@@ -87,10 +87,13 @@ medidor_lawfare/               # Paquete Python instalable
 │   └── deltas.py              # clasificar_delta()
 ├── catalog/sync.py            # sync_catalog() / sincronizar_catalog() → catalog.json
 ├── cli/
-│   ├── main.py                # medidor cribar | commit | build | catalog sync
+│   ├── main.py                # medidor cribar | commit | build | pack | catalog sync
 │   ├── cribar.py
 │   ├── commit.py
+│   ├── pack.py                # ZIP por medición o caso → public/prensa/downloads/
 │   └── build.py               # Jinja2 → public/index + public/prensa + public/foss
+├── site/
+│   └── packs.py               # Lógica de empaquetado (usada por build y pack)
 └── paths.py                   # Rutas centralizadas
 
 docs/
@@ -196,8 +199,20 @@ Flujo estándar para **cualquier** `caso_id` (Zapatero es el primer caso de uso,
 | Cribado | `data/casos/<caso-id>/cribados/cribado-MCS-N.json` |
 | Catálogo | `data/catalog.json` |
 | Prensa | `public/prensa/medicion/MN.html`, caso, índice |
+| Paquetes ZIP | `public/prensa/downloads/<caso-id>.zip`, `<caso-id>-MN.zip` |
 
-Los paquetes de datos se generan con `medidor build` en `public/prensa/downloads/`.
+Los paquetes ZIP se generan en el paso 7 (`medidor build`) **o** bajo demanda con `medidor pack` (sin rebuild del sitio). Ver sección CLI.
+
+**Solo generar un ZIP (agente / operador):** no hace falta levantar web ni `medidor build` completo si los datos en `data/` ya están actualizados:
+
+```bash
+pip install -e .
+medidor pack --caso zapatero-plus-ultra              # caso completo
+medidor pack --caso zapatero-plus-ultra --med M3   # una medición
+# Salida por defecto: public/prensa/downloads/
+```
+
+Si el repo ya tiene `public/prensa/downloads/` commiteado, el archivo puede existir sin ejecutar nada.
 
 ---
 
@@ -235,6 +250,9 @@ medidor catalog sync
 
 # Regenerar sitios estáticos (NO editar public/ manualmente)
 medidor build --target all
+
+# Paquetes ZIP de datos (medición o caso) sin rebuild completo
+medidor pack --caso <caso-id> [--med M3] [--output dir]
 
 # Tests
 pytest
@@ -305,7 +323,7 @@ Tests de regresión fijan M0=5.0 … M4=6.68.
 
 - **No presentar el proyecto como “el caso Zapatero”** en README, webs ni docs de interfaz — es una medición del catálogo.
 - **No editar `public/` a mano** — regenerar con `medidor build`.
-- Paquetes ZIP de datos (medición/caso): `public/prensa/downloads/` (generados en el build).
+- Paquetes ZIP: `public/prensa/downloads/` — `medidor build` o `medidor pack --caso <id>`
 - **No sobrescribir buffers inmutables** en `estado.json` — son append-only.
 - **No cambiar `caso_foco`** — es inmutable por diseño.
 - **No asumir rutas `sls/`** — migradas a `medidor_lawfare/` + `data/`.

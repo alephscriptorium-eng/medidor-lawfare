@@ -137,6 +137,9 @@ medidor catalog sync
 
 # Regenerar sitios (no editar public/ a mano)
 medidor build --target all
+
+# Paquetes ZIP (medición o caso; sin rebuild del sitio)
+medidor pack --caso <caso-id> [--med M3]
 ```
 
 ## Estructura del repositorio
