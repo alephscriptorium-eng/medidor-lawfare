@@ -107,6 +107,92 @@
       },
       "intensidad": 6.79,
       "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_6": {
+      "id": "M6",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6"
+      ],
+      "ejes": {
+        "integridad": 6.27,
+        "sincronia": 8.01,
+        "ventana": 7.51,
+        "impacto": 8.93,
+        "vector": -1.07
+      },
+      "intensidad": 6.97,
+      "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_7": {
+      "id": "M7",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7"
+      ],
+      "ejes": {
+        "integridad": 6.27,
+        "sincronia": 8.08,
+        "ventana": 7.56,
+        "impacto": 8.93,
+        "vector": -1.1
+      },
+      "intensidad": 6.98,
+      "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_8": {
+      "id": "M8",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7",
+        "MCS-8"
+      ],
+      "ejes": {
+        "integridad": 6.3,
+        "sincronia": 8.18,
+        "ventana": 7.63,
+        "impacto": 8.96,
+        "vector": -1.13
+      },
+      "intensidad": 7.01,
+      "lectura": "lawfare sistémico confirmado"
+    },
+    "post_mcs_9": {
+      "id": "M9",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7",
+        "MCS-8",
+        "MCS-9"
+      ],
+      "ejes": {
+        "integridad": 6.6,
+        "sincronia": 8.23,
+        "ventana": 7.65,
+        "impacto": 9.16,
+        "vector": -1.17
+      },
+      "intensidad": 7.09,
+      "lectura": "lawfare sistémico confirmado"
     }
   },
   "deltas": [
@@ -193,6 +279,74 @@
       "direccion": "MIXED",
       "clasificacion_impacto": "ambiguo",
       "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.11"
+    },
+    {
+      "id": "D5→6",
+      "desde": "M5",
+      "hasta": "M6",
+      "buffer_aplicado": "MCS-6",
+      "delta_ejes": {
+        "integridad": 0.25,
+        "sincronia": 0.49,
+        "ventana": 0.13,
+        "impacto": 0.48,
+        "vector": -0.24
+      },
+      "delta_intensidad": 0.18,
+      "direccion": "MIXED",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.18"
+    },
+    {
+      "id": "D6→7",
+      "desde": "M6",
+      "hasta": "M7",
+      "buffer_aplicado": "MCS-7",
+      "delta_ejes": {
+        "integridad": 0.0,
+        "sincronia": 0.07,
+        "ventana": 0.05,
+        "impacto": 0.0,
+        "vector": -0.03
+      },
+      "delta_intensidad": 0.01,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Datos verificables refuerzan medición previa. Δ=+0.01"
+    },
+    {
+      "id": "D7→8",
+      "desde": "M7",
+      "hasta": "M8",
+      "buffer_aplicado": "MCS-8",
+      "delta_ejes": {
+        "integridad": 0.03,
+        "sincronia": 0.1,
+        "ventana": 0.07,
+        "impacto": 0.03,
+        "vector": -0.03
+      },
+      "delta_intensidad": 0.03,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Datos verificables refuerzan medición previa. Δ=+0.03"
+    },
+    {
+      "id": "D8→9",
+      "desde": "M8",
+      "hasta": "M9",
+      "buffer_aplicado": "MCS-9",
+      "delta_ejes": {
+        "integridad": 0.3,
+        "sincronia": 0.05,
+        "ventana": 0.02,
+        "impacto": 0.2,
+        "vector": -0.04
+      },
+      "delta_intensidad": 0.08,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Datos verificables refuerzan medición previa. Δ=+0.08"
     }
   ],
   "buffers": [
@@ -286,25 +440,113 @@
       },
       "pct_l3": 0.14,
       "nota_origen": "docs/sesiones/buffer-05.md — modelo electoral + fuentes enriquecidas"
+    },
+    {
+      "id": "MCS-6",
+      "tipo": "contexto_comparativo",
+      "etiqueta": "Corpus buffer-06: delitos, electoral, Trump/Musk, acusación y afinidades",
+      "fecha_carga": "2026-06-18",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 6,
+      "items_cargados": 23,
+      "items_cuarentena": 2,
+      "resumen_capas": {
+        "L0": 1,
+        "L1": 22,
+        "L2": 0,
+        "L3": 2,
+        "Lx": 0
+      },
+      "pct_l3": 0.08,
+      "nota_origen": "docs/sesiones/buffer-06.md — corpus completo sesión"
+    },
+    {
+      "id": "MCS-7",
+      "tipo": "contexto_fino",
+      "etiqueta": "Solidificación cuarentena MCS-6 — respuesta agente (buffer-07)",
+      "fecha_carga": "2026-06-18",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 2,
+      "items_cargados": 2,
+      "items_cuarentena": 0,
+      "resumen_capas": {
+        "L0": 0,
+        "L1": 2,
+        "L2": 0,
+        "L3": 0,
+        "Lx": 0
+      },
+      "pct_l3": 0.0,
+      "nota_origen": "docs/sesiones/buffer-07.md — 2 ítems SOLIDIFICAR del agente externo"
+    },
+    {
+      "id": "MCS-8",
+      "tipo": "contexto_fino",
+      "etiqueta": "Solidificación cuarentena MCS-5 — indicios acumulados (buffer-08)",
+      "fecha_carga": "2026-06-18",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 3,
+      "items_cargados": 3,
+      "items_cuarentena": 0,
+      "resumen_capas": {
+        "L0": 0,
+        "L1": 3,
+        "L2": 0,
+        "L3": 0,
+        "Lx": 0
+      },
+      "pct_l3": 0.0,
+      "nota_origen": "docs/sesiones/buffer-08.md — cierre 3 ítems L3 MCS-5 (indicios sin carga causal)"
+    },
+    {
+      "id": "MCS-9",
+      "tipo": "contexto_comparativo",
+      "etiqueta": "Fiscal General del Estado: caso González Amador y polarización del Ministerio Fiscal (buffer-09)",
+      "fecha_carga": "2026-06-18",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 4,
+      "items_cargados": 9,
+      "items_cuarentena": 0,
+      "resumen_capas": {
+        "L0": 1,
+        "L1": 8,
+        "L2": 0,
+        "L3": 0,
+        "Lx": 0
+      },
+      "pct_l3": 0.0,
+      "nota_origen": "docs/sesiones/buffer-09.md — contexto Álvaro García Ortiz / PP / Ayuso"
     }
   ],
   "branch_actual": "main",
   "branches": {
     "main": {
-      "medicion_activa": "M5",
+      "medicion_activa": "M9",
       "buffers_activos": [
         "MCS-1",
         "MCS-2",
         "MCS-3",
         "MCS-4",
-        "MCS-5"
+        "MCS-5",
+        "MCS-6",
+        "MCS-7",
+        "MCS-8",
+        "MCS-9"
       ],
       "historial_deltas": [
         "D0→1",
         "D1→2",
         "D2→3",
         "D3→4",
-        "D4→5"
+        "D4→5",
+        "D5→6",
+        "D6→7",
+        "D7→8",
+        "D8→9"
       ]
     }
   }

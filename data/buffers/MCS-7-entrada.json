@@ -1,0 +1,24 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-7",
+    "tipo": "contexto_fino",
+    "etiqueta": "Solidificación cuarentena MCS-6 — respuesta agente (buffer-07)",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "agente",
+    "nota_origen": "docs/sesiones/buffer-07.md — 2 ítems SOLIDIFICAR del agente externo",
+    "items": [
+      {
+        "texto": "A 431 días del límite electoral legal del 22-ago-2027 (LOREG, investidura 23-jul-2023), el PSOE presentó enmienda en el Congreso el 10-sep-2024 reconociendo la mediación de Zapatero en Venezuela (Diario de Sesiones del Congreso, El Confidencial), lo que indica defensa activa de su segunda línea internacional pese a la distancia temporal hasta las urnas.",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "ef44ec0f"
+      },
+      {
+        "texto": "En la vista de medidas cautelares del 17-jun-2026 (Audiencia Nacional, juez José Luis Calama), Vox, Hazte Oír, Liberum e Iustitia Europa pidieron prisión provisional subsidiaria (RTVE); su documentada oposición pública a la Agenda 2030 (iustitiaeuropa.es, liberumasociacion.org) indica alineación de intereses ideológicos extraprocesales distinta del plano institucional de Fiscalía y PP.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "3bc10676"
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-6",
+    "tipo": "contexto_comparativo",
+    "etiqueta": "Corpus buffer-06: delitos, electoral, Trump/Musk, acusación y afinidades",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "agente",
+    "nota_origen": "docs/sesiones/buffer-06.md — corpus completo sesión",
+    "items": [
+      {
+        "texto": "17-jun-2026: José Luis Rodríguez Zapatero declara como investigado ante la Audiencia Nacional (juez José Luis Calama) en el caso Plus Ultra por tráfico de influencias, organización criminal, blanqueo, falsedad documental, delitos fiscales y contrabando; el juez denegó medidas cautelares señalando indicios racionales de criminalidad.",
+        "ranura_sugerida": "historico_imputaciones",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "19-may-2026: auto del juez Calama imputa a José Luis Rodríguez Zapatero en el procedimiento Plus Ultra (Audiencia Nacional).",
+        "ranura_sugerida": "historico_imputaciones",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Delitos investigados en Plus Ultra contra Zapatero: tráfico de influencias, organización criminal, blanqueo de capitales, falsedad documental, delitos fiscales, contrabando (joyas en oficina).",
+        "ranura_sugerida": "historico_imputaciones",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Investidura de Pedro Sánchez 23-jul-2023; límite legal elecciones generales 22-ago-2027 según LOREG (legislatura de 4 años).",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "431 días entre declaración Zapatero 17-jun-2026 y límite legal elecciones 22-ago-2027 (t_s a t_e).",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Modelo de decaimiento exponencial: relevancia teórica 25,7% a 431 días de elecciones; factor M_partidista medio (~1,0) distinguiendo ausencia de primera línea electoral y presencia de segunda línea internacional respaldada por el PSOE.",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "interpretativo"
+      },
+      {
+        "texto": "25-jun-2025: Trump amenazó represalias comerciales contra España por mantener objetivo de gasto en defensa del 2,1% frente a meta OTAN del 5%; acusó a España de viajar gratis en seguridad (BBC Mundo, El País).",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Marzo de 2026: el Gobierno español deniega uso de bases Rota y Morón y espacio aéreo para la operación USA-Israel contra Irán (Furia Épica); Trump calificó a España de aliado terrible y amenazó cortar relaciones comerciales (El País 30-mar-2026).",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Mayo de 2026: el secretario de Estado Marco Rubio cuestionó la pertenencia de España a la OTAN por el veto a las bases: «¿Para qué estás en la OTAN?» (Cadena SER 21-may-2026).",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "3 de febrero de 2026: Elon Musk en X calificó a Pedro Sánchez de tirano y traidor al pueblo de España y fascista totalitario tras anuncio de regulación de redes sociales para menores (El País, BBC Mundo).",
+        "ranura_sugerida": "cobertura_mediatica",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "4 de febrero de 2026: Pedro Sánchez responde en X: «Deja que los tecno-oligarcas ladren, Sancho, es señal de que cabalgamos» en contexto del choque con Musk (Público).",
+        "ranura_sugerida": "cobertura_mediatica",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "15 de enero de 2026: Pedro Sánchez anuncia fondo soberano España Crece vía ICO con objetivo de movilizar 120.000 M€; sectores incluyen IA, digitalización y computación cuántica (El Mundo, La Moncloa).",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "10 de septiembre de 2024: el PSOE presenta enmienda al Congreso pidiendo reconocer toda la labor de mediación de Zapatero en Venezuela (El Confidencial).",
+        "ranura_sugerida": "actores_recurrentes",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Agosto de 2024: España firma declaración conjunta con Estados Unidos reconociendo la victoria de Edmundo González en Venezuela (Público; State.gov).",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: Fiscalía Anticorrupción pide retirada pasaporte, prohibición salir de España, comparecencias quincenales (RTVE/El País).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: PP, acusación popular unificada, se adhiere a petición Fiscalía (El Mundo).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: Vox pide prisión provisional de forma subsidiaria (RTVE).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: Hazte Oír pide prisión provisional de forma subsidiaria (RTVE — letrado Javier Pérez Roldán).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: Liberum pide prisión provisional de forma subsidiaria.",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: Iustitia Europa pide prisión provisional de forma subsidiaria (RTVE — Luis Pardo).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "17-jun-2026: juez Calama deniega medidas cautelares; cita notoriedad y arraigo (auto, El País).",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Vox participa activamente en las cumbres CPAC, compartiendo el discurso de fronteras fuertes y antiglobalismo con Donald Trump.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Santiago Abascal interactúa frecuentemente con Elon Musk, compartiendo el discurso contra la censura gubernamental en redes sociales.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Iustitia Europa mantiene una posición pública centrada en la oposición frontal a la Agenda 2030, la identidad digital y el multilateralismo europeo.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Mapa de intereses ideológicos: Mientras que la Fiscalía y el PP se mueven en un plano institucional, las otras cuatro acusaciones populares (Vox, Hazte Oír, Liberum e Iustitia Europa) muestran una intersección directa con el bloque ideológico de Trump y Musk, compartiendo la oposición a las agendas progresistas que defiende el actual Ejecutivo español.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "interpretativo"
+      }
+    ]
+  }
+}

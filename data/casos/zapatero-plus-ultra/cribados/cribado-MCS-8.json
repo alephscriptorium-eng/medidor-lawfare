@@ -1,0 +1,80 @@
+{
+  "buffer_id": "MCS-8",
+  "etiqueta": "Solidificación cuarentena MCS-5 — indicios acumulados (buffer-08)",
+  "resumen_capas": {
+    "L0": 0,
+    "L1": 3,
+    "L2": 0,
+    "L3": 0,
+    "Lx": 0
+  },
+  "items": [
+    {
+      "id": "b9c36f7f",
+      "texto_original": "Zapatero mantuvo mediación autodeclarada en Venezuela y Colombia (2015–2024; enmienda PSOE 10-sep-2024 reconociendo su labor, El Confidencial); el 19-may-2026 Calama le imputa en Plus Ultra y el 17-jun-2026 declara como investigado por tráfico de influencias y blanqueo vinculado a redes internacionales (auto AN), lo que acumula indicios de intersección entre su perfil internacional documentado y el foco procesal actual sin afirmar causalidad.",
+      "capa": "L1",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "626d88f0",
+      "texto_original": "Entre feb-2026 y jun-2026 documentaron picos de tensión Sánchez–Trump (veto bases Rota, mar-2026, El País) y Sánchez–Musk (3-feb-2026, BBC Mundo); la imputación de Zapatero fue el 19-may-2026 y su declaración el 17-jun-2026 (auto Calama), lo que indica coincidencia temporal entre presión adversarial externa sobre el Ejecutivo y hitos procesales del caso foco sin documentar injerencia en la instrucción.",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "7a2e27c3",
+      "texto_original": "A 431 días del límite electoral 22-ago-2027 (LOREG, investidura 23-jul-2023), el cálculo aritmético R(431)=100·e^(-0,00315·431) documentado en buffer-05 arroja relevancia teórica ~25,7%; Zapatero carece de cargo electivo nacional y el PSOE respaldó su segunda línea internacional (enmienda 10-sep-2024), lo que indica amortiguación partidista parcial frente a una ventana temporal amplia hasta las urnas.",
+      "capa": "L1",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    }
+  ],
+  "cuarentena": [],
+  "medicion": {
+    "id": "M8",
+    "buffers_activos": [
+      "MCS-1",
+      "MCS-2",
+      "MCS-3",
+      "MCS-4",
+      "MCS-5",
+      "MCS-6",
+      "MCS-7",
+      "MCS-8"
+    ],
+    "ejes": {
+      "integridad": 6.3,
+      "sincronia": 8.18,
+      "ventana": 7.63,
+      "impacto": 8.96,
+      "vector": -1.13
+    },
+    "intensidad": 7.01,
+    "lectura": "lawfare sistémico confirmado"
+  },
+  "delta": {
+    "id": "D7→8",
+    "desde": "M7",
+    "hasta": "M8",
+    "buffer_aplicado": "MCS-8",
+    "delta_ejes": {
+      "integridad": 0.03,
+      "sincronia": 0.1,
+      "ventana": 0.07,
+      "impacto": 0.03,
+      "vector": -0.03
+    },
+    "delta_intensidad": 0.03,
+    "direccion": "NEUTRAL",
+    "clasificacion_impacto": "ambiguo",
+    "nota": "Datos verificables refuerzan medición previa. Δ=+0.03"
+  }
+}

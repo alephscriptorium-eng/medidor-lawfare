@@ -132,6 +132,7 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | **M3** | 6.56 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3 |
 | **M4** | 6.68 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4 |
 | **M5** | 6.79 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4, MCS-5 |
+| **M6** | 6.88 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4, MCS-5, MCS-6 |
 
 ### Correspondencia sesión → buffer → medición (armónica)
 
@@ -142,6 +143,7 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | buffer-03.md | MCS-3 | **M3** | `MCS-3-entrada.json` | `cribado-MCS-3.json` |
 | buffer-04.md | MCS-4 | **M4** | `MCS-4-entrada.json` | `cribado-MCS-4.json` |
 | buffer-05.md | MCS-5 | **M5** | `MCS-5-entrada.json` | `cribado-MCS-5.json` |
+| buffer-06.md | MCS-6 | **M6** | `MCS-6-entrada.json` | `cribado-MCS-6.json` |
 
 `buffer-03.md` incluye prompt + respuesta agente; solo la parte SOLIDIFICAR entra en MCS-3.
 
@@ -154,8 +156,9 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | D2→3 | +0.06 | NEUTRAL | MCS-3 — respuesta agente buffer-03 |
 | D3→4 | +0.12 | NEUTRAL | MCS-4 — investigación buffer-04 |
 | D4→5 | +0.11 | MIXED | MCS-5 — calendario electoral, PSOE, tensiones Sánchez–Trump/Musk (14% L3 cuarentena) |
+| D5→6 | +0.09 | MIXED | MCS-6 — acusación Plus Ultra vista 17-jun-2026 y posiciones públicas |
 
-**Medición activa en catálogo:** **M5** (6.79/10).
+**Medición activa en catálogo:** **M6** (6.88/10).
 
 ---
 

@@ -1,0 +1,30 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-8",
+    "tipo": "contexto_fino",
+    "etiqueta": "Solidificación cuarentena MCS-5 — indicios acumulados (buffer-08)",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "operador",
+    "nota_origen": "docs/sesiones/buffer-08.md — cierre 3 ítems L3 MCS-5 (indicios sin carga causal)",
+    "items": [
+      {
+        "texto": "Zapatero mantuvo mediación autodeclarada en Venezuela y Colombia (2015–2024; enmienda PSOE 10-sep-2024 reconociendo su labor, El Confidencial); el 19-may-2026 Calama le imputa en Plus Ultra y el 17-jun-2026 declara como investigado por tráfico de influencias y blanqueo vinculado a redes internacionales (auto AN), lo que acumula indicios de intersección entre su perfil internacional documentado y el foco procesal actual sin afirmar causalidad.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "109a1033"
+      },
+      {
+        "texto": "Entre feb-2026 y jun-2026 documentaron picos de tensión Sánchez–Trump (veto bases Rota, mar-2026, El País) y Sánchez–Musk (3-feb-2026, BBC Mundo); la imputación de Zapatero fue el 19-may-2026 y su declaración el 17-jun-2026 (auto Calama), lo que indica coincidencia temporal entre presión adversarial externa sobre el Ejecutivo y hitos procesales del caso foco sin documentar injerencia en la instrucción.",
+        "ranura_sugerida": "vectores_politicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "2de4624a"
+      },
+      {
+        "texto": "A 431 días del límite electoral 22-ago-2027 (LOREG, investidura 23-jul-2023), el cálculo aritmético R(431)=100·e^(-0,00315·431) documentado en buffer-05 arroja relevancia teórica ~25,7%; Zapatero carece de cargo electivo nacional y el PSOE respaldó su segunda línea internacional (enmienda 10-sep-2024), lo que indica amortiguación partidista parcial frente a una ventana temporal amplia hasta las urnas.",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "9b207bbf"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-9",
+    "tipo": "contexto_comparativo",
+    "etiqueta": "Fiscal General del Estado: caso González Amador y polarización del Ministerio Fiscal (buffer-09)",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "agente",
+    "nota_origen": "docs/sesiones/buffer-09.md — contexto Álvaro García Ortiz / PP / Ayuso",
+    "items": [
+      {
+        "texto": "Álvaro García Ortiz fue nombrado fiscal general del Estado en julio de 2022 a propuesta del Gobierno de coalición PSOE-Sumar.",
+        "ranura_sugerida": "actores_recurrentes",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "16-oct-2024: el Tribunal Supremo abrió causa especial contra el fiscal general Álvaro García Ortiz por revelación de secretos; fue la primera investigación formal contra un fiscal general del Estado en democracia, originada por querella de Alberto González Amador, pareja de Isabel Díaz Ayuso (El País).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "La investigación del Supremo se vinculó a una nota de prensa de la Fiscalía General y a la filtración de correos del abogado de González Amador en los que se admitía fraude fiscal; la Fiscalía difundió el comunicado para desmentir informaciones del entorno de Ayuso sobre un presunto pacto con Hacienda (El País, sentencia TS dic-2025).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "20-nov-2025: la Sala Segunda del Tribunal Supremo condenó a García Ortiz como autor de un delito de revelación de datos reservados (art. 417.1 CP) a 2 años de inhabilitación para el cargo de fiscal general, multa de 7.200 euros e indemnización de 10.000 euros a Alberto González Amador (RTVE, CGPJ).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "24-nov-2025: Álvaro García Ortiz presentó su dimisión como fiscal general del Estado tras hacerse pública la condena del Tribunal Supremo (El País).",
+        "ranura_sugerida": "actores_recurrentes",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "11-jun-2026: la Sala Penal del Tribunal Supremo emitió informe preceptivo desfavorable a la concesión de indulto a García Ortiz, al no advertir razones de justicia, equidad o utilidad pública y subrayar la afectación a la institucionalidad del Ministerio Fiscal (El País, EFE).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "Tras la condena de noviembre de 2025, García Ortiz y el Ministerio Fiscal interpusieron recurso de amparo ante el Tribunal Constitucional; el Gobierno conserva la decisión final sobre el indulto tramitado por el Ministerio de Justicia (EFE, jun-2026).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "La condena del fiscal general en noviembre de 2025 por revelación de secretos en un caso impulsado por querella del entorno del PP (González Amador) coincide temporalmente con la vista de medidas cautelares de Plus Ultra el 17-jun-2026, donde la Fiscalía Anticorrupción y el PP pidieron restricciones contra Zapatero, lo que indica un contexto de alta polarización en torno al Ministerio Fiscal sin afirmar sesgo en la instrucción Plus Ultra.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "datos_duros"
+      },
+      {
+        "texto": "La caída del fiscal general por condena firme en noviembre de 2025 y el mantenimiento de peticiones de prisión provisional subsidiaria por acusaciones populares (Vox, Hazte Oír, Liberum, Iustitia) en la vista Plus Ultra del 17-jun-2026 (RTVE) acumulan indicios de tensión sobre el rol de la fiscalía y la acusación popular en causas de alta visibilidad política.",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "datos_duros"
+      }
+    ]
+  }
+}

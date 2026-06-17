@@ -78,8 +78,82 @@
         "MCS-4",
         "MCS-5"
       ],
-      "destacada": true,
+      "destacada": false,
       "url_prensa": "/prensa/medicion/M5.html"
+    },
+    {
+      "id": "M6",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 6.97,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6"
+      ],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M6.html"
+    },
+    {
+      "id": "M7",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 6.98,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7"
+      ],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M7.html"
+    },
+    {
+      "id": "M8",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 7.01,
+      "lectura": "lawfare sistémico confirmado",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7",
+        "MCS-8"
+      ],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M8.html"
+    },
+    {
+      "id": "M9",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 7.09,
+      "lectura": "lawfare sistémico confirmado",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5",
+        "MCS-6",
+        "MCS-7",
+        "MCS-8",
+        "MCS-9"
+      ],
+      "destacada": true,
+      "url_prensa": "/prensa/medicion/M9.html"
     }
   ],
   "casos": [

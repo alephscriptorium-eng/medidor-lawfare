@@ -44,6 +44,22 @@ def test_m5_intensidad(estado: dict) -> None:
     assert estado["mediciones"]["post_mcs_5"]["intensidad"] == 6.79
 
 
+def test_m6_intensidad(estado: dict) -> None:
+    assert estado["mediciones"]["post_mcs_6"]["intensidad"] == 6.97
+
+
+def test_m7_intensidad(estado: dict) -> None:
+    assert estado["mediciones"]["post_mcs_7"]["intensidad"] == 6.98
+
+
+def test_m8_intensidad(estado: dict) -> None:
+    assert estado["mediciones"]["post_mcs_8"]["intensidad"] == 7.01
+
+
+def test_m9_intensidad(estado: dict) -> None:
+    assert estado["mediciones"]["post_mcs_9"]["intensidad"] == 7.09
+
+
 def test_motor_version(estado: dict) -> None:
     assert estado["motor_version"] == "1.0.0"
 
