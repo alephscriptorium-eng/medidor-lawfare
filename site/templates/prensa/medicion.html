@@ -1,35 +1,68 @@
 {% extends "base.html" %}
-{% block title %}{{ med.id }} — {{ brand }}{% endblock %}
+{% block title %}{{ med.id }} — Medidor de Lawfare{% endblock %}
 {% block meta %}
 <meta property="og:title" content="{{ med.id }}: intensidad {{ med.intensidad }}/10">
-<meta property="og:description" content="{{ med.lectura }} — {{ estado.caso_foco.etiqueta }}">
+<meta property="og:description" content="{{ med.lectura }} — {{ med.caso_nombre }}">
 {% endblock %}
 {% block content %}
 <h1>Medición {{ med.id }}</h1>
-<p class="caso-meta">Caso: <a href="caso/{{ med.caso_id }}.html">{{ med.caso_etiqueta or estado.caso_foco.etiqueta }}</a> · <a href="index.html">Catálogo</a></p>
+<p class="caso-meta">Caso: <a href="{{ base_href }}caso/{{ med.caso_id }}.html">{{ med.caso_nombre }}</a> · <a href="{{ base_href }}index.html">Catálogo</a></p>
 <div class="panel-intensidad">
   <span class="valor">{{ med.intensidad }}</span><span class="max">/10</span>
   <p class="lectura">{{ med.lectura }}</p>
 </div>
 <h2>Ejes</h2>
 <ul class="ejes">
-  {% for eje, val in medicion.ejes.items() %}
+  {% for eje, val in med.ejes.items() %}
   <li>
     <span class="eje-nombre">{{ eje | capitalize }}</span>
-    <span class="barra"><span style="width: {{ (val / 10 * 100) | int }}%"></span></span>
+    <span class="barra"><span style="width: {{ ((val | abs) / 10 * 100) | int }}%"></span></span>
     <span class="eje-val">{{ val }}</span>
   </li>
   {% endfor %}
 </ul>
-{% if med.buffers_activos %}
-<h2>Contexto aplicado</h2>
-<p>Buffers: {{ med.buffers_activos | join(', ') }}</p>
+
+{% if med.id == 'M0' %}
+<section class="buffer-panel buffer-panel--baseline">
+  <h2>Contexto</h2>
+  <p>Medición baseline: sin buffers de contexto aplicados.</p>
+</section>
+{% elif buffer %}
+<section class="buffer-panel">
+  <h2>Buffer de contexto</h2>
+  <p class="buffer-intro">Esta medición incorpora el buffer <strong>{{ buffer.id }}</strong>{% if buffer.etiqueta %} — {{ buffer.etiqueta }}{% endif %}.</p>
+  {% if delta %}
+  <p class="delta-nota">Δ {{ delta.delta_intensidad }} ({{ delta.direccion }}){% if delta.nota %} — {{ delta.nota }}{% endif %}</p>
+  {% endif %}
+  {% if buffer.nota_origen %}
+  <p class="buffer-nota">{{ buffer.nota_origen }}</p>
+  {% endif %}
+  <ul class="buffer-stats">
+    {% if buffer.items_cargados is not none %}<li>{{ buffer.items_cargados }} ítems cargados</li>{% endif %}
+    {% if buffer.items_cuarentena is not none %}<li>{{ buffer.items_cuarentena }} en cuarentena</li>{% endif %}
+    {% if buffer.tipo %}<li>Tipo: {{ buffer.tipo }}</li>{% endif %}
+  </ul>
+  <h3 class="buffer-files-title">Archivos fuente (rama <code>main</code>)</h3>
+  <ul class="buffer-files">
+    {% if buffer.sesion_github %}
+    <li><a href="{{ buffer.sesion_github }}" class="ext-link" rel="noopener">Sesión del agente</a> <span class="path-hint">docs/sesiones/buffer-0{{ buffer.num }}.md</span></li>
+    {% endif %}
+    <li><a href="{{ buffer.entrada_github }}" class="ext-link" rel="noopener">Entrada del buffer</a> <span class="path-hint">data/buffers/{{ buffer.id }}-entrada.json</span></li>
+    <li><a href="{{ buffer.cribado_github }}" class="ext-link" rel="noopener">Cribado</a> <span class="path-hint">data/casos/{{ med.caso_id }}/cribados/cribado-{{ buffer.id }}.json</span></li>
+  </ul>
+</section>
+{% else %}
+<section class="buffer-panel">
+  <h2>Contexto aplicado</h2>
+  <p>Buffers activos: {{ med.buffers_activos | join(', ') }}</p>
+</section>
 {% endif %}
+
 <h2>Línea temporal</h2>
 <ol class="timeline">
-  {% for m in mediciones | sort(attribute='id') %}
-  <li><a href="{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10 ({{ m.lectura }})</li>
+  {% for m in timeline %}
+  <li{% if m.id == med.id %} class="activa"{% endif %}><a href="{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10 ({{ m.lectura }})</li>
   {% endfor %}
 </ol>
-<p><a href="caso/{{ med.caso_id }}.html">Ver ficha del caso</a></p>
+<p class="nav-actions"><a class="btn" href="{{ base_href }}caso/{{ med.caso_id }}.html">Ver ficha del caso</a></p>
 {% endblock %}

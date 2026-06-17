@@ -33,8 +33,37 @@
         "MCS-1",
         "MCS-2"
       ],
-      "destacada": true,
+      "destacada": false,
       "url_prensa": "/prensa/medicion/M2.html"
+    },
+    {
+      "id": "M3",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 6.56,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3"
+      ],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M3.html"
+    },
+    {
+      "id": "M4",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 6.68,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4"
+      ],
+      "destacada": true,
+      "url_prensa": "/prensa/medicion/M4.html"
     }
   ],
   "casos": [

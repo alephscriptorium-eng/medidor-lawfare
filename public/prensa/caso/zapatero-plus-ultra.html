@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zapatero / Plus Ultra — Medidor de Lawfare</title>
   
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a href="index.html" class="brand">Medidor de Lawfare</a>
+      <a href="../index.html" class="brand">Medidor de Lawfare</a>
       <p class="site-tag">Centro de datos</p>
       <nav>
-        <a href="index.html">Catálogo</a>
-        <a href="artefacto.html">El artefacto</a>
-        <a href="../foss/index.html" class="foss-link">Documentación FOSS</a>
+        <a href="../index.html">Catálogo</a>
+        <a href="../artefacto.html">El artefacto</a>
+        <a href="../../foss/index.html" class="foss-link">Documentación FOSS</a>
       </nav>
     </div>
   </header>
@@ -25,59 +25,91 @@
 <p class="banner-inaugural">Primera medición publicada en el catálogo — dato ilustrativo del artefacto</p>
 
 <h1>Zapatero / Plus Ultra</h1>
-<p class="lead">Registro de mediciones del caso en el centro de datos.</p>
-<h2>Evolución</h2>
-<div class="delta-visual">
-  
-  <div class="delta-step">
-    <strong>M0</strong>
-    <span class="int">5.0</span>
-    <small>sospechas fundadas</small>
-  </div>
-  <span class="arrow">→</span>
-  
-  <div class="delta-step">
-    <strong>M1</strong>
-    <span class="int">6.4</span>
-    <small>alta probabilidad de lawfare</small>
-  </div>
-  <span class="arrow">→</span>
-  
-  <div class="delta-step">
-    <strong>M2</strong>
-    <span class="int">6.5</span>
-    <small>alta probabilidad de lawfare</small>
-  </div>
-  
-  
+<p class="caso-meta">Primera medición publicada en el catálogo del Medidor de Lawfare.</p>
+<div class="panel-intensidad">
+  <span class="valor">6.68</span><span class="max">/10</span>
+  <p class="lectura">alta probabilidad de lawfare</p>
+  <p class="medicion-activa">Medición activa: <a href="../medicion/M4.html">M4</a></p>
 </div>
+<h2>Historial de mediciones</h2>
+<ol class="timeline">
+  
+  <li><a href="../medicion/M0.html">M0</a> — 5.0/10 (sospechas fundadas)</li>
+  
+  <li><a href="../medicion/M1.html">M1</a> — 6.4/10 (alta probabilidad de lawfare)</li>
+  
+  <li><a href="../medicion/M2.html">M2</a> — 6.5/10 (alta probabilidad de lawfare)</li>
+  
+  <li><a href="../medicion/M3.html">M3</a> — 6.56/10 (alta probabilidad de lawfare)</li>
+  
+  <li class="activa"><a href="../medicion/M4.html">M4</a> — 6.68/10 (alta probabilidad de lawfare)</li>
+  
+</ol>
 
-<p class="explicacion">Medición inaugural: el contexto histórico (M1) elevó la lectura; la verificación empírica (M2) la confirmó sin inflarla.</p>
-
-<h2>Fichas</h2>
-<ul>
+<h2>Buffers de contexto</h2>
+<p class="section-lead">Cada medición M1–M4 corresponde a un buffer MCS; los archivos están en el repositorio.</p>
+<ul class="buffer-list">
   
-  <li><a href="../medicion/M0.html">M0</a> — 5.0/10</li>
+  <li class="buffer-card">
+    <h3>MCS-1 — Directorio casos España 1978-2026</h3>
+    <p class="buffer-nota">docs/sesiones/buffer-01.md — directorio Gemini; entrada retroactiva MCS-1-entrada.json</p>
+    <ul class="buffer-files">
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/sesiones/buffer-01.md" class="ext-link" rel="noopener">Sesión del agente</a></li>
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/buffers/MCS-1-entrada.json" class="ext-link" rel="noopener">Entrada</a></li>
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/casos/zapatero-plus-ultra/cribados/cribado-MCS-1.json" class="ext-link" rel="noopener">Cribado</a></li>
+    </ul>
+    <p class="buffer-med-link">Medición: <a href="../medicion/M1.html">M1</a></p>
+  </li>
   
-  <li><a href="../medicion/M1.html">M1</a> — 6.4/10</li>
+  <li class="buffer-card">
+    <h3>MCS-2 — Verificación empírica delta 5→6.4 (mecanismos + datos duros)</h3>
+    <p class="buffer-nota">buffer-02.md — conversación Gemini; bloque 1 interpretativo, bloque 2 datos verificables</p>
+    <ul class="buffer-files">
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/sesiones/buffer-02.md" class="ext-link" rel="noopener">Sesión del agente</a></li>
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/buffers/MCS-2-entrada.json" class="ext-link" rel="noopener">Entrada</a></li>
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/casos/zapatero-plus-ultra/cribados/cribado-MCS-2.json" class="ext-link" rel="noopener">Cribado</a></li>
+    </ul>
+    <p class="buffer-med-link">Medición: <a href="../medicion/M2.html">M2</a></p>
+  </li>
   
-  <li><a href="../medicion/M2.html">M2</a> — 6.5/10</li>
+  <li class="buffer-card">
+    <h3>MCS-3 — Solidificación cuarentena MCS-2 — respuesta agente (buffer-03)</h3>
+    <p class="buffer-nota">docs/sesiones/buffer-03.md — 5 ítems SOLIDIFICAR del agente externo</p>
+    <ul class="buffer-files">
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/sesiones/buffer-03.md" class="ext-link" rel="noopener">Sesión del agente</a></li>
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/buffers/MCS-3-entrada.json" class="ext-link" rel="noopener">Entrada</a></li>
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/casos/zapatero-plus-ultra/cribados/cribado-MCS-3.json" class="ext-link" rel="noopener">Cribado</a></li>
+    </ul>
+    <p class="buffer-med-link">Medición: <a href="../medicion/M3.html">M3</a></p>
+  </li>
+  
+  <li class="buffer-card">
+    <h3>MCS-4 — Solidificación cuarentena MCS-2 — investigación ampliada (buffer-04)</h3>
+    <p class="buffer-nota">docs/sesiones/buffer-04.md — ítems adicionales no cubiertos por MCS-3</p>
+    <ul class="buffer-files">
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/sesiones/buffer-04.md" class="ext-link" rel="noopener">Sesión del agente</a></li>
+      
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/buffers/MCS-4-entrada.json" class="ext-link" rel="noopener">Entrada</a></li>
+      <li><a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/data/casos/zapatero-plus-ultra/cribados/cribado-MCS-4.json" class="ext-link" rel="noopener">Cribado</a></li>
+    </ul>
+    <p class="buffer-med-link">Medición: <a href="../medicion/M4.html">M4</a></p>
+  </li>
   
 </ul>
 
-<h2>Deltas registrados</h2>
-
-<p><strong>D0→1</strong>: Δ 1,4 (UP)</p>
-
-<p><strong>D1→2</strong>: Δ 0,1 (NEUTRAL)</p>
-
-
-<p><a href="../index.html">← Catálogo</a></p>
+<p class="nav-actions"><a class="btn btn-secondary" href="../index.html">Volver al catálogo</a></p>
 
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Medidor de Lawfare v1.0.0 · Registro de mediciones · <a href="../index.html">Inicio</a></p>
+      <p>Medidor de Lawfare v1.0.0 · Registro de mediciones · <a href="../../index.html">Inicio</a></p>
     </div>
   </footer>
 </body>

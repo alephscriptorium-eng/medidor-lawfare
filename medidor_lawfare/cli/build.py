@@ -19,7 +19,12 @@ from medidor_lawfare.paths import (
     PUBLIC_FOSS,
     PUBLIC_PRENSA,
     SITE_DIR,
-    estado_path,
+)
+from medidor_lawfare.site.prensa_context import (
+    buffer_para_medicion,
+    caso_enriquecido,
+    med_enriquecida,
+    timeline_mediciones,
 )
 
 
@@ -55,19 +60,20 @@ def build_prensa() -> None:
     PUBLIC_PRENSA.mkdir(parents=True, exist_ok=True)
     _copiar_assets("prensa", PUBLIC_PRENSA)
 
-    ctx_base = {
+    ctx_root = {
         "version": __version__,
         "catalog": catalog,
         "estados": estados,
         "brand": "Medidor de Lawfare",
+        "base_href": "",
     }
 
     (PUBLIC_PRENSA / "index.html").write_text(
-        env.get_template("index.html").render(**ctx_base),
+        env.get_template("index.html").render(**ctx_root),
         encoding="utf-8",
     )
     (PUBLIC_PRENSA / "artefacto.html").write_text(
-        env.get_template("artefacto.html").render(**ctx_base),
+        env.get_template("artefacto.html").render(**ctx_root),
         encoding="utf-8",
     )
 
@@ -79,14 +85,17 @@ def build_prensa() -> None:
         estado = estados.get(caso_id, {})
         mediciones_list = list(estado.get("mediciones", {}).values())
         medicion_estado = next((m for m in mediciones_list if m["id"] == med_id), {})
+        delta, buffer = buffer_para_medicion(estado, med_id, caso_id)
+        ctx_med = {**ctx_root, "base_href": "../"}
         (medicion_dir / f"{med_id}.html").write_text(
             env.get_template("medicion.html").render(
-                **ctx_base,
-                med=med,
+                **ctx_med,
+                med=med_enriquecida(med, medicion_estado),
                 medicion=medicion_estado,
                 estado=estado,
-                mediciones=mediciones_list,
-                deltas=estado.get("deltas", []),
+                timeline=timeline_mediciones(estado),
+                delta=delta,
+                buffer=buffer,
             ),
             encoding="utf-8",
         )
@@ -96,13 +105,12 @@ def build_prensa() -> None:
     for caso in catalog.get("casos", []):
         caso_id = caso["id"]
         estado = estados.get(caso_id, {})
+        ctx_caso = {**ctx_root, "base_href": "../"}
         (caso_dir / f"{caso_id}.html").write_text(
             env.get_template("caso.html").render(
-                **ctx_base,
-                caso=caso,
+                **ctx_caso,
+                caso=caso_enriquecido(caso, estado),
                 estado=estado,
-                mediciones=list(estado.get("mediciones", {}).values()),
-                deltas=estado.get("deltas", []),
             ),
             encoding="utf-8",
         )

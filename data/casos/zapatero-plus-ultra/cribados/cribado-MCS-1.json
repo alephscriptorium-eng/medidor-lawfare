@@ -1,0 +1,140 @@
+{
+  "buffer_id": "MCS-1",
+  "etiqueta": "Directorio casos España 1978-2026",
+  "resumen_capas": {
+    "L0": 0,
+    "L1": 14,
+    "L2": 0,
+    "L3": 0,
+    "Lx": 0
+  },
+  "items": [
+    {
+      "id": "07637ad6",
+      "texto_original": "Caso Sogecable (1997-1999): procesamiento cúpula PRISA; juez Gómez de Liaño apartado y condenado por prevaricación continuada.",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "a903329e",
+      "texto_original": "Guerra sucia GAL (1987-1998): filtraciones dosificadas de sumarios secretos; choque instrucción judicial (Garzón) y Ministerio del Interior.",
+      "capa": "L1",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "953f59ad",
+      "texto_original": "Filesa y Naseiro (1990-1995): financiación ilegal PSOE/PP; surgimiento acusación popular como herramienta de presión partidista.",
+      "capa": "L1",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "44eabc80",
+      "texto_original": "Caso Bateragune (2009-2018): TEDH dictaminó en 2018 juicio no imparcial contra Arnaldo Otegi y dirigentes abertzales.",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "4f37443c",
+      "texto_original": "Gürtel/ERE (2009-2018): apertura y cierre de piezas separadas coincidiendo con convocatorias electorales autonómicas y generales.",
+      "capa": "L1",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "6503c459",
+      "texto_original": "Operación Cataluña (2012-2016): informes UDEF apócrifos filtrados en campaña contra Artur Mas y Xavier Trias (cuenta falsa Suiza).",
+      "capa": "L1",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "26e7cd97",
+      "texto_original": "Causa del Procés (2017-2024): debate tipificaciones rebelión vs sedición y forzamiento jurisdicción Tribunal Supremo.",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "0f7dcc66",
+      "texto_original": "Tsunami Democràtic (2019-2024): tipificación protestas como terrorismo; choque Audiencia Nacional y Tribunal Supremo.",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "24ca8509",
+      "texto_original": "Caso Victoria Rosell (2015-2019): magistrado Salvador Alba condenado a 6 años por conspiración contra jueza de Podemos.",
+      "capa": "L1",
+      "ranura_destino": "intensidad_historica_comparable",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "e85d277f",
+      "texto_original": "Causas contra Podemos (2016-2023): decenas de líneas (Neurona, PISA, Dina) archivadas sin condenas tras cobertura en campaña.",
+      "capa": "L1",
+      "ranura_destino": "historico_imputaciones",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "041466da",
+      "texto_original": "Operación Kitchen (2013-2015): fondos reservados Interior y policías para sustraer pruebas a Luis Bárcenas (caso Gürtel).",
+      "capa": "L1",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "3cffb46d",
+      "texto_original": "Caso Begoña Gómez (2024-actual): diligencias por acusaciones populares basadas en recortes de prensa, algunos falsos.",
+      "capa": "L1",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "fb9d44cc",
+      "texto_original": "Manos Limpias y Hazte Oír: sindicatos recurrentes en acusación popular contra entorno del Ejecutivo desde 2020.",
+      "capa": "L1",
+      "ranura_destino": "actores_recurrentes",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "f5cfcbf6",
+      "texto_original": "Patrón post-1978: sincronización actuaciones judiciales con calendarios electorales e investigaciones prospectivas en casos políticos.",
+      "capa": "L1",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    }
+  ],
+  "cuarentena": []
+}

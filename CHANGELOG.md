@@ -11,7 +11,9 @@ All notable changes to **Medidor de Lawfare** follow [Semantic Versioning](https
 - Módulo MCN: cribado epistemológico L0–L3 y cuarentena de ítems interpretativos.
 - RDB: registro de deltas entre mediciones (M0→M1→M2) y branches.
 - Primera medición publicada en el catálogo (Zapatero / Plus Ultra, M0→M2) como referencia de regresión.
-- Mediciones publicadas: M0 (5.0), M1 (6.4), M2 (6.5).
+- Mediciones publicadas: M0 (5.0), M1 (6.4), M2 (6.5), M3 (6.56), M4 (6.68).
+- Correspondencia armónica buffer-01…04 → MCS-1…4 → M1…M4.
+- MCS-1 entrada/cribado retroactivos; cuarentena MCS-2 resuelta en MCS-3 + MCS-4.
 - JSON Schemas versionados en `data/schema/`.
 - CLI unificada: `medidor cribar`, `commit`, `build`, `catalog sync`.
 - Sitios estáticos generados: `public/prensa` y `public/foss`.

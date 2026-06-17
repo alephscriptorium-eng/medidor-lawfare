@@ -53,6 +53,41 @@
       },
       "intensidad": 6.5,
       "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_3": {
+      "id": "M3",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3"
+      ],
+      "ejes": {
+        "integridad": 5.56,
+        "sincronia": 7.09,
+        "ventana": 7.11,
+        "impacto": 7.92,
+        "vector": -0.6
+      },
+      "intensidad": 6.56,
+      "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_4": {
+      "id": "M4",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4"
+      ],
+      "ejes": {
+        "integridad": 5.83,
+        "sincronia": 7.23,
+        "ventana": 7.23,
+        "impacto": 8.2,
+        "vector": -0.6
+      },
+      "intensidad": 6.68,
+      "lectura": "alta probabilidad de lawfare"
     }
   },
   "deltas": [
@@ -88,6 +123,40 @@
       "direccion": "NEUTRAL",
       "clasificacion_impacto": "ambiguo",
       "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.10"
+    },
+    {
+      "id": "D2→3",
+      "desde": "M2",
+      "hasta": "M3",
+      "buffer_aplicado": "MCS-3",
+      "delta_ejes": {
+        "integridad": 0.12,
+        "sincronia": 0.11,
+        "ventana": 0.04,
+        "impacto": 0.16,
+        "vector": 0.0
+      },
+      "delta_intensidad": 0.06,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Datos verificables refuerzan medición previa. Δ=+0.06"
+    },
+    {
+      "id": "D3→4",
+      "desde": "M3",
+      "hasta": "M4",
+      "buffer_aplicado": "MCS-4",
+      "delta_ejes": {
+        "integridad": 0.27,
+        "sincronia": 0.14,
+        "ventana": 0.12,
+        "impacto": 0.28,
+        "vector": 0.0
+      },
+      "delta_intensidad": 0.12,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Datos verificables refuerzan medición previa. Δ=+0.12"
     }
   ],
   "buffers": [
@@ -99,7 +168,8 @@
       "inmutable": true,
       "nivel_asépticidad_promedio": "L1",
       "ranuras_pobladas": 9,
-      "resumen": "Histórico de imputaciones, patrones de acusación popular, cobertura mediática, ventanas temporales comparables"
+      "resumen": "Histórico de imputaciones, patrones de acusación popular, cobertura mediática, ventanas temporales comparables",
+      "nota_origen": "docs/sesiones/buffer-01.md — directorio Gemini; entrada retroactiva MCS-1-entrada.json"
     },
     {
       "id": "MCS-2",
@@ -120,19 +190,63 @@
       },
       "pct_l3": 0.56,
       "nota_origen": "buffer-02.md — conversación Gemini; bloque 1 interpretativo, bloque 2 datos verificables"
+    },
+    {
+      "id": "MCS-3",
+      "tipo": "contexto_fino",
+      "etiqueta": "Solidificación cuarentena MCS-2 — respuesta agente (buffer-03)",
+      "fecha_carga": "2026-06-17",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L0",
+      "ranuras_pobladas": 4,
+      "items_cargados": 5,
+      "items_cuarentena": 0,
+      "resumen_capas": {
+        "L0": 3,
+        "L1": 2,
+        "L2": 0,
+        "L3": 0,
+        "Lx": 0
+      },
+      "pct_l3": 0.0,
+      "nota_origen": "docs/sesiones/buffer-03.md — 5 ítems SOLIDIFICAR del agente externo"
+    },
+    {
+      "id": "MCS-4",
+      "tipo": "contexto_fino",
+      "etiqueta": "Solidificación cuarentena MCS-2 — investigación ampliada (buffer-04)",
+      "fecha_carga": "2026-06-17",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 5,
+      "items_cargados": 9,
+      "items_cuarentena": 0,
+      "resumen_capas": {
+        "L0": 4,
+        "L1": 5,
+        "L2": 0,
+        "L3": 0,
+        "Lx": 0
+      },
+      "pct_l3": 0.0,
+      "nota_origen": "docs/sesiones/buffer-04.md — ítems adicionales no cubiertos por MCS-3"
     }
   ],
   "branch_actual": "main",
   "branches": {
     "main": {
-      "medicion_activa": "M2",
+      "medicion_activa": "M4",
       "buffers_activos": [
         "MCS-1",
-        "MCS-2"
+        "MCS-2",
+        "MCS-3",
+        "MCS-4"
       ],
       "historial_deltas": [
         "D0→1",
-        "D1→2"
+        "D1→2",
+        "D2→3",
+        "D3→4"
       ]
     }
   }

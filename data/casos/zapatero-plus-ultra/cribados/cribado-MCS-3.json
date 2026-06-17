@@ -1,0 +1,93 @@
+{
+  "buffer_id": "MCS-3",
+  "etiqueta": "Solidificación cuarentena MCS-2 — respuesta agente (buffer-03)",
+  "resumen_capas": {
+    "L0": 3,
+    "L1": 2,
+    "L2": 0,
+    "L3": 0,
+    "Lx": 0
+  },
+  "items": [
+    {
+      "id": "99735d78",
+      "texto_original": "29 de julio de 2021: auto del juez Manuel García Castellón (JCI nº 6 AN, pieza Kitchen del caso Tándem) acredita operación gestionada al margen de control judicial con fondos reservados del Interior.",
+      "capa": "L0",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "8f296e46",
+      "texto_original": "27 de octubre de 2014: El Mundo publica titular sobre cuenta en Andorra de Xavier Trias. Consulta independentista del 9 de noviembre de 2014 — 13 días después.",
+      "capa": "L1",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "180f61bf",
+      "texto_original": "16 de abril de 2024: auto apertura diligencias DP 1146/2024 (Begoña Gómez, JI nº 41 Madrid). Manos Limpias admitió el 24 de abril de 2024 basar la denuncia en recortes de prensa.",
+      "capa": "L0",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "54bf2983",
+      "texto_original": "6 de noviembre de 2023: auto de García Castellón en DP 85/2019 (Tsunami Democràtic) acuerda investigar terrorismo (art. 573 CP) y elevar exposición razonada al Tribunal Supremo.",
+      "capa": "L0",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "619d9d02",
+      "texto_original": "25 de abril de 2024: Fiscalía Provincial de Madrid solicita archivo de DP 1146/2024 (Begoña Gómez); acusaciones populares mantienen viva la causa.",
+      "capa": "L1",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    }
+  ],
+  "cuarentena": [],
+  "medicion": {
+    "id": "M3",
+    "buffers_activos": [
+      "MCS-1",
+      "MCS-2",
+      "MCS-3"
+    ],
+    "ejes": {
+      "integridad": 5.56,
+      "sincronia": 7.09,
+      "ventana": 7.11,
+      "impacto": 7.92,
+      "vector": -0.6
+    },
+    "intensidad": 6.56,
+    "lectura": "alta probabilidad de lawfare"
+  },
+  "delta": {
+    "id": "D2→3",
+    "desde": "M2",
+    "hasta": "M3",
+    "buffer_aplicado": "MCS-3",
+    "delta_ejes": {
+      "integridad": 0.12,
+      "sincronia": 0.11,
+      "ventana": 0.04,
+      "impacto": 0.16,
+      "vector": 0.0
+    },
+    "delta_intensidad": 0.06,
+    "direccion": "NEUTRAL",
+    "clasificacion_impacto": "ambiguo",
+    "nota": "Datos verificables refuerzan medición previa. Δ=+0.06"
+  }
+}

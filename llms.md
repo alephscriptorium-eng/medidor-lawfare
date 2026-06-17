@@ -65,9 +65,15 @@ data/                          # Fuente de verdad
 │       ├── caso.json          # Metadatos del caso (inmutable)
 │       ├── estado.json        # Mediciones, buffers, deltas, branches
 │       └── cribados/
-│           └── cribado-MCS-2.json
+│           ├── cribado-MCS-1.json
+│           ├── cribado-MCS-2.json
+│           ├── cribado-MCS-3.json
+│           └── cribado-MCS-4.json
 ├── buffers/
-│   └── MCS-2-entrada.json     # Buffer original del agente externo
+│   ├── MCS-1-entrada.json
+│   ├── MCS-2-entrada.json
+│   ├── MCS-3-entrada.json
+│   └── MCS-4-entrada.json
 ├── schema/                    # JSON Schemas (estado, buffer, cribado, catalog, caso)
 └── catalog.json               # Catálogo prensa (generado/sincronizado)
 
@@ -89,12 +95,13 @@ medidor_lawfare/               # Paquete Python instalable
 
 docs/
 ├── metodologia/               # Marco, ejes, L0–L3, limitaciones, extension-mcn-rdb
-└── sesiones/                  # sesion-01.md, buffer-01.md, buffer-02.md (origen conversacional)
+├── prompts/                   # Plantillas para agentes externos ({{variables}})
+└── sesiones/                  # buffer-NN.md — origen conversacional por MCS-N
 
 site/                          # Plantillas Jinja2 + CSS (no editar public/ a mano)
 public/                        # Salida generada (GitHub Pages despliega esto)
 
-tests/test_regression.py       # M0=5.0, M1=6.4, M2=6.5, schema, cribado MCS-2
+tests/test_regression.py       # M0–M4, schema, cribado MCS-2
 ```
 
 ---
@@ -117,44 +124,45 @@ tests/test_regression.py       # M0=5.0, M1=6.4, M2=6.5, schema, cribado MCS-2
 | **M0** | 5.0 | sospechas fundadas | — |
 | **M1** | 6.4 | alta probabilidad de lawfare | MCS-1 |
 | **M2** | 6.5 | alta probabilidad de lawfare | MCS-1, MCS-2 |
+| **M3** | 6.56 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3 |
+| **M4** | 6.68 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4 |
+
+### Correspondencia sesión → buffer → medición (armónica)
+
+| Sesión | MCS | Medición | Entrada JSON | Cribado |
+|--------|-----|----------|--------------|---------|
+| buffer-01.md | MCS-1 | **M1** | `MCS-1-entrada.json` | `cribado-MCS-1.json` (retroactivo) |
+| buffer-02.md | MCS-2 | **M2** | `MCS-2-entrada.json` | `cribado-MCS-2.json` |
+| buffer-03.md | MCS-3 | **M3** | `MCS-3-entrada.json` | `cribado-MCS-3.json` |
+| buffer-04.md | MCS-4 | **M4** | `MCS-4-entrada.json` | `cribado-MCS-4.json` |
+
+`buffer-03.md` incluye prompt + respuesta agente; solo la parte SOLIDIFICAR entra en MCS-3.
 
 ### Deltas registrados
 
 | Delta | Δ intensidad | Dirección | Buffer |
 |-------|--------------|-----------|--------|
-| D0→1 | +1.4 | UP | MCS-1 — directorio histórico España 1978–2026 |
-| D1→2 | +0.1 | NEUTRAL | MCS-2 — verificación empírica (mixto) |
+| D0→1 | +1.4 | UP | MCS-1 |
+| D1→2 | +0.1 | NEUTRAL | MCS-2 (56% L3 cuarentena) |
+| D2→3 | +0.06 | NEUTRAL | MCS-3 — respuesta agente buffer-03 |
+| D3→4 | +0.12 | NEUTRAL | MCS-4 — investigación buffer-04 |
 
-**Por qué D1→2 es tan pequeño:** MCS-2 confirma MCS-1; descuento de redundancia (`REDUNDANCIA_MCS1 = 0.55`); 56% del buffer en cuarentena L3.
+**Medición activa en catálogo:** **M4** (6.68/10).
 
 ---
 
-## Cuarentena MCS-2 (estado congelado, no es un bug)
+## Cuarentena MCS-2 (resuelta en M3 + M4)
 
-Los 10 ítems L3 en cuarentena son **correctos por diseño**: el bloque interpretativo de `docs/sesiones/buffer-02.md` no tenía ancla verificable suficiente. Están registrados en `data/casos/zapatero-plus-ultra/cribados/cribado-MCS-2.json` y **no afectan M2**.
+La cuarentena original (10 L3 en `cribado-MCS-2.json`) se solidificó en **dos buffers**:
 
-| Métrica | Valor |
-|---------|-------|
-| Ítems cargados | 8 (L0: 2, L1: 6) |
-| Ítems en cuarentena | **10 (L3)** |
-| pct_l3 | 0.56 |
+- **MCS-3** (buffer-03): 5 ítems del agente → M3 (+0.06)
+- **MCS-4** (buffer-04): 9 ítems investigación ampliada → M4 (+0.12)
 
-### Ítems en cuarentena (IDs)
+Cuarentena MCS-2 permanece como histórico; no se reescribe MCS-2 (inmutable).
 
-| ID | Ranura | Resumen |
-|----|--------|---------|
-| `5ae098d6` | meta_patrones_sistemicos | Dosieres prospectivos sin mandato (Kitchen/PISA) |
-| `ad9fe6cf` | cobertura_mediatica | Filtración a medios en momento político |
-| `afaf2846` | patrones_acusacion | Querella basada en recorte + alarma social |
-| `4efd030c` | ventanas_temporales | Hitos 15–30 días antes de comicios |
-| `e951031d` | ventanas_temporales | Archivo tardío post-objetivo político |
-| `3d0a0138` | precedentes_judiciales | Tipificación para subir a AN/TS |
-| `1171a6d9` | precedentes_judiciales | Forum shopping / juez natural |
-| `98840122` | patrones_acusacion | Acusación popular vs archivo fiscal |
-| `481c5cb8` | meta_patrones_sistemicos | “Pena de telediario” |
-| `ea902be9` | meta_patrones_sistemicos | “Mecánica estructural” |
+Ítems originales en cuarentena (referencia): ver `cribado-MCS-2.json` o tabla en commits anteriores a MCS-3.
 
-### Ya cargado (no repetir como novedad)
+### Ya cargado en MCS-1/MCS-2 (no repetir como novedad)
 
 - Salvador Alba / Victoria Rosell (TSJC 2019, TS 2021)
 - TEDH Bateragune / Otegi (6-nov-2018)
@@ -163,23 +171,53 @@ Los 10 ítems L3 en cuarentena son **correctos por diseño**: el bloque interpre
 
 ---
 
-## Próximo trabajo posible (cuarentena → solidificación)
+## Ciclo operativo completo (artefacto → prensa)
 
-Si el usuario aporta **datos verificables** del agente externo para ítems en cuarentena:
+Flujo estándar para **cualquier** `caso_id` (Zapatero es el primer caso de uso, no un modo especial):
 
-1. Recibir output (formato: SOLIDIFICAR con L0/L1/L2 por ítem, o DESCARTADO).
-2. Convertir a buffer nuevo (`MCS-3` o patch documentado).
-3. `medidor cribar … --caso zapatero-plus-ultra` — previsualizar.
-4. `medidor commit …` — recalcula medición (probablemente **M3**, no M2').
-5. `pytest` — no romper M0/M1/M2 **a menos que el usuario acepte recálculo**.
-6. `medidor catalog sync` + `medidor build --target all`.
+```
+1. docs/sesiones/buffer-NN.md     ← agente externo o operador (markdown)
+2. data/buffers/MCS-N-entrada.json ← conversión estructurada
+3. medidor cribar … --caso <id>   ← preview MCN + cribado-*.json
+4. medidor commit … --caso <id>   ← estado.json + M(N+1) + delta
+5. pytest                         ← regresión
+6. medidor catalog sync           ← data/catalog.json
+7. medidor build --target all     ← public/ (prensa + foss + índice)
+8. git push main                  ← GitHub Pages (si activo)
+```
 
-**Limitación del motor actual:** `commit_buffer()` solo **appendea** buffers nuevos (MCS-3, MCS-4…). No existe flujo de patch in-place sobre MCS-2. Opciones:
+**Archivos tocados por medición nueva:**
 
-- **Opción A (recomendada):** Nuevo buffer `MCS-3` solo con ítems solidificados → M3 + delta D2→3
-- **Opción B:** Extender MCN/commit para mergear cuarentena resuelta sin duplicar ranuras
+| Artefacto | Ruta |
+|-----------|------|
+| Entrada conversacional | `docs/sesiones/buffer-NN.md` |
+| Entrada machine | `data/buffers/MCS-N-entrada.json` |
+| Estado | `data/casos/<caso-id>/estado.json` |
+| Cribado | `data/casos/<caso-id>/cribados/cribado-MCS-N.json` |
+| Catálogo | `data/catalog.json` |
+| Prensa | `public/prensa/medicion/MN.html`, caso, índice |
 
-Comparar IDs de cuarentena antes/después; no inventar L0.
+---
+
+## Prompts reutilizables (agentes externos)
+
+Plantillas en `docs/prompts/` — sustituir `{{variables}}`; no acoplar al caso inaugural salvo en ejemplos.
+
+| Archivo | Uso |
+|---------|-----|
+| `llenar_buffer.md` | Pedir un **nuevo buffer** MCS-N al agente |
+| `limpiar_cuarentena_pedir.md` | Pedir datos para ítems L3 en cuarentena |
+| `limpiar_cuarentena_recibir.md` | Formato de respuesta + reglas de conversión a JSON |
+
+**Convención sesiones:** ver tabla «Correspondencia sesión → buffer → medición» arriba.
+
+---
+
+## Próximo trabajo posible
+
+- Añadir otro `caso_id` bajo `data/casos/` (mismo flujo; tests nuevos).
+- Workflow CI con `pytest` (aún no existe).
+- Patch in-place de cuarentena (Opción B en metodología) — hoy solo append MCS-N.
 
 ## CLI — comandos esenciales
 
@@ -227,7 +265,7 @@ CAP_DELTA_INTENSIDAD = 0.50
 # Dirección delta: |Δ| > 0.3 → UP/DOWN; ≤ 0.3 → NEUTRAL
 ```
 
-Tests de regresión fijan M0=5.0, M1=6.4, M2=6.5. Cualquier recálculo post-cuarentena debe documentar si cambia M2 o crea M3.
+Tests de regresión fijan M0=5.0 … M4=6.68.
 
 ---
 
@@ -253,7 +291,8 @@ Tests de regresión fijan M0=5.0, M1=6.4, M2=6.5. Cualquier recálculo post-cuar
 | `docs/metodologia/extension-mcn-rdb.md` | Especificación MCN + RDB |
 | `docs/metodologia/limitaciones.md` | Limitaciones conocidas |
 | `docs/sesiones/buffer-01.md` | Origen MCS-1 (directorio Gemini) |
-| `docs/sesiones/buffer-02.md` | Origen MCS-2 (interpretación + datos duros) |
+| `docs/sesiones/buffer-04.md` | Origen MCS-3 (solidificación cuarentena) |
+| `docs/prompts/` | Plantillas llenar_buffer / limpiar_cuarentena |
 | `docs/sesiones/sesion-01.md` | Log conversacional sesión 1 |
 | `CHANGELOG.md` | Historial de releases |
 | `README.md` | Instalación y uso humano |
@@ -301,4 +340,4 @@ Funcionalidad preservada; añadidos empaquetado pip, schemas, tests, sitios pren
 
 ---
 
-*Última actualización: 2026-06-17 — branch `main`, motor 1.0.0, Pages workflow pendiente de activación en repo.*
+*Última actualización: 2026-06-17 — M4=6.68, correspondencia buffer-NN ↔ MCS-N ↔ MN armónica.*

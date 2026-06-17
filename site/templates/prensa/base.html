@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ brand }}{% endblock %}</title>
+  <title>{% block title %}Medidor de Lawfare{% endblock %}</title>
   {% block meta %}{% endblock %}
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="{{ base_href }}assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a href="index.html" class="brand">{{ brand }}</a>
+      <a href="{{ base_href }}index.html" class="brand">Medidor de Lawfare</a>
       <p class="site-tag">Centro de datos</p>
       <nav>
-        <a href="index.html">Catálogo</a>
-        <a href="artefacto.html">El artefacto</a>
-        <a href="../foss/index.html" class="foss-link">Documentación FOSS</a>
+        <a href="{{ base_href }}index.html">Catálogo</a>
+        <a href="{{ base_href }}artefacto.html">El artefacto</a>
+        <a href="{{ base_href }}../foss/index.html" class="foss-link">Documentación FOSS</a>
       </nav>
     </div>
   </header>
@@ -24,7 +24,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>{{ brand }} v{{ version }} · Registro de mediciones · <a href="../index.html">Inicio</a></p>
+      <p>Medidor de Lawfare v{{ version }} · Registro de mediciones · <a href="{{ base_href }}../index.html">Inicio</a></p>
     </div>
   </footer>
 </body>

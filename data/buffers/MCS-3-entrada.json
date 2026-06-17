@@ -1,0 +1,42 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-3",
+    "tipo": "contexto_fino",
+    "etiqueta": "Solidificación cuarentena MCS-2 — respuesta agente (buffer-03)",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "agente",
+    "nota_origen": "docs/sesiones/buffer-03.md — 5 ítems SOLIDIFICAR del agente externo",
+    "items": [
+      {
+        "texto": "29 de julio de 2021: auto del juez Manuel García Castellón (JCI nº 6 AN, pieza Kitchen del caso Tándem) acredita operación gestionada al margen de control judicial con fondos reservados del Interior.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "5ae098d6"
+      },
+      {
+        "texto": "27 de octubre de 2014: El Mundo publica titular sobre cuenta en Andorra de Xavier Trias. Consulta independentista del 9 de noviembre de 2014 — 13 días después.",
+        "ranura_sugerida": "cobertura_mediatica",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "ad9fe6cf"
+      },
+      {
+        "texto": "16 de abril de 2024: auto apertura diligencias DP 1146/2024 (Begoña Gómez, JI nº 41 Madrid). Manos Limpias admitió el 24 de abril de 2024 basar la denuncia en recortes de prensa.",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "afaf2846"
+      },
+      {
+        "texto": "6 de noviembre de 2023: auto de García Castellón en DP 85/2019 (Tsunami Democràtic) acuerda investigar terrorismo (art. 573 CP) y elevar exposición razonada al Tribunal Supremo.",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "3d0a0138"
+      },
+      {
+        "texto": "25 de abril de 2024: Fiscalía Provincial de Madrid solicita archivo de DP 1146/2024 (Begoña Gómez); acusaciones populares mantienen viva la causa.",
+        "ranura_sugerida": "patrones_acusacion",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "98840122"
+      }
+    ]
+  }
+}

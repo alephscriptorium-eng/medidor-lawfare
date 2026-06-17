@@ -1,0 +1,66 @@
+{
+  "buffer_entrada": {
+    "id": "MCS-4",
+    "tipo": "contexto_fino",
+    "etiqueta": "Solidificación cuarentena MCS-2 — investigación ampliada (buffer-04)",
+    "caso_foco": "ZAP-PU-2026-06-17",
+    "fuente": "operador",
+    "nota_origen": "docs/sesiones/buffer-04.md — ítems adicionales no cubiertos por MCS-3",
+    "items": [
+      {
+        "texto": "8 de julio de 2024: instructor Tsunami Democràtic acuerda archivo tras auto Sala Penal AN anulando diligencias desde julio de 2021 (nota CGPJ).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "3d0a0138"
+      },
+      {
+        "texto": "13 de mayo de 2015: Tribunal Supremo inadmite y archiva querella Manos Limpias contra Pablo Iglesias (nota CGPJ).",
+        "ranura_sugerida": "historico_imputaciones",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "e951031d"
+      },
+      {
+        "texto": "14 de abril de 2016: Tribunal Supremo archiva querella Manos Limpias contra Iglesias y Errejón; basada en informaciones periodísticas no autentificadas.",
+        "ranura_sugerida": "historico_imputaciones",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "e951031d"
+      },
+      {
+        "texto": "20 de julio de 2011: Francisco Camps dimite como presidente Generalitat tras apertura juicio oral pieza Gürtel financiación PPCV.",
+        "ranura_sugerida": "ventanas_temporales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "e951031d"
+      },
+      {
+        "texto": "8 de abril de 2024: Manos Limpias presenta denuncia contra Begoña Gómez; en mayo de 2024 Pedro Sánchez anuncia posible dimisión — causa aún abierta.",
+        "ranura_sugerida": "intensidad_historica_comparable",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "e951031d"
+      },
+      {
+        "texto": "22 de septiembre de 2023: TEDH emplaza a España sobre demandas Procés relativas a juez predeterminado; TS confirmó competencia en diciembre de 2018 (BOE-A-2019-455).",
+        "ranura_sugerida": "precedentes_judiciales",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "1171a6d9"
+      },
+      {
+        "texto": "Instrucción contra Victoria Rosell antes de elecciones 2015; sentencia Tribunal Supremo 2021 condenó al juez Salvador Alba, no a Rosell. Por tanto el desgaste mediático precedió a condena penal del objetivo político.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "481c5cb8"
+      },
+      {
+        "texto": "Según elDiario.es (2025), la Sala Penal del TS registró unas cincuenta querellas fallidas de Vox, Manos Limpias y Hazte Oír contra aforados entre 2019 y 2024.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "ea902be9"
+      },
+      {
+        "texto": "Filtración Operación Cataluña (nov-2012), archivo TS querella Manos Limpias Podemos (may-2015), diligencias Begoña Gómez (abr-2024) y auto pieza Kitchen (jul-2021): cuatro hitos en cuatro décadas con secuencia denuncia o filtración y desenlace penal distinto.",
+        "ranura_sugerida": "meta_patrones_sistemicos",
+        "bloque": "solidificacion_cuarentena",
+        "ref_cuarentena": "ea902be9"
+      }
+    ]
+  }
+}

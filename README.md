@@ -28,7 +28,7 @@ El catálogo de mediciones publicadas vive en `data/catalog.json` y se expone en
 
 ### Primera medición en el catálogo
 
-La medición inaugural (*Zapatero / Plus Ultra*, M0→M2) ilustra el funcionamiento del artefacto. Sus fichas están en el centro de datos; ver [ficha del registro](public/prensa/caso/zapatero-plus-ultra.html).
+La medición inaugural (*Zapatero / Plus Ultra*, M0→M4) ilustra el funcionamiento del artefacto. Sus fichas están en el centro de datos; ver [ficha del registro](public/prensa/caso/zapatero-plus-ultra.html).
 
 ## Requisitos
 

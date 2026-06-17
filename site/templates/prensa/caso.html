@@ -1,36 +1,41 @@
 {% extends "base.html" %}
-{% block title %}{{ caso.etiqueta }} — {{ brand }}{% endblock %}
+{% block title %}{{ caso.nombre }} — Medidor de Lawfare{% endblock %}
 {% block content %}
 {% if caso.inaugural %}
 <p class="banner-inaugural">Primera medición publicada en el catálogo — dato ilustrativo del artefacto</p>
 {% endif %}
-<h1>{{ caso.etiqueta }}</h1>
-<p class="lead">Registro de mediciones del caso en el centro de datos.</p>
-<h2>Evolución</h2>
-<div class="delta-visual">
-  {% for m in mediciones | sort(attribute='id') %}
-  <div class="delta-step">
-    <strong>{{ m.id }}</strong>
-    <span class="int">{{ m.intensidad }}</span>
-    <small>{{ m.lectura }}</small>
-  </div>
-  {% if not loop.last %}<span class="arrow">→</span>{% endif %}
-  {% endfor %}
+<h1>{{ caso.nombre }}</h1>
+<p class="caso-meta">{{ caso.descripcion }}</p>
+<div class="panel-intensidad">
+  <span class="valor">{{ caso.intensidad_actual }}</span><span class="max">/10</span>
+  <p class="lectura">{{ caso.lectura_actual }}</p>
+  <p class="medicion-activa">Medición activa: <a href="{{ base_href }}medicion/{{ caso.medicion_activa }}.html">{{ caso.medicion_activa }}</a></p>
 </div>
-{% if caso.inaugural %}
-<p class="explicacion">Medición inaugural: el contexto histórico (M1) elevó la lectura; la verificación empírica (M2) la confirmó sin inflarla.</p>
-{% endif %}
-<h2>Fichas</h2>
-<ul>
-  {% for m in mediciones | sort(attribute='id') %}
-  <li><a href="../medicion/{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10</li>
+<h2>Historial de mediciones</h2>
+<ol class="timeline">
+  {% for m in caso.mediciones %}
+  <li{% if m.id == caso.medicion_activa %} class="activa"{% endif %}><a href="{{ base_href }}medicion/{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10 ({{ m.lectura }})</li>
+  {% endfor %}
+</ol>
+{% if caso.buffers %}
+<h2>Buffers de contexto</h2>
+<p class="section-lead">Cada medición M1–M4 corresponde a un buffer MCS; los archivos están en el repositorio.</p>
+<ul class="buffer-list">
+  {% for b in caso.buffers %}
+  <li class="buffer-card">
+    <h3>{{ b.id }}{% if b.etiqueta %} — {{ b.etiqueta }}{% endif %}</h3>
+    {% if b.nota_origen %}<p class="buffer-nota">{{ b.nota_origen }}</p>{% endif %}
+    <ul class="buffer-files">
+      {% if b.sesion_github %}
+      <li><a href="{{ b.sesion_github }}" class="ext-link" rel="noopener">Sesión del agente</a></li>
+      {% endif %}
+      <li><a href="{{ b.entrada_github }}" class="ext-link" rel="noopener">Entrada</a></li>
+      <li><a href="{{ b.cribado_github }}" class="ext-link" rel="noopener">Cribado</a></li>
+    </ul>
+    <p class="buffer-med-link">Medición: <a href="{{ base_href }}medicion/{{ b.medicion }}.html">{{ b.medicion }}</a></p>
+  </li>
   {% endfor %}
 </ul>
-{% if deltas %}
-<h2>Deltas registrados</h2>
-{% for d in deltas %}
-<p><strong>{{ d.id }}</strong>: Δ {{ d.delta_intensidad | string | replace('.', ',') }} ({{ d.direccion }})</p>
-{% endfor %}
 {% endif %}
-<p><a href="../index.html">← Catálogo</a></p>
+<p class="nav-actions"><a class="btn btn-secondary" href="{{ base_href }}index.html">Volver al catálogo</a></p>
 {% endblock %}
