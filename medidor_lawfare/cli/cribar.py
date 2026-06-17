@@ -9,6 +9,7 @@ from argparse import Namespace
 from pathlib import Path
 
 from medidor_lawfare.mcn.cribador import (
+    calcular_pct_l3,
     cargar_buffer_desde_archivo,
     procesar_buffer,
     resultado_a_dict,
@@ -59,9 +60,7 @@ def run(args: Namespace) -> int:
     if len(resultado.items) > 10:
         print(f"  ... y {len(resultado.items) - 10} más")
 
-    pct_l3 = resultado.resumen_capas.get("L3", 0) / max(
-        1, sum(resultado.resumen_capas.values())
-    )
+    pct_l3 = calcular_pct_l3(resultado)
     print("\n" + "-" * 60)
     print(f"REFERENCIA {activa} (última medición):")
     print(f"  Intensidad: {m_ref['intensidad']} | Vector: {m_ref['ejes']['vector']}")

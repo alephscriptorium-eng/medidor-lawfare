@@ -3,36 +3,28 @@
 
 from __future__ import annotations
 
-from medidor_lawfare.mcn.cribador import ItemCribado
+from typing import TYPE_CHECKING
 
-RANURA_EJES: dict[str, dict[str, float]] = {
-    "historico_imputaciones": {"integridad": 0.06, "impacto": 0.09},
-    "patrones_acusacion": {"integridad": 0.04, "sincronia": 0.05, "impacto": 0.07},
-    "cobertura_mediatica": {"sincronia": 0.05, "impacto": 0.06, "ventana": 0.03},
-    "ventanas_temporales": {"sincronia": 0.10, "ventana": 0.09},
-    "actores_recurrentes": {"vector": -0.04},
-    "precedentes_judiciales": {"integridad": 0.09, "impacto": 0.05},
-    "vectores_politicos": {"vector": -0.05, "sincronia": 0.03},
-    "intensidad_historica_comparable": {"impacto": 0.08, "integridad": 0.04},
-    "meta_patrones_sistemicos": {
-        "integridad": 0.05,
-        "sincronia": 0.05,
-        "ventana": 0.04,
-        "impacto": 0.05,
-    },
-}
+if TYPE_CHECKING:
+    from medidor_lawfare.mcn.cribador import ItemCribado
+from medidor_lawfare.motor.constantes import (
+    CAP_DELTA_EJE,
+    CAP_DELTA_INTENSIDAD,
+    PESOS_INTENSIDAD,
+    RANURA_EJES,
+    REDUNDANCIA_MCS1,
+)
 
-REDUNDANCIA_MCS1 = 0.55
-CAP_DELTA_EJE = 0.55
-CAP_DELTA_INTENSIDAD = 0.50
-
-PESOS_INTENSIDAD = {
-    "integridad": 0.12,
-    "sincronia": 0.15,
-    "ventana": 0.12,
-    "impacto": 0.18,
-    "vector": 0.10,
-}
+# Re-export para compatibilidad de API
+__all__ = [
+    "RANURA_EJES",
+    "REDUNDANCIA_MCS1",
+    "CAP_DELTA_EJE",
+    "CAP_DELTA_INTENSIDAD",
+    "PESOS_INTENSIDAD",
+    "calcular_impacto_ejes",
+    "calcular_delta_intensidad",
+]
 
 
 def calcular_impacto_ejes(items: list[ItemCribado]) -> dict[str, float]:
@@ -62,7 +54,3 @@ def calcular_delta_intensidad(
     )
     delta = max(-CAP_DELTA_INTENSIDAD, min(CAP_DELTA_INTENSIDAD, delta))
     return round(intensidad_base + delta, 2)
-
-
-from medidor_lawfare.motor.intensidad import lectura_intensidad  # noqa: F401
-from medidor_lawfare.rdb.deltas import clasificar_delta  # noqa: F401

@@ -11,9 +11,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from medidor_lawfare import __version__
 from medidor_lawfare.catalog.sync import cargar_catalog, sincronizar_catalog
-from medidor_lawfare.rdb.estado import listar_casos
+from medidor_lawfare.rdb.estado import listar_casos, cargar_estado
 from medidor_lawfare.paths import (
-    CASOS_DIR,
     LICENSE,
     PROJECT_ROOT,
     PUBLIC_DIR,
@@ -72,13 +71,8 @@ def _copiar_assets(subdir: str, dest: Path) -> None:
 
 def _cargar_estados() -> dict[str, dict]:
     estados: dict[str, dict] = {}
-    for caso_path in sorted(CASOS_DIR.iterdir()):
-        if not caso_path.is_dir():
-            continue
-        ep = caso_path / "estado.json"
-        if ep.exists():
-            with open(ep, encoding="utf-8") as f:
-                estados[caso_path.name] = json.load(f)
+    for caso_id in listar_casos():
+        estados[caso_id] = cargar_estado(caso_id)
     return estados
 
 
@@ -157,7 +151,7 @@ def build_foss() -> None:
         "version": __version__,
         "catalog": catalog,
         "estados": estados,
-        "brand": "Medidor de Lawfare",
+        "brand": brand_context().get("brand_name", "Medidor de Lawfare"),
         "license_text": LICENSE.read_text(encoding="utf-8") if LICENSE.exists() else "",
         **foss_context(),
     }

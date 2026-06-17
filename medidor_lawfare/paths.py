@@ -17,7 +17,8 @@ PUBLIC_DIR = PROJECT_ROOT / "public"
 PUBLIC_PRENSA = PUBLIC_DIR / "prensa"
 PUBLIC_FOSS = PUBLIC_DIR / "foss"
 LICENSE = PROJECT_ROOT / "LICENSE"
-LICENSE_PATH = LICENSE
+
+GITHUB_REPO = "https://github.com/alephscriptorium-eng/medidor-lawfare"
 
 
 def caso_dir(caso_id: str) -> Path:

@@ -6,24 +6,9 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from medidor_lawfare.paths import caso_dir
+from medidor_lawfare.paths import caso_dir, GITHUB_REPO, PROJECT_ROOT
 
-GITHUB_REPO = "https://github.com/alephscriptorium-eng/medidor-lawfare"
 GITHUB_BRANCH = "main"
-
-BUFFER_SESION: dict[str, str] = {
-    "MCS-1": "docs/sesiones/buffer-01.md",
-    "MCS-2": "docs/sesiones/buffer-02.md",
-    "MCS-3": "docs/sesiones/buffer-03.md",
-    "MCS-4": "docs/sesiones/buffer-04.md",
-}
-
-MCS_MEDICION: dict[str, str] = {
-    "MCS-1": "M1",
-    "MCS-2": "M2",
-    "MCS-3": "M3",
-    "MCS-4": "M4",
-}
 
 
 def github_blob(path: str) -> str:
@@ -33,13 +18,16 @@ def github_blob(path: str) -> str:
 def _buffer_enriquecido(buf: dict[str, Any], caso_id: str) -> dict[str, Any]:
     bid = buf["id"]
     num = bid.rsplit("-", 1)[-1]
-    sesion = BUFFER_SESION.get(bid)
+    
+    sesion_path = f"docs/sesiones/buffer-{int(num):02d}.md"
+    sesion = sesion_path if (PROJECT_ROOT / sesion_path).exists() else None
+    
     entrada = f"data/buffers/{bid}-entrada.json"
     cribado = f"data/casos/{caso_id}/cribados/cribado-{bid}.json"
     return {
         **buf,
         "num": num,
-        "medicion": MCS_MEDICION.get(bid),
+        "medicion": f"M{num}",
         "sesion": sesion,
         "entrada": entrada,
         "cribado": cribado,

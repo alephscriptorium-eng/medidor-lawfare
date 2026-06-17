@@ -4,6 +4,8 @@
 from medidor_lawfare.mcn.cribador import (
     ItemCribado,
     ResultadoCribado,
+    buffer_num,
+    calcular_pct_l3,
     cribar_item,
     clasificar_capa,
     inferir_ranura,
@@ -16,6 +18,8 @@ from medidor_lawfare.mcn.cribador import (
 __all__ = [
     "ItemCribado",
     "ResultadoCribado",
+    "buffer_num",
+    "calcular_pct_l3",
     "cribar_item",
     "clasificar_capa",
     "inferir_ranura",

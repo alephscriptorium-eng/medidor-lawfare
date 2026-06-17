@@ -9,17 +9,7 @@ import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any
 
-RANURAS_VALIDAS = {
-    "historico_imputaciones",
-    "patrones_acusacion",
-    "cobertura_mediatica",
-    "ventanas_temporales",
-    "actores_recurrentes",
-    "precedentes_judiciales",
-    "vectores_politicos",
-    "intensidad_historica_comparable",
-    "meta_patrones_sistemicos",
-}
+from medidor_lawfare.motor.constantes import RANURAS_VALIDAS
 
 L0_PATTERNS = [
     r"\b\d{4}[-/]\d{2}[-/]\d{2}\b",
@@ -236,3 +226,14 @@ def resultado_a_dict(resultado: ResultadoCribado) -> dict[str, Any]:
         "items": [asdict(i) for i in resultado.items],
         "cuarentena": [asdict(i) for i in resultado.cuarentena],
     }
+
+
+def buffer_num(buffer_id: str) -> int:
+    """Extrae el número de un buffer_id 'MCS-N' → N."""
+    return int(buffer_id.split("-")[-1])
+
+
+def calcular_pct_l3(resultado: ResultadoCribado) -> float:
+    """Porcentaje de ítems L3 sobre el total del resultado."""
+    total = sum(resultado.resumen_capas.values())
+    return resultado.resumen_capas.get("L3", 0) / max(1, total)

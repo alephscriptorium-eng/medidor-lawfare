@@ -6,10 +6,9 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from medidor_lawfare.paths import SITE_DIR
+from medidor_lawfare.paths import SITE_DIR, GITHUB_REPO
 
 BRAND_PATH = SITE_DIR / "brand.json"
-GITHUB_REPO = "https://github.com/alephscriptorium-eng/medidor-lawfare"
 
 
 def cargar_brand() -> dict[str, Any]:
