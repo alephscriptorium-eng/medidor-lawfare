@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevOps — Medidor de Lawfare</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">Medidor de Lawfare</a>
+      <p class="tag">FOSS · v1.0.0</p>
+      <nav>
+        <a href="index.html">Índice</a>
+        <a href="tecnico.html">Técnico</a>
+        <a href="funcional.html">Funcional</a>
+        <a href="ejemplo-zapatero.html">Ejemplo Zapatero</a>
+        <a href="devops.html">DevOps</a>
+        <a href="LICENSE.html">Licencia</a>
+        <hr>
+        <a href="../prensa/index.html">Sitio prensa</a>
+      </nav>
+    </aside>
+    <main>
+      
+<h1>DevOps — operar y expandir</h1>
+<h2>Instalación</h2>
+<pre>git clone &lt;repo&gt;
+cd SESGADOR
+pip install -e ".[dev]"</pre>
+<h2>Comandos CLI</h2>
+<pre>medidor cribar  data/buffers/MCS-2-entrada.json --caso zapatero-plus-ultra
+medidor commit  data/buffers/MCS-3-entrada.json --caso zapatero-plus-ultra
+medidor catalog sync
+medidor build --target all</pre>
+<h2>Añadir un caso nuevo</h2>
+<ol>
+  <li>Crear <code>data/casos/{slug}/caso.json</code> y <code>estado.json</code> con baseline M0</li>
+  <li>Ejecutar <code>medidor catalog sync</code></li>
+  <li><code>medidor build --target prensa</code></li>
+</ol>
+<h2>Estructura public/</h2>
+<pre>public/
+  prensa/   → portal y fichas para medios
+  foss/     → documentación técnica</pre>
+<h2>Despliegue futuro</h2>
+<p>Preparado para dos dominios independientes: copiar <code>public/prensa</code> y <code>public/foss</code> a sus respectivos hosts estáticos (GitHub Pages, Netlify, etc.).</p>
+<h2>Tests</h2>
+<pre>pytest</pre>
+
+    </main>
+  </div>
+</body>
+</html>

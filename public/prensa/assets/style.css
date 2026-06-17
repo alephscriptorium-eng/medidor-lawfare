@@ -1,0 +1,38 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #555;
+  --accent: #8b2942;
+  --bg: #faf9f7;
+  --card: #fff;
+  --border: #e0ddd8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+.site-header { border-bottom: 1px solid var(--border); background: var(--card); padding: 1rem 0; }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.brand { font-weight: bold; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+nav a { margin-left: 1rem; color: var(--muted); text-decoration: none; font-family: system-ui, sans-serif; font-size: 0.9rem; }
+nav a:hover { color: var(--accent); }
+.foss-link { color: var(--accent); }
+main { padding: 2rem 0 3rem; }
+h1 { font-size: 1.75rem; margin-top: 0; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 4px; }
+.card.destacada { border-color: var(--accent); }
+.intensidad { font-size: 2rem; font-weight: bold; color: var(--accent); margin: 0.5rem 0; }
+.intensidad span { font-size: 1rem; color: var(--muted); }
+.badge { font-size: 0.75rem; background: var(--accent); color: #fff; padding: 0.2rem 0.5rem; border-radius: 2px; }
+.panel-intensidad { text-align: center; padding: 2rem; background: var(--card); border: 1px solid var(--border); margin: 1.5rem 0; }
+.panel-intensidad .valor { font-size: 3.5rem; font-weight: bold; color: var(--accent); }
+.ejes { list-style: none; padding: 0; }
+.ejes li { display: grid; grid-template-columns: 120px 1fr 40px; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; font-family: system-ui, sans-serif; font-size: 0.9rem; }
+.barra { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.barra span { display: block; height: 100%; background: var(--accent); }
+.delta-visual { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+.delta-step { background: var(--card); border: 1px solid var(--border); padding: 1rem; text-align: center; min-width: 100px; }
+.delta-step .int { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+.arrow { font-size: 1.5rem; color: var(--muted); }
+.btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 3px; font-family: system-ui, sans-serif; }
+.site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0; font-size: 0.85rem; color: var(--muted); font-family: system-ui, sans-serif; }

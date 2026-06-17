@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funcional — Medidor de Lawfare</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">Medidor de Lawfare</a>
+      <p class="tag">FOSS · v1.0.0</p>
+      <nav>
+        <a href="index.html">Índice</a>
+        <a href="tecnico.html">Técnico</a>
+        <a href="funcional.html">Funcional</a>
+        <a href="ejemplo-zapatero.html">Ejemplo Zapatero</a>
+        <a href="devops.html">DevOps</a>
+        <a href="LICENSE.html">Licencia</a>
+        <hr>
+        <a href="../prensa/index.html">Sitio prensa</a>
+      </nav>
+    </aside>
+    <main>
+      
+<h1>Descripción funcional</h1>
+<ol>
+  <li><strong>Definir caso</strong> — <code>data/casos/{id}/caso.json</code> + medición baseline</li>
+  <li><strong>Aportar buffer</strong> — JSON en <code>data/buffers/</code></li>
+  <li><strong>Cribar</strong> — <code>medidor cribar archivo.json --caso {id}</code></li>
+  <li><strong>Commit</strong> — <code>medidor commit archivo.json --caso {id}</code></li>
+  <li><strong>Sincronizar catálogo</strong> — <code>medidor catalog sync</code></li>
+  <li><strong>Publicar</strong> — <code>medidor build --target all</code></li>
+</ol>
+<p>El caso foco es inmutable. Los buffers son apéndices; no sobrescriben anteriores.</p>
+
+    </main>
+  </div>
+</body>
+</html>
