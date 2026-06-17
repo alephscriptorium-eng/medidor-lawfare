@@ -633,6 +633,74 @@ h3 {
   color: var(--link-hover) !important;
 }
 
+/* —— Proveniencia transmedia —— */
+.provenance {
+  text-align: center;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.provenance-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.4rem;
+}
+
+.logo-frame {
+  display: inline-flex;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.provenance-logo {
+  display: block;
+  max-height: 32px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.provenance-chain,
+.provenance-footer-chain,
+.provenance-footer-meta {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.provenance-chain a,
+.provenance-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.provenance-chain a:hover,
+.provenance-footer a:hover {
+  color: var(--link-hover);
+}
+
+.provenance-sep {
+  margin: 0 0.25em;
+  opacity: 0.6;
+}
+
+.provenance-footer {
+  text-align: center;
+}
+
+.provenance-footer-meta {
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+}
+
 /* —— Pie —— */
 .site-footer {
   border-top: 4px double var(--border);

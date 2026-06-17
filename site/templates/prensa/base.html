@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Medidor de Lawfare{% endblock %}</title>
+  <title>{% block title %}{{ brand_name }}{% endblock %}</title>
+  <meta name="description" content="{{ brand.serie.nombre }} — {{ brand.producto.nombre }}. {{ brand.arg.etiqueta }}. Centro de datos y registro público de mediciones.">
+  <meta property="og:image" content="{{ base_href }}assets/{{ brand.producto.logo }}">
   {% block meta %}{% endblock %}
   <script>
     (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
@@ -13,10 +15,11 @@
 <body class="newspaper">
   <header class="site-header">
     <div class="wrap">
+      {% include "provenance-strip.html" %}
       <div class="masthead">
-        <p class="dateline">Centro de datos · Edición electrónica</p>
-        <a href="{{ base_href }}index.html" class="brand">Medidor de Lawfare</a>
-        <p class="site-tag">Registro público de mediciones</p>
+        <p class="dateline">Material transmedia {{ brand.arg.siglas }} · Centro de datos · Edición electrónica</p>
+        <a href="{{ prensa_href }}" class="brand">{{ brand.producto.nombre }}</a>
+        <p class="site-tag">{{ brand.serie.etiqueta }} {{ brand.serie.nombre }} · Registro público de mediciones</p>
       </div>
       <div class="header-rule" aria-hidden="true"></div>
       <div class="header-toolbar">
@@ -36,7 +39,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p class="footer-colophon">Medidor de Lawfare v{{ version }} · Registro de mediciones · <a href="{{ base_href }}../index.html">Inicio</a></p>
+      {% include "provenance-footer.html" %}
     </div>
   </footer>
   <script src="{{ base_href }}assets/theme.js"></script>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ brand }}</title>
-  <meta name="description" content="Artefacto de medición de lawfare y centro de datos de resultados publicados">
+  <title>{{ brand.serie.nombre }} — {{ brand.producto.nombre }}</title>
+  <meta name="description" content="{{ brand.serie.nombre }}: {{ brand.producto.etiqueta }}. {{ brand.scriptorium.etiqueta }}. {{ brand.arg.etiqueta }}.">
+  <meta property="og:image" content="assets/{{ brand.producto.logo }}">
   <script>
     (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
@@ -12,24 +13,34 @@
 </head>
 <body>
   <main class="wrap">
-    <header class="page-top">
-      <h1>{{ brand }}</h1>
+    <header class="landing-header">
+      <div class="landing-logos">
+        <a href="{{ brand.scriptorium.url }}" class="logo-frame" title="{{ brand.scriptorium.nombre }}">
+          <img src="assets/{{ brand.scriptorium.logo }}" alt="{{ brand.scriptorium.nombre }}" class="provenance-logo landing-logo" width="48" height="48">
+        </a>
+        <a href="index.html" class="logo-frame" title="{{ brand.producto.nombre }}">
+          <img src="assets/{{ brand.producto.logo }}" alt="{{ brand.producto.nombre }} — {{ brand.arg.siglas }}" class="provenance-logo landing-logo" width="48" height="48">
+        </a>
+      </div>
+      <p class="serie-name">{{ brand.serie.nombre }}</p>
+      <p class="serie-tag">{{ brand.serie.etiqueta }} · <a href="{{ brand.scriptorium.url }}">{{ brand.scriptorium.nombre }}</a></p>
+      <h1>{{ brand.producto.nombre }}</h1>
       <p class="version">v{{ version }} · GPL-3.0</p>
       <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
     </header>
-    <p class="lead">Artefacto de cuantificación reproducible y registro público de sus mediciones.</p>
+    <p class="lead">{{ brand.producto.etiqueta }}. Juguete-pasatiempo de la serie {{ brand.serie.nombre }}, {{ brand.serie.descripcion | lower }}. Material transmedia para agentes del juego {{ brand.arg.siglas }}</p>
     <nav class="portals" aria-label="Portales">
       <a class="portal" href="prensa/index.html">
         <strong>Centro de datos</strong>
-        <span>Catálogo de mediciones publicadas por el artefacto</span>
+        <span>Periódico de mediciones publicadas por el artefacto</span>
       </a>
       <a class="portal" href="foss/index.html">
         <strong>Artefacto (FOSS)</strong>
         <span>Documentación técnica, metodología y operación</span>
       </a>
     </nav>
-    <footer>
-      <p>Software libre · <a href="https://github.com/alephscriptorium-eng/medidor-lawfare">Repositorio</a></p>
+    <footer class="site-footer">
+      {% include "provenance-footer.html" %}
     </footer>
   </main>
   <script src="assets/theme.js"></script>

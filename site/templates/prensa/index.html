@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Centro de datos — {{ brand }}{% endblock %}
+{% block title %}Centro de datos — {{ brand_name }}{% endblock %}
 {% block content %}
 <h1>Centro de datos</h1>
-<p class="lead">Registro público de mediciones producidas por el <a href="artefacto.html">Medidor de Lawfare</a>. Cada ficha es un resultado del artefacto aplicado a un caso concreto.</p>
+<p class="lead">Registro público de mediciones del <a href="artefacto.html">{{ brand.producto.nombre }}</a>, juguete-pasatiempo de la serie <strong>{{ brand.serie.nombre }}</strong> producida en el marco de <a href="{{ brand.scriptorium.url }}">{{ brand.scriptorium.nombre }}</a>. Material transmedia para agentes del juego {{ brand.arg.siglas }} (<em>{{ brand.arg.nombre }}</em>). Cada ficha es un resultado del artefacto aplicado a un caso concreto.</p>
 
 <h2>Mediciones publicadas</h2>
 <div class="cards">

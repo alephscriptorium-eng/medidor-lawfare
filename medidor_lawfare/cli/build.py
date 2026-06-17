@@ -21,6 +21,7 @@ from medidor_lawfare.paths import (
     PUBLIC_PRENSA,
     SITE_DIR,
 )
+from medidor_lawfare.site.brand import brand_context
 from medidor_lawfare.site.foss_context import foss_context
 from medidor_lawfare.site.prensa_context import (
     buffer_para_medicion,
@@ -32,9 +33,35 @@ from medidor_lawfare.site.prensa_context import (
 
 def _jinja_env(subdir: str) -> Environment:
     return Environment(
-        loader=FileSystemLoader(str(SITE_DIR / "templates" / subdir)),
+        loader=FileSystemLoader([
+            str(SITE_DIR / "templates" / subdir),
+            str(SITE_DIR / "templates" / "_partials"),
+        ]),
         autoescape=select_autoescape(["html", "xml"]),
     )
+
+
+def _href_context(base_href: str, section: str) -> dict:
+    if section == "root":
+        return {
+            "base_href": "",
+            "portal_href": "index.html",
+            "prensa_href": "prensa/index.html",
+            "show_inicio": False,
+        }
+    if base_href == "":
+        return {
+            "base_href": "",
+            "portal_href": "../index.html",
+            "prensa_href": "index.html",
+            "show_inicio": True,
+        }
+    return {
+        "base_href": base_href,
+        "portal_href": "../../index.html",
+        "prensa_href": "../index.html",
+        "show_inicio": True,
+    }
 
 
 def _copiar_assets(subdir: str, dest: Path) -> None:
@@ -61,13 +88,14 @@ def build_prensa() -> None:
     env = _jinja_env("prensa")
     PUBLIC_PRENSA.mkdir(parents=True, exist_ok=True)
     _copiar_assets("prensa", PUBLIC_PRENSA)
+    _copiar_assets("shared", PUBLIC_PRENSA)
 
     ctx_root = {
         "version": __version__,
         "catalog": catalog,
         "estados": estados,
-        "brand": "Medidor de Lawfare",
-        "base_href": "",
+        **brand_context(),
+        **_href_context("", "prensa"),
     }
 
     (PUBLIC_PRENSA / "index.html").write_text(
@@ -88,7 +116,7 @@ def build_prensa() -> None:
         mediciones_list = list(estado.get("mediciones", {}).values())
         medicion_estado = next((m for m in mediciones_list if m["id"] == med_id), {})
         delta, buffer = buffer_para_medicion(estado, med_id, caso_id)
-        ctx_med = {**ctx_root, "base_href": "../"}
+        ctx_med = {**ctx_root, **_href_context("../", "prensa")}
         (medicion_dir / f"{med_id}.html").write_text(
             env.get_template("medicion.html").render(
                 **ctx_med,
@@ -107,7 +135,7 @@ def build_prensa() -> None:
     for caso in catalog.get("casos", []):
         caso_id = caso["id"]
         estado = estados.get(caso_id, {})
-        ctx_caso = {**ctx_root, "base_href": "../"}
+        ctx_caso = {**ctx_root, **_href_context("../", "prensa")}
         (caso_dir / f"{caso_id}.html").write_text(
             env.get_template("caso.html").render(
                 **ctx_caso,
@@ -158,9 +186,11 @@ def build_root() -> None:
     env = _jinja_env("root")
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     _copiar_assets("root", PUBLIC_DIR)
+    _copiar_assets("shared", PUBLIC_DIR)
     ctx = {
         "version": __version__,
-        "brand": "Medidor de Lawfare",
+        **brand_context(),
+        **_href_context("", "root"),
     }
     (PUBLIC_DIR / "index.html").write_text(
         env.get_template("index.html").render(**ctx),
