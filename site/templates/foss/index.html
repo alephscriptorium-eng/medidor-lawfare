@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Artefacto Medidor de Lawfare</h1>
-<p>Software libre (GPL-3.0) para producir mediciones reproducibles de indicios de lawfare. Este portal documenta el <strong>artefacto</strong>; los resultados se publican en el <a href="../prensa/index.html">centro de datos</a>.</p>
-<ul>
-  <li><a href="tecnico.html">Descripción técnica</a> — MCN, motor, RDB, esquemas</li>
-  <li><a href="funcional.html">Descripción funcional</a> — flujo operativo</li>
-  <li><a href="datos-publicados.html">Datos publicados</a> — primera medición en el catálogo (referencia)</li>
-  <li><a href="devops.html">DevOps</a> — instalar, operar, ampliar el catálogo</li>
+<p class="lead">Software libre (GPL-3.0) para producir mediciones reproducibles de indicios de lawfare. Este portal documenta el <strong>artefacto</strong>; los resultados se publican en el <a href="../prensa/index.html">centro de datos</a>.</p>
+<ul class="doc-list">
+  <li>
+    <a href="tecnico.html">Descripción técnica</a>
+    <span class="desc">MCN, motor, RDB, esquemas JSON</span>
+  </li>
+  <li>
+    <a href="funcional.html">Descripción funcional</a>
+    <span class="desc">Flujo operativo de caso → buffer → medición</span>
+  </li>
+  <li>
+    <a href="datos-publicados.html">Datos publicados</a>
+    <span class="desc">Qué se publica y enlace al catálogo prensa</span>
+  </li>
+  <li>
+    <a href="devops.html">DevOps</a>
+    <span class="desc">Instalación, prompts, llms.md y publicación</span>
+  </li>
 </ul>
 {% endblock %}

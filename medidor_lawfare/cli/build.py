@@ -15,11 +15,13 @@ from medidor_lawfare.rdb.estado import listar_casos
 from medidor_lawfare.paths import (
     CASOS_DIR,
     LICENSE,
+    PROJECT_ROOT,
     PUBLIC_DIR,
     PUBLIC_FOSS,
     PUBLIC_PRENSA,
     SITE_DIR,
 )
+from medidor_lawfare.site.foss_context import foss_context
 from medidor_lawfare.site.prensa_context import (
     buffer_para_medicion,
     caso_enriquecido,
@@ -129,7 +131,12 @@ def build_foss() -> None:
         "estados": estados,
         "brand": "Medidor de Lawfare",
         "license_text": LICENSE.read_text(encoding="utf-8") if LICENSE.exists() else "",
+        **foss_context(),
     }
+
+    llms_src = PROJECT_ROOT / "llms.md"
+    if llms_src.exists():
+        shutil.copy(llms_src, PUBLIC_FOSS / "llms.md")
 
     pages = [
         "index.html",

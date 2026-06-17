@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DevOps — Medidor de Lawfare</title>
+  <script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,7 +14,7 @@
     <aside class="sidebar">
       <a href="index.html" class="brand">Medidor de Lawfare</a>
       <p class="tag">Artefacto · v1.0.0</p>
-      <nav>
+      <nav aria-label="Documentación FOSS">
         <a href="index.html">Índice</a>
         <a href="tecnico.html">Técnico</a>
         <a href="funcional.html">Funcional</a>
@@ -19,36 +22,100 @@
         <a href="devops.html">DevOps</a>
         <a href="LICENSE.html">Licencia</a>
         <hr>
-        <a href="../prensa/index.html">Centro de datos</a>
+        <a href="../prensa/index.html" class="nav-external">Centro de datos ↗</a>
       </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
     </aside>
     <main>
       
 <h1>DevOps — operar y ampliar el catálogo</h1>
+<p class="lead">Instalación, ciclo operativo con agentes externos y publicación del sitio estático.</p>
+
+<h2>Onboarding para agentes LLM</h2>
+<div class="card">
+  <h3>llms.md</h3>
+  <p>Documento de contexto obligatorio antes de tocar código o datos: estructura del repo, ciclo MCS, CI y convenciones.</p>
+  <div class="card-actions">
+    <a href="llms.md" class="ext">Copia en este sitio</a>
+    <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/llms.md" class="ext" rel="noopener">Ver en GitHub</a>
+    <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/raw/main/llms.md" class="ext" rel="noopener">Raw (agents)</a>
+  </div>
+  <p class="path-hint">llms.md · rama main</p>
+</div>
+
+<h2>Prompts operativos</h2>
+<p>Plantillas en <code>docs/prompts/</code> para gestionar buffers y cuarentena con agentes externos.</p>
+<div class="card-grid">
+  
+  <article class="card">
+    <h3>Llenar buffer</h3>
+    <p>Pedir a un agente externo un nuevo buffer MCS-N.</p>
+    <div class="card-actions">
+      <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/prompts/llenar_buffer.md" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">docs/prompts/llenar_buffer.md</p>
+  </article>
+  
+  <article class="card">
+    <h3>Limpiar cuarentena (pedir)</h3>
+    <p>Solicitar solidificación o descarte de ítems en cuarentena L3.</p>
+    <div class="card-actions">
+      <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/prompts/limpiar_cuarentena_pedir.md" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">docs/prompts/limpiar_cuarentena_pedir.md</p>
+  </article>
+  
+  <article class="card">
+    <h3>Limpiar cuarentena (recibir)</h3>
+    <p>Formato de respuesta del agente para convertir a buffer o sesión.</p>
+    <div class="card-actions">
+      <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/prompts/limpiar_cuarentena_recibir.md" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">docs/prompts/limpiar_cuarentena_recibir.md</p>
+  </article>
+  
+</div>
+
 <h2>Instalación</h2>
 <pre>git clone https://github.com/alephscriptorium-eng/medidor-lawfare.git
 cd medidor-lawfare
 pip install -e ".[dev]"</pre>
+
 <h2>Comandos CLI</h2>
 <pre>medidor cribar  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor commit  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor catalog sync
 medidor build --target all</pre>
-<h2>Publicar un nuevo caso en el centro de datos</h2>
+
+<h2>Ciclo típico</h2>
+<ol>
+  <li>Agente externo llena buffer (<code>llenar_buffer.md</code>) → <code>docs/sesiones/buffer-NN.md</code></li>
+  <li>Operador convierte a <code>data/buffers/MCS-N-entrada.json</code></li>
+  <li><code>medidor cribar</code> → <code>medidor commit</code></li>
+  <li>Si hay cuarentena L3: <code>limpiar_cuarentena_pedir.md</code> / <code>limpiar_cuarentena_recibir.md</code></li>
+  <li><code>medidor catalog sync</code> + <code>medidor build --target all</code></li>
+</ol>
+
+<h2>Publicar un nuevo caso</h2>
 <ol>
   <li>Crear <code>data/casos/{slug}/caso.json</code> y <code>estado.json</code> con medición baseline</li>
   <li><code>medidor catalog sync</code></li>
   <li><code>medidor build --target all</code></li>
 </ol>
+
 <h2>Estructura public/</h2>
 <pre>public/
   index.html   → índice (artefacto + centro de datos)
   prensa/      → catálogo de mediciones
-  foss/        → documentación del artefacto</pre>
+  foss/        → documentación del artefacto (esta sección)</pre>
+
 <h2>Tests</h2>
 <pre>pytest</pre>
 
     </main>
   </div>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

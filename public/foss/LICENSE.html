@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Licencia — Medidor de Lawfare</title>
+  <script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,7 +14,7 @@
     <aside class="sidebar">
       <a href="index.html" class="brand">Medidor de Lawfare</a>
       <p class="tag">Artefacto · v1.0.0</p>
-      <nav>
+      <nav aria-label="Documentación FOSS">
         <a href="index.html">Índice</a>
         <a href="tecnico.html">Técnico</a>
         <a href="funcional.html">Funcional</a>
@@ -19,8 +22,11 @@
         <a href="devops.html">DevOps</a>
         <a href="LICENSE.html">Licencia</a>
         <hr>
-        <a href="../prensa/index.html">Centro de datos</a>
+        <a href="../prensa/index.html" class="nav-external">Centro de datos ↗</a>
       </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
     </aside>
     <main>
       
@@ -89,5 +95,6 @@ giving you legal permission to copy, distribute and/or modify it.
 
     </main>
   </div>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

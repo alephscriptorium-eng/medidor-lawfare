@@ -2,26 +2,68 @@
 {% block title %}DevOps — {{ brand }}{% endblock %}
 {% block content %}
 <h1>DevOps — operar y ampliar el catálogo</h1>
+<p class="lead">Instalación, ciclo operativo con agentes externos y publicación del sitio estático.</p>
+
+<h2>Onboarding para agentes LLM</h2>
+<div class="card">
+  <h3>llms.md</h3>
+  <p>Documento de contexto obligatorio antes de tocar código o datos: estructura del repo, ciclo MCS, CI y convenciones.</p>
+  <div class="card-actions">
+    <a href="{{ llms_local }}" class="ext">Copia en este sitio</a>
+    <a href="{{ llms_github }}" class="ext" rel="noopener">Ver en GitHub</a>
+    <a href="{{ llms_raw }}" class="ext" rel="noopener">Raw (agents)</a>
+  </div>
+  <p class="path-hint">{{ llms_local }} · rama {{ github_branch }}</p>
+</div>
+
+<h2>Prompts operativos</h2>
+<p>Plantillas en <code>docs/prompts/</code> para gestionar buffers y cuarentena con agentes externos.</p>
+<div class="card-grid">
+  {% for p in prompts %}
+  <article class="card">
+    <h3>{{ p.titulo }}</h3>
+    <p>{{ p.descripcion }}</p>
+    <div class="card-actions">
+      <a href="{{ p.github }}" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">{{ p.archivo }}</p>
+  </article>
+  {% endfor %}
+</div>
+
 <h2>Instalación</h2>
-<pre>git clone https://github.com/alephscriptorium-eng/medidor-lawfare.git
+<pre>git clone {{ github_repo }}.git
 cd medidor-lawfare
 pip install -e ".[dev]"</pre>
+
 <h2>Comandos CLI</h2>
 <pre>medidor cribar  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor commit  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor catalog sync
 medidor build --target all</pre>
-<h2>Publicar un nuevo caso en el centro de datos</h2>
+
+<h2>Ciclo típico</h2>
+<ol>
+  <li>Agente externo llena buffer (<code>llenar_buffer.md</code>) → <code>docs/sesiones/buffer-NN.md</code></li>
+  <li>Operador convierte a <code>data/buffers/MCS-N-entrada.json</code></li>
+  <li><code>medidor cribar</code> → <code>medidor commit</code></li>
+  <li>Si hay cuarentena L3: <code>limpiar_cuarentena_pedir.md</code> / <code>limpiar_cuarentena_recibir.md</code></li>
+  <li><code>medidor catalog sync</code> + <code>medidor build --target all</code></li>
+</ol>
+
+<h2>Publicar un nuevo caso</h2>
 <ol>
   <li>Crear <code>data/casos/{slug}/caso.json</code> y <code>estado.json</code> con medición baseline</li>
   <li><code>medidor catalog sync</code></li>
   <li><code>medidor build --target all</code></li>
 </ol>
+
 <h2>Estructura public/</h2>
 <pre>public/
   index.html   → índice (artefacto + centro de datos)
   prensa/      → catálogo de mediciones
-  foss/        → documentación del artefacto</pre>
+  foss/        → documentación del artefacto (esta sección)</pre>
+
 <h2>Tests</h2>
 <pre>pytest</pre>
 {% endblock %}

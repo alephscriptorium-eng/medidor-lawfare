@@ -2,37 +2,30 @@
 {% block title %}Datos publicados — {{ brand }}{% endblock %}
 {% block content %}
 <h1>Datos publicados</h1>
-<p>El artefacto alimenta un catálogo de mediciones. A continuación, la <strong>primera entrada publicada</strong> — material de referencia para reproducibilidad y tests, no el objeto del proyecto.</p>
+<p class="lead">El artefacto alimenta un <strong>catálogo público de mediciones</strong>. Los resultados no viven en esta documentación técnica: se consultan en el centro de datos.</p>
 
-{% set estado = estados.get('zapatero-plus-ultra', {}) %}
-{% set caso = (catalog.casos | selectattr('id', 'equalto', 'zapatero-plus-ultra') | list | first) or {} %}
-
-<h2>{{ caso.etiqueta or 'Zapatero / Plus Ultra' }}</h2>
-{% if caso.inaugural %}<p class="nota">Medición inaugural del catálogo.</p>{% endif %}
-<p>ID interno: <code>{{ estado.caso_foco.id }}</code></p>
-
-<h3>Mediciones</h3>
-<table>
-  <tr><th>ID</th><th>Buffers</th><th>Intensidad</th><th>Lectura</th></tr>
-  {% for m in (estado.mediciones.values() | list | sort(attribute='id')) %}
-  <tr>
-    <td><a href="../prensa/medicion/{{ m.id }}.html">{{ m.id }}</a></td>
-    <td>{{ m.buffers_activos | join(', ') or '—' }}</td>
-    <td>{{ m.intensidad }}</td>
-    <td>{{ m.lectura }}</td>
-  </tr>
-  {% endfor %}
-</table>
-
-<h3>Deltas</h3>
-{% for d in estado.deltas %}
-<p><code>{{ d.id }}</code>: Δ{{ d.delta_intensidad }} ({{ d.direccion }})</p>
-{% endfor %}
-
-<h3>Fuentes (reproducibilidad)</h3>
+<h2>Qué se publica</h2>
 <ul>
-  <li><code>data/casos/zapatero-plus-ultra/estado.json</code></li>
-  <li><code>data/catalog.json</code></li>
+  <li><strong>Mediciones</strong> (M0, M1, …) — intensidad, lectura y ejes por instante del caso</li>
+  <li><strong>Fichas de caso</strong> — historial, buffers de contexto y enlaces a fuentes en el repositorio</li>
+  <li><strong>Catálogo</strong> — índice de todas las mediciones y casos registrados</li>
 </ul>
-<p><a href="../prensa/caso/zapatero-plus-ultra.html">Ficha en centro de datos (prensa)</a></p>
+
+<h2>Dónde consultarlo</h2>
+<p>El centro de datos (<code>public/prensa/</code>) es la interfaz pública. GitHub Pages sirve ese contenido cuando el workflow está activo.</p>
+<p>
+  <a class="btn" href="../prensa/index.html">Abrir centro de datos</a>
+</p>
+
+<h2>Fuente en el repositorio</h2>
+<p>Los JSON bajo <code>data/</code> son la fuente de verdad; el catálogo y las páginas prensa se generan con <code>medidor catalog sync</code> y <code>medidor build</code>.</p>
+<ul>
+  <li><code>data/catalog.json</code> — índice sincronizado</li>
+  <li><code>data/casos/{id}/estado.json</code> — mediciones, deltas y buffers por caso</li>
+  <li><code>data/buffers/</code> y <code>data/casos/{id}/cribados/</code> — entradas y cribados MCS</li>
+</ul>
+
+<div class="note">
+  Un caso concreto publicado ilustra el funcionamiento del artefacto; no define el alcance del proyecto. Consulta el catálogo para ver qué hay registrado en cada momento.
+</div>
 {% endblock %}

@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Medidor de Lawfare — Artefacto</title>
+  <script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,7 +14,7 @@
     <aside class="sidebar">
       <a href="index.html" class="brand">Medidor de Lawfare</a>
       <p class="tag">Artefacto · v1.0.0</p>
-      <nav>
+      <nav aria-label="Documentación FOSS">
         <a href="index.html">Índice</a>
         <a href="tecnico.html">Técnico</a>
         <a href="funcional.html">Funcional</a>
@@ -19,21 +22,37 @@
         <a href="devops.html">DevOps</a>
         <a href="LICENSE.html">Licencia</a>
         <hr>
-        <a href="../prensa/index.html">Centro de datos</a>
+        <a href="../prensa/index.html" class="nav-external">Centro de datos ↗</a>
       </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
     </aside>
     <main>
       
 <h1>Artefacto Medidor de Lawfare</h1>
-<p>Software libre (GPL-3.0) para producir mediciones reproducibles de indicios de lawfare. Este portal documenta el <strong>artefacto</strong>; los resultados se publican en el <a href="../prensa/index.html">centro de datos</a>.</p>
-<ul>
-  <li><a href="tecnico.html">Descripción técnica</a> — MCN, motor, RDB, esquemas</li>
-  <li><a href="funcional.html">Descripción funcional</a> — flujo operativo</li>
-  <li><a href="datos-publicados.html">Datos publicados</a> — primera medición en el catálogo (referencia)</li>
-  <li><a href="devops.html">DevOps</a> — instalar, operar, ampliar el catálogo</li>
+<p class="lead">Software libre (GPL-3.0) para producir mediciones reproducibles de indicios de lawfare. Este portal documenta el <strong>artefacto</strong>; los resultados se publican en el <a href="../prensa/index.html">centro de datos</a>.</p>
+<ul class="doc-list">
+  <li>
+    <a href="tecnico.html">Descripción técnica</a>
+    <span class="desc">MCN, motor, RDB, esquemas JSON</span>
+  </li>
+  <li>
+    <a href="funcional.html">Descripción funcional</a>
+    <span class="desc">Flujo operativo de caso → buffer → medición</span>
+  </li>
+  <li>
+    <a href="datos-publicados.html">Datos publicados</a>
+    <span class="desc">Qué se publica y enlace al catálogo prensa</span>
+  </li>
+  <li>
+    <a href="devops.html">DevOps</a>
+    <span class="desc">Instalación, prompts, llms.md y publicación</span>
+  </li>
 </ul>
 
     </main>
   </div>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datos publicados — Medidor de Lawfare</title>
+  <script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,7 +14,7 @@
     <aside class="sidebar">
       <a href="index.html" class="brand">Medidor de Lawfare</a>
       <p class="tag">Artefacto · v1.0.0</p>
-      <nav>
+      <nav aria-label="Documentación FOSS">
         <a href="index.html">Índice</a>
         <a href="tecnico.html">Técnico</a>
         <a href="funcional.html">Funcional</a>
@@ -19,81 +22,44 @@
         <a href="devops.html">DevOps</a>
         <a href="LICENSE.html">Licencia</a>
         <hr>
-        <a href="../prensa/index.html">Centro de datos</a>
+        <a href="../prensa/index.html" class="nav-external">Centro de datos ↗</a>
       </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
     </aside>
     <main>
       
 <h1>Datos publicados</h1>
-<p>El artefacto alimenta un catálogo de mediciones. A continuación, la <strong>primera entrada publicada</strong> — material de referencia para reproducibilidad y tests, no el objeto del proyecto.</p>
+<p class="lead">El artefacto alimenta un <strong>catálogo público de mediciones</strong>. Los resultados no viven en esta documentación técnica: se consultan en el centro de datos.</p>
 
-
-
-
-<h2>Zapatero / Plus Ultra</h2>
-<p class="nota">Medición inaugural del catálogo.</p>
-<p>ID interno: <code>ZAP-PU-2026-06-17</code></p>
-
-<h3>Mediciones</h3>
-<table>
-  <tr><th>ID</th><th>Buffers</th><th>Intensidad</th><th>Lectura</th></tr>
-  
-  <tr>
-    <td><a href="../prensa/medicion/M0.html">M0</a></td>
-    <td>—</td>
-    <td>5.0</td>
-    <td>sospechas fundadas</td>
-  </tr>
-  
-  <tr>
-    <td><a href="../prensa/medicion/M1.html">M1</a></td>
-    <td>MCS-1</td>
-    <td>6.4</td>
-    <td>alta probabilidad de lawfare</td>
-  </tr>
-  
-  <tr>
-    <td><a href="../prensa/medicion/M2.html">M2</a></td>
-    <td>MCS-1, MCS-2</td>
-    <td>6.5</td>
-    <td>alta probabilidad de lawfare</td>
-  </tr>
-  
-  <tr>
-    <td><a href="../prensa/medicion/M3.html">M3</a></td>
-    <td>MCS-1, MCS-2, MCS-3</td>
-    <td>6.56</td>
-    <td>alta probabilidad de lawfare</td>
-  </tr>
-  
-  <tr>
-    <td><a href="../prensa/medicion/M4.html">M4</a></td>
-    <td>MCS-1, MCS-2, MCS-3, MCS-4</td>
-    <td>6.68</td>
-    <td>alta probabilidad de lawfare</td>
-  </tr>
-  
-</table>
-
-<h3>Deltas</h3>
-
-<p><code>D0→1</code>: Δ1.4 (UP)</p>
-
-<p><code>D1→2</code>: Δ0.1 (NEUTRAL)</p>
-
-<p><code>D2→3</code>: Δ0.06 (NEUTRAL)</p>
-
-<p><code>D3→4</code>: Δ0.12 (NEUTRAL)</p>
-
-
-<h3>Fuentes (reproducibilidad)</h3>
+<h2>Qué se publica</h2>
 <ul>
-  <li><code>data/casos/zapatero-plus-ultra/estado.json</code></li>
-  <li><code>data/catalog.json</code></li>
+  <li><strong>Mediciones</strong> (M0, M1, …) — intensidad, lectura y ejes por instante del caso</li>
+  <li><strong>Fichas de caso</strong> — historial, buffers de contexto y enlaces a fuentes en el repositorio</li>
+  <li><strong>Catálogo</strong> — índice de todas las mediciones y casos registrados</li>
 </ul>
-<p><a href="../prensa/caso/zapatero-plus-ultra.html">Ficha en centro de datos (prensa)</a></p>
+
+<h2>Dónde consultarlo</h2>
+<p>El centro de datos (<code>public/prensa/</code>) es la interfaz pública. GitHub Pages sirve ese contenido cuando el workflow está activo.</p>
+<p>
+  <a class="btn" href="../prensa/index.html">Abrir centro de datos</a>
+</p>
+
+<h2>Fuente en el repositorio</h2>
+<p>Los JSON bajo <code>data/</code> son la fuente de verdad; el catálogo y las páginas prensa se generan con <code>medidor catalog sync</code> y <code>medidor build</code>.</p>
+<ul>
+  <li><code>data/catalog.json</code> — índice sincronizado</li>
+  <li><code>data/casos/{id}/estado.json</code> — mediciones, deltas y buffers por caso</li>
+  <li><code>data/buffers/</code> y <code>data/casos/{id}/cribados/</code> — entradas y cribados MCS</li>
+</ul>
+
+<div class="note">
+  Un caso concreto publicado ilustra el funcionamiento del artefacto; no define el alcance del proyecto. Consulta el catálogo para ver qué hay registrado en cada momento.
+</div>
 
     </main>
   </div>
+  <script src="assets/theme.js"></script>
 </body>
 </html>
