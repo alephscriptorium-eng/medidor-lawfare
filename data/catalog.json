@@ -62,8 +62,24 @@
         "MCS-3",
         "MCS-4"
       ],
-      "destacada": true,
+      "destacada": false,
       "url_prensa": "/prensa/medicion/M4.html"
+    },
+    {
+      "id": "M5",
+      "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
+      "intensidad": 6.79,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5"
+      ],
+      "destacada": true,
+      "url_prensa": "/prensa/medicion/M5.html"
     }
   ],
   "casos": [

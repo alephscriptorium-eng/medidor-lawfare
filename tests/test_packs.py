@@ -51,9 +51,9 @@ def test_archivos_caso_incluye_estado_y_buffers(estado: dict) -> None:
     assert "caso.json" in arcnames
     assert "estado.json" in arcnames
     assert "cribados/cribado-MCS-1.json" in arcnames
-    assert "buffers/MCS-4-entrada.json" in arcnames
-    assert "docs/sesiones/buffer-04.md" in arcnames
-    assert len([a for a in arcnames if a.startswith("cribados/")]) == 4
+    assert "buffers/MCS-5-entrada.json" in arcnames
+    assert "docs/sesiones/buffer-05.md" in arcnames
+    assert len([a for a in arcnames if a.startswith("cribados/")]) == 5
 
 
 def test_zip_medicion_contiene_readme_y_rutas(estado: dict, tmp_path: Path) -> None:

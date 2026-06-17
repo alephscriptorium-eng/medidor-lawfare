@@ -1,0 +1,240 @@
+{
+  "buffer_id": "MCS-5",
+  "etiqueta": "Calendario electoral, rol PSOE, tensiones Sánchez–Trump/Musk y cooperación judicial Plus Ultra (buffer-05)",
+  "resumen_capas": {
+    "L0": 2,
+    "L1": 16,
+    "L2": 0,
+    "L3": 3,
+    "Lx": 0
+  },
+  "items": [
+    {
+      "id": "cdc060e6",
+      "texto_original": "17 de junio de 2026: José Luis Rodríguez Zapatero declara como investigado ante la Audiencia Nacional (juez José Luis Calama) en el caso Plus Ultra por tráfico de influencias, organización criminal, blanqueo, falsedad documental, delitos fiscales y contrabando; el juez denegó medidas cautelares señalando indicios racionales de criminalidad.",
+      "capa": "L1",
+      "ranura_destino": "historico_imputaciones",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "06729d2b",
+      "texto_original": "19 de mayo de 2026: auto del juez Calama imputa a José Luis Rodríguez Zapatero en el procedimiento Plus Ultra (Audiencia Nacional).",
+      "capa": "L0",
+      "ranura_destino": "historico_imputaciones",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "94e0a6ec",
+      "texto_original": "Investidura de Pedro Sánchez 23 de julio de 2023; límite legal elecciones generales 22 de agosto de 2027 según LOREG (legislatura de 4 años).",
+      "capa": "L1",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "5e89031e",
+      "texto_original": "431 días entre declaración Zapatero 17-jun-2026 y límite legal elecciones 22-ago-2027 (t_s a t_e).",
+      "capa": "L1",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "e1613e12",
+      "texto_original": "Julio de 2024: Fiscalía Anticorrupción recibe comisión rogatoria de Suiza y orden europea de investigación de Francia sobre blanqueo vinculado a Venezuela (El País, Newtral).",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "eedbb174",
+      "texto_original": "Octubre de 2024: Fiscalía Anticorrupción presenta denuncia; Plus Ultra como firmante o beneficiaria de préstamos con sociedades de red Francia, Suiza y España; origen no es Manos Limpias (RTVE, Newtral, La Vanguardia).",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "1e188b6e",
+      "texto_original": "10 de septiembre de 2024: el PSOE presenta enmienda al Congreso pidiendo reconocer toda la labor de mediación de Zapatero en Venezuela (El Confidencial).",
+      "capa": "L1",
+      "ranura_destino": "actores_recurrentes",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "02f7a41d",
+      "texto_original": "2015–2024: mediación autodeclarada de Zapatero en Venezuela; septiembre de 2024 reconoce facilitación de la salida de Edmundo González con acto y presencia del ministro Bolaños (El Periódico, ABC).",
+      "capa": "L1",
+      "ranura_destino": "actores_recurrentes",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "0dc9ef62",
+      "texto_original": "Agosto de 2024: España firma declaración conjunta con Estados Unidos reconociendo la victoria de Edmundo González en Venezuela (Público; State.gov).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "fb212dcd",
+      "texto_original": "2008–2010: presión diplomática de la embajada de EEUU en Madrid contra venta de patrulleras y aviones a Venezuela documentada en cables WikiLeaks (El País, 8-dic-2010).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "d1550317",
+      "texto_original": "Procedimientos paralelos en Francia, Suiza, España y Estados Unidos sobre red de blanqueo CLAP y oro venezolano; solicitudes FR/CH apuntaban inicialmente a seis personas sin incluir a Zapatero (BBC Mundo, 20minutos).",
+      "capa": "L1",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "321bf2db",
+      "texto_original": "2023–2025: Zapatero interviene en acto sobre Colombia organizado por el PSOE en Madrid (Pulzo); conferencia en Bogotá sobre paz total de Petro (BluRadio); diciembre de 2025 apertura evento Frente Amplio Colombia (El País Colombia).",
+      "capa": "L1",
+      "ranura_destino": "actores_recurrentes",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "ed1aa860",
+      "texto_original": "25 de junio de 2025: Trump amenazó represalias comerciales contra España por mantener objetivo de gasto en defensa del 2,1% frente a meta OTAN del 5%; acusó a España de viajar gratis en seguridad (BBC Mundo, El País).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "8650be2c",
+      "texto_original": "Marzo de 2026: el Gobierno español deniega uso de bases Rota y Morón y espacio aéreo para la operación USA-Israel contra Irán (Furia Épica); Trump calificó a España de aliado terrible y amenazó cortar relaciones comerciales (El País 30-mar-2026).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "b400e1d7",
+      "texto_original": "Mayo de 2026: el secretario de Estado Marco Rubio cuestionó la pertenencia de España a la OTAN por el veto a las bases: «¿Para qué estás en la OTAN?» (Cadena SER 21-may-2026).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "5efb0b2e",
+      "texto_original": "3 de febrero de 2026: Elon Musk en X calificó a Pedro Sánchez de tirano y traidor al pueblo de España y fascista totalitario tras anuncio de regulación de redes sociales para menores (El País, BBC Mundo).",
+      "capa": "L1",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "cbbd20aa",
+      "texto_original": "4 de febrero de 2026: Pedro Sánchez responde en X: «Deja que los tecno-oligarcas ladren, Sancho, es señal de que cabalgamos» en contexto del choque con Musk (Público).",
+      "capa": "L0",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "20252fcf",
+      "texto_original": "15 de enero de 2026: Pedro Sánchez anuncia fondo soberano España Crece vía ICO con objetivo de movilizar 120.000 M€; sectores incluyen IA, digitalización y computación cuántica (El Mundo, La Moncloa).",
+      "capa": "L1",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    }
+  ],
+  "cuarentena": [
+    {
+      "id": "109a1033",
+      "texto_original": "Hipótesis interpretativa: el lawfare focal en Plus Ultra podría neutralizar el canal internacional del PSOE representado por Zapatero en Venezuela y Colombia.",
+      "capa": "L3",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "2de4624a",
+      "texto_original": "Hipótesis interpretativa: agentes externos (Trump, Musk) amplificaron un contexto adversarial sobre el Gobierno Sánchez en 2025–2026 sin ancla procesal que vincule esa presión con el auto de imputación de Calama.",
+      "capa": "L3",
+      "ranura_destino": "vectores_politicos",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "9b207bbf",
+      "texto_original": "Modelo electoral de decaimiento exponencial: relevancia teórica 25,7% a 431 días de elecciones; factor M_partidista medio (~1,0) distinguiendo ausencia de primera línea electoral y presencia de segunda línea internacional respaldada por el PSOE.",
+      "capa": "L3",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    }
+  ],
+  "medicion": {
+    "id": "M5",
+    "buffers_activos": [
+      "MCS-1",
+      "MCS-2",
+      "MCS-3",
+      "MCS-4",
+      "MCS-5"
+    ],
+    "ejes": {
+      "integridad": 6.02,
+      "sincronia": 7.52,
+      "ventana": 7.38,
+      "impacto": 8.45,
+      "vector": -0.83
+    },
+    "intensidad": 6.79,
+    "lectura": "alta probabilidad de lawfare"
+  },
+  "delta": {
+    "id": "D4→5",
+    "desde": "M4",
+    "hasta": "M5",
+    "buffer_aplicado": "MCS-5",
+    "delta_ejes": {
+      "integridad": 0.19,
+      "sincronia": 0.29,
+      "ventana": 0.15,
+      "impacto": 0.25,
+      "vector": -0.23
+    },
+    "delta_intensidad": 0.11,
+    "direccion": "MIXED",
+    "clasificacion_impacto": "ambiguo",
+    "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.11"
+  }
+}

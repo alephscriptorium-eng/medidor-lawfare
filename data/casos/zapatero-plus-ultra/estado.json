@@ -88,6 +88,25 @@
       },
       "intensidad": 6.68,
       "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_5": {
+      "id": "M5",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2",
+        "MCS-3",
+        "MCS-4",
+        "MCS-5"
+      ],
+      "ejes": {
+        "integridad": 6.02,
+        "sincronia": 7.52,
+        "ventana": 7.38,
+        "impacto": 8.45,
+        "vector": -0.83
+      },
+      "intensidad": 6.79,
+      "lectura": "alta probabilidad de lawfare"
     }
   },
   "deltas": [
@@ -157,6 +176,23 @@
       "direccion": "NEUTRAL",
       "clasificacion_impacto": "ambiguo",
       "nota": "Datos verificables refuerzan medición previa. Δ=+0.12"
+    },
+    {
+      "id": "D4→5",
+      "desde": "M4",
+      "hasta": "M5",
+      "buffer_aplicado": "MCS-5",
+      "delta_ejes": {
+        "integridad": 0.19,
+        "sincronia": 0.29,
+        "ventana": 0.15,
+        "impacto": 0.25,
+        "vector": -0.23
+      },
+      "delta_intensidad": 0.11,
+      "direccion": "MIXED",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.11"
     }
   ],
   "buffers": [
@@ -230,23 +266,45 @@
       },
       "pct_l3": 0.0,
       "nota_origen": "docs/sesiones/buffer-04.md — ítems adicionales no cubiertos por MCS-3"
+    },
+    {
+      "id": "MCS-5",
+      "tipo": "contexto_comparativo",
+      "etiqueta": "Calendario electoral, rol PSOE, tensiones Sánchez–Trump/Musk y cooperación judicial Plus Ultra (buffer-05)",
+      "fecha_carga": "2026-06-18",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 7,
+      "items_cargados": 18,
+      "items_cuarentena": 3,
+      "resumen_capas": {
+        "L0": 2,
+        "L1": 16,
+        "L2": 0,
+        "L3": 3,
+        "Lx": 0
+      },
+      "pct_l3": 0.14,
+      "nota_origen": "docs/sesiones/buffer-05.md — modelo electoral + fuentes enriquecidas"
     }
   ],
   "branch_actual": "main",
   "branches": {
     "main": {
-      "medicion_activa": "M4",
+      "medicion_activa": "M5",
       "buffers_activos": [
         "MCS-1",
         "MCS-2",
         "MCS-3",
-        "MCS-4"
+        "MCS-4",
+        "MCS-5"
       ],
       "historial_deltas": [
         "D0→1",
         "D1→2",
         "D2→3",
-        "D3→4"
+        "D3→4",
+        "D4→5"
       ]
     }
   }

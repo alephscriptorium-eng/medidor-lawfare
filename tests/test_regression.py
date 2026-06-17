@@ -40,6 +40,10 @@ def test_m4_intensidad(estado: dict) -> None:
     assert estado["mediciones"]["post_mcs_4"]["intensidad"] == 6.68
 
 
+def test_m5_intensidad(estado: dict) -> None:
+    assert estado["mediciones"]["post_mcs_5"]["intensidad"] == 6.79
+
+
 def test_motor_version(estado: dict) -> None:
     assert estado["motor_version"] == "1.0.0"
 
