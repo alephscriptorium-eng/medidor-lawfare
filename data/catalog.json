@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "mediciones_publicas": [
+    {
+      "id": "M0",
+      "caso_id": "zapatero-plus-ultra",
+      "intensidad": 5.0,
+      "lectura": "sospechas fundadas",
+      "buffers_activos": [],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M0.html"
+    },
+    {
+      "id": "M1",
+      "caso_id": "zapatero-plus-ultra",
+      "intensidad": 6.4,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1"
+      ],
+      "destacada": false,
+      "url_prensa": "/prensa/medicion/M1.html"
+    },
+    {
+      "id": "M2",
+      "caso_id": "zapatero-plus-ultra",
+      "intensidad": 6.5,
+      "lectura": "alta probabilidad de lawfare",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2"
+      ],
+      "destacada": true,
+      "url_prensa": "/prensa/medicion/M2.html"
+    }
+  ],
+  "casos": [
+    {
+      "id": "zapatero-plus-ultra",
+      "etiqueta": "Zapatero / Plus Ultra",
+      "ejemplo": true
+    }
+  ]
+}
