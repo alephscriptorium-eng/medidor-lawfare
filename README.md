@@ -50,7 +50,13 @@ public/         # Salida generada (prensa + foss)
 - **Prensa:** `public/prensa/` — portal para periodistas y ciudadanía
 - **FOSS:** `public/foss/` — documentación técnica para desarrolladores
 
-Tras `medidor build --target all`, abrir `public/prensa/index.html` o `public/foss/index.html`.
+Tras `medidor build --target all`, abrir `public/index.html` (índice raíz) o los portales `public/prensa/` y `public/foss/`.
+
+### GitHub Pages
+
+1. En [Settings → Pages](https://github.com/alephscriptorium-eng/medidor-lawfare/settings/pages), elegir **GitHub Actions** como origen.
+2. El workflow `.github/workflows/pages.yml` publica el contenido de `public/` en cada push a `main`.
+3. La URL raíz enlaza a prensa y FOSS sin duplicar contenido.
 
 ## Caso ejemplo
 
