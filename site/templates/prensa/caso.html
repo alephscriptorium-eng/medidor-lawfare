@@ -37,5 +37,8 @@
   {% endfor %}
 </ul>
 {% endif %}
-<p class="nav-actions"><a class="btn btn-secondary" href="{{ base_href }}index.html">Volver al catálogo</a></p>
+<p class="nav-actions">
+  <a class="btn btn-secondary" href="{{ caso.pack_caso_href }}" download>Descargar paquete completo del caso (.zip)</a>
+  <a class="btn btn-secondary" href="{{ base_href }}index.html">Volver al catálogo</a>
+</p>
 {% endblock %}

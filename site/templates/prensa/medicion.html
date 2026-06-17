@@ -26,6 +26,9 @@
 <section class="buffer-panel buffer-panel--baseline">
   <h2>Contexto</h2>
   <p>Medición baseline: sin buffers de contexto aplicados.</p>
+  <p class="download-pack">
+    <a class="btn btn-secondary" href="{{ med.pack_medicion_href }}" download>Descargar paquete de esta medición (.zip)</a>
+  </p>
 </section>
 {% elif buffer %}
 <section class="buffer-panel">
@@ -50,11 +53,17 @@
     <li><a href="{{ buffer.entrada_github }}" class="ext-link" rel="noopener">Entrada del buffer</a> <span class="path-hint">data/buffers/{{ buffer.id }}-entrada.json</span></li>
     <li><a href="{{ buffer.cribado_github }}" class="ext-link" rel="noopener">Cribado</a> <span class="path-hint">data/casos/{{ med.caso_id }}/cribados/cribado-{{ buffer.id }}.json</span></li>
   </ul>
+  <p class="download-pack">
+    <a class="btn btn-secondary" href="{{ med.pack_medicion_href }}" download>Descargar paquete de esta medición (.zip)</a>
+  </p>
 </section>
 {% else %}
 <section class="buffer-panel">
   <h2>Contexto aplicado</h2>
   <p>Buffers activos: {{ med.buffers_activos | join(', ') }}</p>
+  <p class="download-pack">
+    <a class="btn btn-secondary" href="{{ med.pack_medicion_href }}" download>Descargar paquete de esta medición (.zip)</a>
+  </p>
 </section>
 {% endif %}
 

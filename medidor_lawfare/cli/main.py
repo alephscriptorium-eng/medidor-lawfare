@@ -33,6 +33,14 @@ def main(argv: list[str] | None = None) -> int:
         default="all",
     )
 
+    p_pack = sub.add_parser("pack", help="Generar paquete ZIP de caso o medición")
+    p_pack.add_argument("--caso", required=True, help="ID del caso en data/casos/")
+    p_pack.add_argument("--med", help="ID de medición (M0, M1, …); omitir para zip del caso")
+    p_pack.add_argument(
+        "--output",
+        help="Directorio de salida (default: public/prensa/downloads)",
+    )
+
     p_catalog = sub.add_parser("catalog", help="Operaciones de catálogo")
     p_catalog_sub = p_catalog.add_subparsers(dest="catalog_cmd", required=True)
     p_catalog_sub.add_parser("sync", help="Sincronizar catalog.json desde estados")
@@ -48,6 +56,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "build":
         run_build(target=args.target)
         return 0
+    if args.command == "pack":
+        from medidor_lawfare.cli.pack import run as run_pack_cmd
+        return run_pack_cmd(args)
     if args.command == "catalog" and args.catalog_cmd == "sync":
         cat = sincronizar_catalog()
         print(f"Catálogo sincronizado: {len(cat['mediciones_publicas'])} mediciones")

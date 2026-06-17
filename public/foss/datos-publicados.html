@@ -38,6 +38,7 @@
   <li><strong>Mediciones</strong> (M0, M1, …) — intensidad, lectura y ejes por instante del caso</li>
   <li><strong>Fichas de caso</strong> — historial, buffers de contexto y enlaces a fuentes en el repositorio</li>
   <li><strong>Catálogo</strong> — índice de todas las mediciones y casos registrados</li>
+  <li><strong>Paquetes ZIP</strong> — descarga estática de los JSON y documentos que sustentan cada medición o caso completo</li>
 </ul>
 
 <h2>Dónde consultarlo</h2>
@@ -45,6 +46,20 @@
 <p>
   <a class="btn" href="../prensa/index.html">Abrir centro de datos</a>
 </p>
+
+<h2>Paquetes ZIP descargables</h2>
+<p>Cada ficha de medición y cada ficha de caso en el centro de datos incluye un botón de descarga. Los archivos se generan en el build y se sirven desde <code>public/prensa/downloads/</code>.</p>
+<ul>
+  <li><strong>Por medición</strong> — <code>{caso-id}-{MN}.zip</code> (p. ej. <code>zapatero-plus-ultra-M3.zip</code>)</li>
+  <li><strong>Por caso</strong> — <code>{caso-id}.zip</code> (todos los buffers y cribados del caso)</li>
+</ul>
+<p>Contenido típico de un paquete de medición:</p>
+<ul>
+  <li><code>caso.json</code> y <code>medicion/{MN}.json</code> (instantánea de ejes, intensidad y lectura)</li>
+  <li>Para M1 en adelante: <code>delta/</code>, <code>buffers/</code>, <code>cribados/</code> y, si existe, la sesión en <code>docs/sesiones/</code></li>
+</ul>
+<p>El paquete de caso incluye <code>caso.json</code>, <code>estado.json</code>, todos los cribados, buffers de entrada y sesiones asociadas. Cada ZIP lleva un <code>README.txt</code> con el listado exacto de archivos.</p>
+<p>Generación automática en <code>medidor build</code> (target <code>prensa</code> o <code>all</code>). Para regenerar un caso sin rebuild completo: <code>medidor pack --caso &lt;id&gt; [--med M3]</code>.</p>
 
 <h2>Fuente en el repositorio</h2>
 <p>Los JSON bajo <code>data/</code> son la fuente de verdad; el catálogo y las páginas prensa se generan con <code>medidor catalog sync</code> y <code>medidor build</code>.</p>

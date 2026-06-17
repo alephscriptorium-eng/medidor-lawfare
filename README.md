@@ -44,6 +44,10 @@ data/ (JSON)  +  site/ (plantillas Jinja2 + CSS)
 | `site/` | Plantillas y assets fuente | Sí |
 | `public/` | HTML generado listo para publicar | No — regenerar con `medidor build` |
 
+Los paquetes de datos se generan con `medidor build` en `public/prensa/downloads/`.
+
+Los paquetes ZIP de datos (por medición y por caso) se generan en `public/prensa/downloads/` con `medidor build`.
+
 ### Tres portales en `public/`
 
 | Portal | Ruta | Contenido |

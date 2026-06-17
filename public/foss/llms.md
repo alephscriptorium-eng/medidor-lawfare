@@ -197,6 +197,8 @@ Flujo estándar para **cualquier** `caso_id` (Zapatero es el primer caso de uso,
 | Catálogo | `data/catalog.json` |
 | Prensa | `public/prensa/medicion/MN.html`, caso, índice |
 
+Los paquetes de datos se generan con `medidor build` en `public/prensa/downloads/`.
+
 ---
 
 ## Prompts reutilizables (agentes externos)
@@ -303,6 +305,7 @@ Tests de regresión fijan M0=5.0 … M4=6.68.
 
 - **No presentar el proyecto como “el caso Zapatero”** en README, webs ni docs de interfaz — es una medición del catálogo.
 - **No editar `public/` a mano** — regenerar con `medidor build`.
+- Paquetes ZIP de datos (medición/caso): `public/prensa/downloads/` (generados en el build).
 - **No sobrescribir buffers inmutables** en `estado.json` — son append-only.
 - **No cambiar `caso_foco`** — es inmutable por diseño.
 - **No asumir rutas `sls/`** — migradas a `medidor_lawfare/` + `data/`.

@@ -40,7 +40,9 @@ pip install -e ".[dev]"</pre>
 <pre>medidor cribar  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor commit  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor catalog sync
-medidor build --target all</pre>
+medidor build --target all
+medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]</pre>
+<p><code>medidor pack</code> genera uno o más ZIP en <code>public/prensa/downloads/</code> (por defecto) sin reconstruir todo el sitio. Sin <code>--med</code>, empaqueta el caso completo; con <code>--med</code>, solo esa medición.</p>
 
 <h2>Ciclo típico</h2>
 <ol>
@@ -62,6 +64,7 @@ medidor build --target all</pre>
 <pre>public/
   index.html   → índice (artefacto + centro de datos)
   prensa/      → catálogo de mediciones
+    downloads/ → paquetes ZIP por medición y por caso
   foss/        → documentación del artefacto (esta sección)</pre>
 
 <h2>Tests</h2>

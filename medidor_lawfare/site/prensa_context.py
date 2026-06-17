@@ -11,6 +11,14 @@ from medidor_lawfare.paths import caso_dir, GITHUB_REPO, PROJECT_ROOT
 GITHUB_BRANCH = "main"
 
 
+def pack_medicion_href(caso_id: str, med_id: str, base_href: str = "") -> str:
+    return f"{base_href}downloads/{caso_id}-{med_id}.zip"
+
+
+def pack_caso_href(caso_id: str, base_href: str = "") -> str:
+    return f"{base_href}downloads/{caso_id}.zip"
+
+
 def github_blob(path: str) -> str:
     return f"{GITHUB_REPO}/blob/{GITHUB_BRANCH}/{path}"
 
@@ -65,6 +73,8 @@ def timeline_mediciones(estado: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def med_enriquecida(med: dict[str, Any], medicion_estado: dict[str, Any]) -> dict[str, Any]:
+    caso_id = med.get("caso_id", "")
+    med_id = med.get("id", "")
     return {
         **med,
         "caso_nombre": med.get("caso_etiqueta", med.get("caso_id", "")),
@@ -72,6 +82,7 @@ def med_enriquecida(med: dict[str, Any], medicion_estado: dict[str, Any]) -> dic
         "buffers_activos": medicion_estado.get(
             "buffers_activos", med.get("buffers_activos", [])
         ),
+        "pack_medicion_href": pack_medicion_href(caso_id, med_id, "../"),
     }
 
 
@@ -96,6 +107,7 @@ def caso_enriquecido(caso: dict[str, Any], estado: dict[str, Any]) -> dict[str, 
         "medicion_activa": activa,
         "intensidad_actual": activa_med["intensidad"],
         "lectura_actual": activa_med["lectura"],
+        "pack_caso_href": pack_caso_href(caso["id"], "../"),
         "mediciones": [
             {"id": m["id"], "intensidad": m["intensidad"], "lectura": m["lectura"]}
             for m in meds

@@ -22,6 +22,7 @@ from medidor_lawfare.paths import (
 )
 from medidor_lawfare.site.brand import brand_context
 from medidor_lawfare.site.foss_context import foss_context
+from medidor_lawfare.site.packs import generar_packs_prensa
 from medidor_lawfare.site.prensa_context import (
     buffer_para_medicion,
     caso_enriquecido,
@@ -138,6 +139,9 @@ def build_prensa() -> None:
             ),
             encoding="utf-8",
         )
+
+    packs = generar_packs_prensa(catalog, estados, PUBLIC_PRENSA / "downloads")
+    print(f"  Paquetes ZIP: {len(packs)} en {PUBLIC_PRENSA / 'downloads'}")
 
 
 def build_foss() -> None:

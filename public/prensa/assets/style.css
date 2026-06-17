@@ -602,7 +602,18 @@ h3 {
 }
 
 /* —— Botones —— */
-.nav-actions { margin-top: 1.75rem; }
+.nav-actions {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.download-pack {
+  margin: 1rem 0 0;
+}
+
+.download-pack .btn { margin: 0; }
 
 .btn {
   display: inline-block;
