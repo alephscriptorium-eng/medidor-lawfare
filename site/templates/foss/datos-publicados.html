@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Datos publicados — {{ brand }}{% endblock %}
+{% block content %}
+<h1>Datos publicados</h1>
+<p>El artefacto alimenta un catálogo de mediciones. A continuación, la <strong>primera entrada publicada</strong> — material de referencia para reproducibilidad y tests, no el objeto del proyecto.</p>
+
+{% set estado = estados.get('zapatero-plus-ultra', {}) %}
+{% set caso = (catalog.casos | selectattr('id', 'equalto', 'zapatero-plus-ultra') | list | first) or {} %}
+
+<h2>{{ caso.etiqueta or 'Zapatero / Plus Ultra' }}</h2>
+{% if caso.inaugural %}<p class="nota">Medición inaugural del catálogo.</p>{% endif %}
+<p>ID interno: <code>{{ estado.caso_foco.id }}</code></p>
+
+<h3>Mediciones</h3>
+<table>
+  <tr><th>ID</th><th>Buffers</th><th>Intensidad</th><th>Lectura</th></tr>
+  {% for m in (estado.mediciones.values() | list | sort(attribute='id')) %}
+  <tr>
+    <td><a href="../prensa/medicion/{{ m.id }}.html">{{ m.id }}</a></td>
+    <td>{{ m.buffers_activos | join(', ') or '—' }}</td>
+    <td>{{ m.intensidad }}</td>
+    <td>{{ m.lectura }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3>Deltas</h3>
+{% for d in estado.deltas %}
+<p><code>{{ d.id }}</code>: Δ{{ d.delta_intensidad }} ({{ d.direccion }})</p>
+{% endfor %}
+
+<h3>Fuentes (reproducibilidad)</h3>
+<ul>
+  <li><code>data/casos/zapatero-plus-ultra/estado.json</code></li>
+  <li><code>data/catalog.json</code></li>
+</ul>
+<p><a href="../prensa/caso/zapatero-plus-ultra.html">Ficha en centro de datos (prensa)</a></p>
+{% endblock %}

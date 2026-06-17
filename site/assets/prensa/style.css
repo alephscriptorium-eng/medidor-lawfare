@@ -18,7 +18,16 @@ nav a:hover { color: var(--accent); }
 main { padding: 2rem 0 3rem; }
 h1 { font-size: 1.75rem; margin-top: 0; }
 .lead { font-size: 1.1rem; color: var(--muted); }
-.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin-bottom: 2rem; }
+h2 { font-size: 1.25rem; margin-top: 2rem; }
+.site-header .site-tag { font-size: 0.8rem; color: var(--muted); margin: 0.25rem 0 0; font-family: system-ui, sans-serif; }
+.banner-inaugural { background: #f5f0e8; border-left: 3px solid var(--accent); padding: 0.75rem 1rem; font-size: 0.9rem; margin-bottom: 1rem; }
+.badge-inaugural { background: #5c4a3a; }
+.casos-registro { display: grid; gap: 1rem; margin-top: 1rem; }
+.caso-card { background: var(--card); border: 1px solid var(--border); padding: 1rem 1.25rem; border-radius: 4px; }
+.nota-registro { font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0 0; }
+.caso-meta { font-size: 0.85rem; color: var(--muted); font-family: system-ui, sans-serif; }
+.cards h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
 .card { background: var(--card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 4px; }
 .card.destacada { border-color: var(--accent); }
 .intensidad { font-size: 2rem; font-weight: bold; color: var(--accent); margin: 0.5rem 0; }

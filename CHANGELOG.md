@@ -10,7 +10,7 @@ All notable changes to **Medidor de Lawfare** follow [Semantic Versioning](https
 - Motor de medición con ejes observables, intensidad y lectura cualitativa.
 - Módulo MCN: cribado epistemológico L0–L3 y cuarentena de ítems interpretativos.
 - RDB: registro de deltas entre mediciones (M0→M1→M2) y branches.
-- Caso ejemplo **Zapatero / Plus Ultra** con buffers MCS-1 y MCS-2.
+- Primera medición publicada en el catálogo (Zapatero / Plus Ultra, M0→M2) como referencia de regresión.
 - Mediciones publicadas: M0 (5.0), M1 (6.4), M2 (6.5).
 - JSON Schemas versionados en `data/schema/`.
 - CLI unificada: `medidor cribar`, `commit`, `build`, `catalog sync`.

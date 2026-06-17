@@ -16,4 +16,4 @@ Cada medición se ancla a un caso concreto identificado por `caso_foco.id`. Los 
 
 - Un buffer con >40% L3 no debe alterar significativamente la medición.
 - Datos L0 contradictorios deben poder abrir un branch alternativo.
-- La reproducción desde `estado.json` + buffers debe producir mismos M0/M1/M2.
+- La reproducción desde `estado.json` + buffers debe reproducir las mediciones de referencia del catálogo.

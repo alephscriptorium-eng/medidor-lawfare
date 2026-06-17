@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
 <h1>Medición {{ med.id }}</h1>
-<p class="caso-label">{{ estado.caso_foco.etiqueta }}</p>
+<p class="caso-meta">Caso: <a href="caso/{{ med.caso_id }}.html">{{ med.caso_etiqueta or estado.caso_foco.etiqueta }}</a> · <a href="index.html">Catálogo</a></p>
 <div class="panel-intensidad">
   <span class="valor">{{ med.intensidad }}</span><span class="max">/10</span>
   <p class="lectura">{{ med.lectura }}</p>

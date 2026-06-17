@@ -1,10 +1,34 @@
 # Medidor de Lawfare
 
+**Artefacto** FOSS (GPL-3.0) para cuantificar indicios de lawfare en casos concretos, y **centro de datos** donde se publican las mediciones que produce.
+
 Web: https://alephscriptorium-eng.github.io/medidor-lawfare
 
-Herramienta FOSS (GPL-3.0) para **cuantificar indicios de lawfare** en un caso concreto, usando ejes observables, buffers de contexto cribados epistemológicamente (L0–L3) y registro de deltas entre mediciones.
-
 **Versión:** 1.0.0
+
+## El artefacto
+
+Herramienta reproducible con:
+
+- 5 ejes observables + intensidad global (0–10)
+- Buffers de contexto cribados epistemológicamente (L0–L3)
+- Registro de deltas entre mediciones
+
+Documentación técnica: `public/foss/` · Metodología: `docs/metodologia/`
+
+## Centro de datos
+
+El catálogo de mediciones publicadas vive en `data/catalog.json` y se expone en `public/prensa/`. Cada entrada es un resultado del artefacto aplicado a un caso — no el objeto del repositorio en sí.
+
+| Portal | URL generada | Audiencia |
+|--------|--------------|-----------|
+| Índice | `public/index.html` | Entrada a prensa y FOSS |
+| Prensa | `public/prensa/` | Catálogo de mediciones |
+| FOSS | `public/foss/` | Artefacto, operación, esquemas |
+
+### Primera medición en el catálogo
+
+La medición inaugural (*Zapatero / Plus Ultra*, M0→M2) ilustra el funcionamiento del artefacto. Sus fichas están en el centro de datos; ver [ficha del registro](public/prensa/caso/zapatero-plus-ultra.html).
 
 ## Requisitos
 
@@ -20,53 +44,33 @@ pip install -e ".[dev]"
 ## Comandos CLI
 
 ```bash
-# Cribar un buffer entrante (MCN)
-medidor cribar data/buffers/MCS-2-entrada.json --caso zapatero-plus-ultra
+# Cribar buffer entrante
+medidor cribar data/buffers/MI-BUFFER.json --caso <caso-id>
 
-# Confirmar buffer y recalcular medición
-medidor commit data/buffers/MCS-2-entrada.json --caso zapatero-plus-ultra
+# Confirmar buffer y recalcular
+medidor commit data/buffers/MI-BUFFER.json --caso <caso-id>
 
-# Sincronizar catálogo prensa desde estados
+# Sincronizar catálogo desde estados
 medidor catalog sync
 
-# Generar sitios estáticos
-medidor build --target all    # prensa + foss
-medidor build --target prensa
-medidor build --target foss
+# Regenerar sitios (no editar public/ a mano)
+medidor build --target all
 ```
 
 ## Estructura
 
 ```
-data/           # Fuente de verdad: casos, buffers, esquemas, catálogo
-medidor_lawfare/  # Paquete Python (MCN, motor, RDB, CLI)
-docs/           # Metodología y sesiones de trabajo
-site/           # Plantillas Jinja2 y CSS
-public/         # Salida generada (prensa + foss)
+data/              # Catálogo, casos medidos, buffers, esquemas
+medidor_lawfare/   # Paquete Python (MCN, motor, RDB, CLI)
+docs/              # Metodología
+site/              # Plantillas
+public/            # Salida publicada (GitHub Pages)
 ```
 
-## Sitios generados
+## GitHub Pages
 
-- **Prensa:** `public/prensa/` — portal para periodistas y ciudadanía
-- **FOSS:** `public/foss/` — documentación técnica para desarrolladores
-
-Tras `medidor build --target all`, abrir `public/index.html` (índice raíz) o los portales `public/prensa/` y `public/foss/`.
-
-### GitHub Pages
-
-1. En [Settings → Pages](https://github.com/alephscriptorium-eng/medidor-lawfare/settings/pages), elegir **GitHub Actions** como origen.
-2. El workflow `.github/workflows/pages.yml` publica el contenido de `public/` en cada push a `main`.
-3. La URL raíz enlaza a prensa y FOSS sin duplicar contenido.
-
-## Caso ejemplo
-
-**Zapatero / Plus Ultra** — tres mediciones publicadas:
-
-| ID | Intensidad | Lectura |
-|----|------------|---------|
-| M0 | 5.0 | sospechas fundadas |
-| M1 | 6.4 | alta probabilidad de lawfare |
-| M2 | 6.5 | alta probabilidad de lawfare |
+1. [Settings → Pages](https://github.com/alephscriptorium-eng/medidor-lawfare/settings/pages) → **GitHub Actions**
+2. El workflow `.github/workflows/pages.yml` publica `public/` en cada push a `main`
 
 ## Tests
 
@@ -74,10 +78,6 @@ Tras `medidor build --target all`, abrir `public/index.html` (índice raíz) o l
 pytest
 ```
 
-## Licencia
+## Licencia y citación
 
-GNU General Public License v3.0 — ver [LICENSE](LICENSE) y [public/foss/LICENSE.html](public/foss/LICENSE.html).
-
-## Citación
-
-Ver [CITATION.cff](CITATION.cff).
+GPL-3.0 — [LICENSE](LICENSE) · [CITATION.cff](CITATION.cff)
