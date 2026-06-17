@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from medidor_lawfare.site.prensa_context import GITHUB_BRANCH, GITHUB_REPO, github_blob
 
-PROMPTS: list[dict[str, str]] = [
+PROMPTS_OPERATIVOS: list[dict[str, str]] = [
     {
         "id": "llenar_buffer",
         "titulo": "Llenar buffer",
@@ -26,16 +26,27 @@ PROMPTS: list[dict[str, str]] = [
     },
 ]
 
+PROMPTS_CIUDADANO: list[dict[str, str]] = [
+    {
+        "id": "lectura_pack_ciudadano",
+        "titulo": "Lectura ciudadana de medición",
+        "archivo": "docs/prompts/lectura_pack_ciudadano.prompt.md",
+        "descripcion": "Interpretar un pack ZIP descargado (solo archivos del pack) para un ciudadano, sin jerga técnica.",
+    },
+]
+
+
+def _prompts_con_github(items: list[dict[str, str]]) -> list[dict[str, str]]:
+    return [{**p, "github": github_blob(p["archivo"])} for p in items]
+
 
 def foss_context() -> dict[str, object]:
-    prompts = [
-        {**p, "github": github_blob(p["archivo"])} for p in PROMPTS
-    ]
     llms_path = "llms.md"
     return {
         "github_repo": GITHUB_REPO,
         "github_branch": GITHUB_BRANCH,
-        "prompts": prompts,
+        "prompts_operativos": _prompts_con_github(PROMPTS_OPERATIVOS),
+        "prompts_ciudadano": _prompts_con_github(PROMPTS_CIUDADANO),
         "llms_github": github_blob(llms_path),
         "llms_raw": f"{GITHUB_REPO}/raw/{GITHUB_BRANCH}/{llms_path}",
         "llms_local": "llms.md",

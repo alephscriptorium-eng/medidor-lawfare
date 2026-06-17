@@ -19,7 +19,22 @@
 <h2>Prompts operativos</h2>
 <p>Plantillas en <code>docs/prompts/</code> para gestionar buffers y cuarentena con agentes externos.</p>
 <div class="card-grid">
-  {% for p in prompts %}
+  {% for p in prompts_operativos %}
+  <article class="card">
+    <h3>{{ p.titulo }}</h3>
+    <p>{{ p.descripcion }}</p>
+    <div class="card-actions">
+      <a href="{{ p.github }}" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">{{ p.archivo }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+<h2>Prompts ciudadano (pack ZIP)</h2>
+<p>Para interpretar un paquete descargado (<code>medidor pack</code> / <code>public/prensa/downloads/</code>). El agente solo lee archivos <strong>dentro</strong> del pack; el prompt puede vivir fuera.</p>
+<div class="card-grid">
+  {% for p in prompts_ciudadano %}
   <article class="card">
     <h3>{{ p.titulo }}</h3>
     <p>{{ p.descripcion }}</p>
@@ -51,6 +66,7 @@ medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]</pre>
   <li><code>medidor cribar</code> → <code>medidor commit</code></li>
   <li>Si hay cuarentena L3: <code>limpiar_cuarentena_pedir.md</code> / <code>limpiar_cuarentena_recibir.md</code></li>
   <li><code>medidor catalog sync</code> + <code>medidor build --target all</code></li>
+  <li>Pack ciudadano: <code>medidor pack --caso &lt;id&gt;</code> → agente con <code>lectura_pack_ciudadano.prompt.md</code></li>
 </ol>
 
 <h2>Publicar un nuevo caso</h2>

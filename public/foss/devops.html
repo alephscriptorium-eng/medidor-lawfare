@@ -78,6 +78,21 @@
   
 </div>
 
+<h2>Prompts ciudadano (pack ZIP)</h2>
+<p>Para interpretar un paquete descargado (<code>medidor pack</code> / <code>public/prensa/downloads/</code>). El agente solo lee archivos <strong>dentro</strong> del pack; el prompt puede vivir fuera.</p>
+<div class="card-grid">
+  
+  <article class="card">
+    <h3>Lectura ciudadana de medición</h3>
+    <p>Interpretar un pack ZIP descargado (solo archivos del pack) para un ciudadano, sin jerga técnica.</p>
+    <div class="card-actions">
+      <a href="https://github.com/alephscriptorium-eng/medidor-lawfare/blob/main/docs/prompts/lectura_pack_ciudadano.prompt.md" class="ext" rel="noopener">Ver en GitHub</a>
+    </div>
+    <p class="path-hint">docs/prompts/lectura_pack_ciudadano.prompt.md</p>
+  </article>
+  
+</div>
+
 <h2>Instalación</h2>
 <pre>git clone https://github.com/alephscriptorium-eng/medidor-lawfare.git
 cd medidor-lawfare
@@ -98,6 +113,7 @@ medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]</pre>
   <li><code>medidor cribar</code> → <code>medidor commit</code></li>
   <li>Si hay cuarentena L3: <code>limpiar_cuarentena_pedir.md</code> / <code>limpiar_cuarentena_recibir.md</code></li>
   <li><code>medidor catalog sync</code> + <code>medidor build --target all</code></li>
+  <li>Pack ciudadano: <code>medidor pack --caso &lt;id&gt;</code> → agente con <code>lectura_pack_ciudadano.prompt.md</code></li>
 </ol>
 
 <h2>Publicar un nuevo caso</h2>

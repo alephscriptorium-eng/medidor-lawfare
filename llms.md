@@ -65,17 +65,9 @@ data/                          # Fuente de verdad
 │       ├── caso.json          # Metadatos del caso (inmutable)
 │       ├── estado.json        # Mediciones, buffers, deltas, branches
 │       └── cribados/
-│           ├── cribado-MCS-1.json
-│           ├── cribado-MCS-2.json
-│           ├── cribado-MCS-3.json
-│           ├── cribado-MCS-4.json
-│           └── cribado-MCS-5.json
+│           ├── cribado-MCS-1.json … cribado-MCS-9.json
 ├── buffers/
-│   ├── MCS-1-entrada.json
-│   ├── MCS-2-entrada.json
-│   ├── MCS-3-entrada.json
-│   ├── MCS-4-entrada.json
-│   └── MCS-5-entrada.json
+│   ├── MCS-1-entrada.json … MCS-9-entrada.json
 ├── schema/                    # JSON Schemas (estado, buffer, cribado, catalog, caso)
 └── catalog.json               # Catálogo prensa (generado/sincronizado)
 
@@ -106,7 +98,7 @@ docs/
 site/                          # Plantillas Jinja2 + CSS (no editar public/ a mano)
 public/                        # Salida generada (GitHub Pages despliega esto)
 
-tests/test_regression.py       # M0–M5, schema, cribado MCS-2
+tests/test_regression.py       # M0–M9, schema, cribado MCS-2
 ```
 
 ---
@@ -131,8 +123,11 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | **M2** | 6.5 | alta probabilidad de lawfare | MCS-1, MCS-2 |
 | **M3** | 6.56 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3 |
 | **M4** | 6.68 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4 |
-| **M5** | 6.79 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4, MCS-5 |
-| **M6** | 6.88 | alta probabilidad de lawfare | MCS-1, MCS-2, MCS-3, MCS-4, MCS-5, MCS-6 |
+| **M5** | 6.79 | alta probabilidad de lawfare | MCS-1 … MCS-5 |
+| **M6** | 6.97 | alta probabilidad de lawfare | MCS-1 … MCS-6 |
+| **M7** | 6.98 | alta probabilidad de lawfare | MCS-1 … MCS-7 |
+| **M8** | 7.01 | lawfare sistémico confirmado | MCS-1 … MCS-8 |
+| **M9** | 7.09 | lawfare sistémico confirmado | MCS-1 … MCS-9 |
 
 ### Correspondencia sesión → buffer → medición (armónica)
 
@@ -144,6 +139,9 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | buffer-04.md | MCS-4 | **M4** | `MCS-4-entrada.json` | `cribado-MCS-4.json` |
 | buffer-05.md | MCS-5 | **M5** | `MCS-5-entrada.json` | `cribado-MCS-5.json` |
 | buffer-06.md | MCS-6 | **M6** | `MCS-6-entrada.json` | `cribado-MCS-6.json` |
+| buffer-07.md | MCS-7 | **M7** | `MCS-7-entrada.json` | `cribado-MCS-7.json` |
+| buffer-08.md | MCS-8 | **M8** | `MCS-8-entrada.json` | `cribado-MCS-8.json` |
+| buffer-09.md | MCS-9 | **M9** | `MCS-9-entrada.json` | `cribado-MCS-9.json` |
 
 `buffer-03.md` incluye prompt + respuesta agente; solo la parte SOLIDIFICAR entra en MCS-3.
 
@@ -155,10 +153,29 @@ tests/test_regression.py       # M0–M5, schema, cribado MCS-2
 | D1→2 | +0.1 | NEUTRAL | MCS-2 (56% L3 cuarentena) |
 | D2→3 | +0.06 | NEUTRAL | MCS-3 — respuesta agente buffer-03 |
 | D3→4 | +0.12 | NEUTRAL | MCS-4 — investigación buffer-04 |
-| D4→5 | +0.11 | MIXED | MCS-5 — calendario electoral, PSOE, tensiones Sánchez–Trump/Musk (14% L3 cuarentena) |
-| D5→6 | +0.09 | MIXED | MCS-6 — acusación Plus Ultra vista 17-jun-2026 y posiciones públicas |
+| D4→5 | +0.11 | MIXED | MCS-5 — calendario electoral, PSOE, tensiones Sánchez–Trump/Musk (14% L3 cuarentena al cribar) |
+| D5→6 | +0.18 | MIXED | MCS-6 — corpus Plus Ultra, acusación 17-jun-2026 (8% L3 al cribar) |
+| D6→7 | +0.01 | NEUTRAL | MCS-7 — solidificación cuarentena MCS-6 |
+| D7→8 | +0.03 | NEUTRAL | MCS-8 — solidificación cuarentena MCS-5 |
+| D8→9 | +0.08 | NEUTRAL | MCS-9 — Fiscal General del Estado / polarización fiscal |
 
-**Medición activa en catálogo:** **M6** (6.88/10).
+**Medición activa en catálogo:** **M9** (7.09/10) — lectura: *lawfare sistémico confirmado*.
+
+---
+
+## Cuarentena del caso (zapatero-plus-ultra)
+
+**Pendiente operativa:** ninguna. Los últimos buffers (MCS-7, MCS-8, MCS-9) cribaron con **0 ítems en cuarentena**.
+
+**Histórico en cribados inmutables** (aparece en informes; **no suma** a la medición):
+
+| Buffer origen | L3 al cribar | Resolución |
+|---------------|--------------|------------|
+| MCS-2 | 10 | MCS-3 (5 ítems) + MCS-4 (9 ítems) |
+| MCS-5 | 3 | MCS-8 (3 ítems) |
+| MCS-6 | 2 | MCS-7 (2 ítems) |
+
+Los arrays `cuarentena[]` en `cribado-MCS-2.json`, `cribado-MCS-5.json` y `cribado-MCS-6.json` **no se reescriben** (buffers inmutables); la solidificación va en buffers posteriores.
 
 ---
 
@@ -226,13 +243,28 @@ Si el repo ya tiene `public/prensa/downloads/` commiteado, el archivo puede exis
 
 ## Prompts reutilizables (agentes externos)
 
-Plantillas en `docs/prompts/` — sustituir `{{variables}}`; no acoplar al caso inaugural salvo en ejemplos.
+Plantillas en `docs/prompts/` — sustituir `{{variables}}` donde aplique; no acoplar al caso inaugural salvo en ejemplos.
+
+### Operativos (repo / buffers)
 
 | Archivo | Uso |
 |---------|-----|
 | `llenar_buffer.md` | Pedir un **nuevo buffer** MCS-N al agente |
 | `limpiar_cuarentena_pedir.md` | Pedir datos para ítems L3 en cuarentena |
 | `limpiar_cuarentena_recibir.md` | Formato de respuesta + reglas de conversión a JSON |
+
+### Ciudadano (pack ZIP descargado)
+
+| Archivo | Uso |
+|---------|-----|
+| `lectura_pack_ciudadano.prompt.md` | Interpretar un pack (`medidor pack`) para un ciudadano: **perímetro cerrado** (solo archivos del pack), español llano, tablas de trazabilidad al final |
+
+**Flujo pack ciudadano:**
+
+1. `medidor pack --caso <id>` o `--med M9` → ZIP en `public/prensa/downloads/`
+2. Descomprimir en carpeta aislada (p. ej. `zapatero-plus-ultra/`)
+3. Pegar `lectura_pack_ciudadano.prompt.md` + pregunta del usuario al agente
+4. El agente **no** sale del directorio del pack (sin git, grep global, web ni repo)
 
 **Convención sesiones:** ver tabla «Correspondencia sesión → buffer → medición» arriba.
 
@@ -293,7 +325,7 @@ CAP_DELTA_INTENSIDAD = 0.50
 # Dirección delta: |Δ| > 0.3 → UP/DOWN; ≤ 0.3 → NEUTRAL
 ```
 
-Tests de regresión fijan M0=5.0 … M5=6.79.
+Tests de regresión fijan M0=5.0 … M9=7.09.
 
 ---
 
@@ -320,7 +352,7 @@ Tests de regresión fijan M0=5.0 … M5=6.79.
 | `docs/metodologia/limitaciones.md` | Limitaciones conocidas |
 | `docs/sesiones/buffer-01.md` | Origen MCS-1 (directorio Gemini) |
 | `docs/sesiones/buffer-04.md` | Origen MCS-3 (solidificación cuarentena) |
-| `docs/prompts/` | Plantillas llenar_buffer / limpiar_cuarentena |
+| `docs/prompts/` | Plantillas operativas + `lectura_pack_ciudadano.prompt.md` |
 | `docs/sesiones/sesion-01.md` | Log conversacional sesión 1 |
 | `CHANGELOG.md` | Historial de releases |
 | `README.md` | Instalación y uso humano |
