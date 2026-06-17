@@ -8,18 +8,30 @@
 <meta property="og:title" content="M2: intensidad 6.5/10">
 <meta property="og:description" content="alta probabilidad de lawfare — Zapatero / Plus Ultra">
 
+  <script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body class="newspaper">
   <header class="site-header">
     <div class="wrap">
-      <a href="../index.html" class="brand">Medidor de Lawfare</a>
-      <p class="site-tag">Centro de datos</p>
-      <nav>
-        <a href="../index.html">Catálogo</a>
-        <a href="../artefacto.html">El artefacto</a>
-        <a href="../../foss/index.html" class="foss-link">Documentación FOSS</a>
-      </nav>
+      <div class="masthead">
+        <p class="dateline">Centro de datos · Edición electrónica</p>
+        <a href="../index.html" class="brand">Medidor de Lawfare</a>
+        <p class="site-tag">Registro público de mediciones</p>
+      </div>
+      <div class="header-rule" aria-hidden="true"></div>
+      <div class="header-toolbar">
+        <nav aria-label="Secciones">
+          <a href="../index.html">Catálogo</a>
+          <span class="nav-sep" aria-hidden="true">|</span>
+          <a href="../artefacto.html">El artefacto</a>
+          <span class="nav-sep" aria-hidden="true">|</span>
+          <a href="../../foss/index.html" class="foss-link">FOSS</a>
+        </nav>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
     </div>
   </header>
   <main class="wrap">
@@ -110,8 +122,9 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Medidor de Lawfare v1.0.0 · Registro de mediciones · <a href="../../index.html">Inicio</a></p>
+      <p class="footer-colophon">Medidor de Lawfare v1.0.0 · Registro de mediciones · <a href="../../index.html">Inicio</a></p>
     </div>
   </footer>
+  <script src="../assets/theme.js"></script>
 </body>
 </html>
