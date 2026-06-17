@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Medidor de Lawfare"
+version: 1.0.0
+date-released: 2026-06-17
+license: GPL-3.0-or-later
+type: software
+message: "If you use this software, please cite it as below."
+authors:
+  - name: "Medidor de Lawfare Contributors"
+repository-code: "https://github.com/alephscriptorium-eng/medidor-lawfare"
+url: "https://alephscriptorium-eng.github.io/medidor-lawfare"
+keywords:
+  - lawfare
+  - medicion
+  - reproducibilidad
+  - epistemologia
+abstract: >
+  Herramienta FOSS para cuantificar indicios de lawfare en un caso concreto
+  mediante ejes observables, buffers de contexto cribados (L0-L3) y registro
+  de deltas reproducibles entre mediciones.
