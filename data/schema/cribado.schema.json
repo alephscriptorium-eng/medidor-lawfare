@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medidor-lawfare.dev/schema/cribado/v1",
+  "title": "Cribado MCN",
+  "type": "object",
+  "required": ["buffer_id", "etiqueta", "resumen_capas", "items", "cuarentena"],
+  "properties": {
+    "buffer_id": { "type": "string" },
+    "etiqueta": { "type": "string" },
+    "resumen_capas": {
+      "type": "object",
+      "properties": {
+        "L0": { "type": "integer" },
+        "L1": { "type": "integer" },
+        "L2": { "type": "integer" },
+        "L3": { "type": "integer" },
+        "Lx": { "type": "integer" }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "texto_original", "capa", "accion"],
+        "properties": {
+          "id": { "type": "string" },
+          "texto_original": { "type": "string" },
+          "capa": { "type": "string", "enum": ["L0", "L1", "L2", "L3", "Lx"] },
+          "ranura_destino": { "type": ["string", "null"] },
+          "evidencias": { "type": "array", "items": { "type": "string" } },
+          "peso": { "type": "number" },
+          "accion": { "type": "string", "enum": ["cargar", "cuarentena"] }
+        }
+      }
+    },
+    "cuarentena": { "type": "array" }
+  }
+}

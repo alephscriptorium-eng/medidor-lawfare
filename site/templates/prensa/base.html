@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ brand }}{% endblock %}</title>
+  {% block meta %}{% endblock %}
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="brand">{{ brand }}</a>
+      <nav>
+        <a href="index.html">Mediciones</a>
+        <a href="caso/zapatero-plus-ultra.html">Caso ejemplo</a>
+        <a href="que-es.html">Qué es</a>
+        <a href="../foss/index.html" class="foss-link">Documentación técnica</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ brand }} v{{ version }} · Software libre GPL-3.0</p>
+    </div>
+  </footer>
+</body>
+</html>

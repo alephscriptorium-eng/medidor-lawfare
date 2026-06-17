@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ brand }} — FOSS{% endblock %}</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">{{ brand }}</a>
+      <p class="tag">FOSS · v{{ version }}</p>
+      <nav>
+        <a href="index.html">Índice</a>
+        <a href="tecnico.html">Técnico</a>
+        <a href="funcional.html">Funcional</a>
+        <a href="ejemplo-zapatero.html">Ejemplo Zapatero</a>
+        <a href="devops.html">DevOps</a>
+        <a href="LICENSE.html">Licencia</a>
+        <hr>
+        <a href="../prensa/index.html">Sitio prensa</a>
+      </nav>
+    </aside>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

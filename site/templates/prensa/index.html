@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Mediciones — {{ brand }}{% endblock %}
+{% block content %}
+<h1>Portal de mediciones</h1>
+<p class="lead">Indicadores de lawfare en casos concretos, medidos con metodología reproducible.</p>
+<div class="cards">
+  {% for med in catalog.mediciones_publicas %}
+  <article class="card {% if med.destacada %}destacada{% endif %}">
+    <h2><a href="medicion/{{ med.id }}.html">{{ med.id }}</a></h2>
+    <p class="caso">{{ med.caso_id | replace('-', ' ') | title }}</p>
+    <p class="intensidad" data-nivel="{{ med.intensidad }}">{{ med.intensidad }}<span>/10</span></p>
+    <p class="lectura">{{ med.lectura }}</p>
+    {% if med.destacada %}<span class="badge">Medición activa</span>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

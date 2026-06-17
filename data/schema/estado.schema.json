@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medidor-lawfare.dev/schema/estado.json",
+  "title": "Estado de caso",
+  "type": "object",
+  "required": ["motor_version", "caso_foco", "mediciones", "deltas", "buffers", "branches"],
+  "properties": {
+    "motor_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "caso_foco": {
+      "type": "object",
+      "required": ["id", "etiqueta", "inmutable"],
+      "properties": {
+        "id": { "type": "string" },
+        "etiqueta": { "type": "string" },
+        "fecha_evento": { "type": "string" },
+        "inmutable": { "const": true }
+      }
+    },
+    "mediciones": { "type": "object", "additionalProperties": { "$ref": "#/$defs/medicion" } },
+    "deltas": { "type": "array" },
+    "buffers": { "type": "array" },
+    "branches": { "type": "object" }
+  },
+  "$defs": {
+    "medicion": {
+      "type": "object",
+      "required": ["id", "ejes", "intensidad", "lectura"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^M\\d+$" },
+        "intensidad": { "type": "number", "minimum": 0, "maximum": 10 },
+        "lectura": { "type": "string" },
+        "ejes": {
+          "type": "object",
+          "required": ["integridad", "sincronia", "ventana", "impacto", "vector"],
+          "properties": {
+            "integridad": { "type": "number" },
+            "sincronia": { "type": "number" },
+            "ventana": { "type": "number" },
+            "impacto": { "type": "number" },
+            "vector": { "type": "number" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medidor-lawfare.dev/schema/caso/v1",
+  "title": "Caso",
+  "type": "object",
+  "required": ["id", "etiqueta", "caso_foco_id", "inmutable"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "caso_foco_id": { "type": "string" },
+    "etiqueta": { "type": "string" },
+    "fecha_evento": { "type": "string", "format": "date" },
+    "descripcion": { "type": "string" },
+    "inmutable": { "type": "boolean" },
+    "ejemplo": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

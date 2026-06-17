@@ -1,0 +1,139 @@
+{
+  "motor_version": "1.0.0",
+  "version": "1.0.0",
+  "artefacto": "Medidor de Lawfare",
+  "caso_id": "zapatero-plus-ultra",
+  "caso_foco": {
+    "id": "ZAP-PU-2026-06-17",
+    "etiqueta": "Zapatero / Plus Ultra",
+    "fecha_evento": "2026-06-17",
+    "inmutable": true
+  },
+  "mediciones": {
+    "baseline": {
+      "id": "M0",
+      "buffers_activos": [],
+      "ejes": {
+        "integridad": 4.2,
+        "sincronia": 5.8,
+        "ventana": 5.5,
+        "impacto": 6.5,
+        "vector": -0.25
+      },
+      "intensidad": 5.0,
+      "lectura": "sospechas fundadas"
+    },
+    "post_mcs_1": {
+      "id": "M1",
+      "buffers_activos": [
+        "MCS-1"
+      ],
+      "ejes": {
+        "integridad": 5.2,
+        "sincronia": 6.9,
+        "ventana": 7.0,
+        "impacto": 7.5,
+        "vector": -0.6
+      },
+      "intensidad": 6.4,
+      "lectura": "alta probabilidad de lawfare"
+    },
+    "post_mcs_2": {
+      "id": "M2",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2"
+      ],
+      "ejes": {
+        "integridad": 5.44,
+        "sincronia": 6.98,
+        "ventana": 7.07,
+        "impacto": 7.76,
+        "vector": -0.6
+      },
+      "intensidad": 6.5,
+      "lectura": "alta probabilidad de lawfare"
+    }
+  },
+  "deltas": [
+    {
+      "id": "D0→1",
+      "desde": "M0",
+      "hasta": "M1",
+      "buffer_aplicado": "MCS-1",
+      "delta_ejes": {
+        "integridad": 1.0,
+        "sincronia": 1.1,
+        "ventana": 1.5,
+        "impacto": 1.0,
+        "vector": -0.35
+      },
+      "delta_intensidad": 1.4,
+      "direccion": "UP",
+      "nota": "Buffer histórico España 1978-2026 eleva todos los ejes salvo vector (más negativo = más direccionalidad adversa)"
+    },
+    {
+      "id": "D1→2",
+      "desde": "M1",
+      "hasta": "M2",
+      "buffer_aplicado": "MCS-2",
+      "delta_ejes": {
+        "integridad": 0.24,
+        "sincronia": 0.08,
+        "ventana": 0.07,
+        "impacto": 0.26,
+        "vector": 0.0
+      },
+      "delta_intensidad": 0.1,
+      "direccion": "NEUTRAL",
+      "clasificacion_impacto": "ambiguo",
+      "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.10"
+    }
+  ],
+  "buffers": [
+    {
+      "id": "MCS-1",
+      "tipo": "contexto_historico",
+      "etiqueta": "Directorio casos España 1978-2026",
+      "fecha_carga": "2026-06-17",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L1",
+      "ranuras_pobladas": 9,
+      "resumen": "Histórico de imputaciones, patrones de acusación popular, cobertura mediática, ventanas temporales comparables"
+    },
+    {
+      "id": "MCS-2",
+      "tipo": "contexto_fino",
+      "etiqueta": "Verificación empírica delta 5→6.4 (mecanismos + datos duros)",
+      "fecha_carga": "2026-06-17",
+      "inmutable": true,
+      "nivel_asépticidad_promedio": "L2",
+      "ranuras_pobladas": 5,
+      "items_cargados": 8,
+      "items_cuarentena": 10,
+      "resumen_capas": {
+        "L0": 2,
+        "L1": 6,
+        "L2": 0,
+        "L3": 10,
+        "Lx": 0
+      },
+      "pct_l3": 0.56,
+      "nota_origen": "buffer-02.md — conversación Gemini; bloque 1 interpretativo, bloque 2 datos verificables"
+    }
+  ],
+  "branch_actual": "main",
+  "branches": {
+    "main": {
+      "medicion_activa": "M2",
+      "buffers_activos": [
+        "MCS-1",
+        "MCS-2"
+      ],
+      "historial_deltas": [
+        "D0→1",
+        "D1→2"
+      ]
+    }
+  }
+}

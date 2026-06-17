@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medidor-lawfare.dev/schema/buffer.json",
+  "title": "Buffer entrante",
+  "type": "object",
+  "required": ["buffer_entrada"],
+  "properties": {
+    "buffer_entrada": {
+      "type": "object",
+      "required": ["id", "items"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^MCS-\\d+$" },
+        "tipo": { "type": "string" },
+        "etiqueta": { "type": "string" },
+        "caso_foco": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["texto"],
+            "properties": {
+              "texto": { "type": "string" },
+              "ranura_sugerida": { "type": "string" },
+              "bloque": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

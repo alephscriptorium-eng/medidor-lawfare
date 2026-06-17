@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ med.id }} — {{ brand }}{% endblock %}
+{% block meta %}
+<meta property="og:title" content="{{ med.id }}: intensidad {{ med.intensidad }}/10">
+<meta property="og:description" content="{{ med.lectura }} — {{ estado.caso_foco.etiqueta }}">
+{% endblock %}
+{% block content %}
+<h1>Medición {{ med.id }}</h1>
+<p class="caso-label">{{ estado.caso_foco.etiqueta }}</p>
+<div class="panel-intensidad">
+  <span class="valor">{{ med.intensidad }}</span><span class="max">/10</span>
+  <p class="lectura">{{ med.lectura }}</p>
+</div>
+<h2>Ejes</h2>
+<ul class="ejes">
+  {% for eje, val in medicion.ejes.items() %}
+  <li>
+    <span class="eje-nombre">{{ eje | capitalize }}</span>
+    <span class="barra"><span style="width: {{ (val / 10 * 100) | int }}%"></span></span>
+    <span class="eje-val">{{ val }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% if med.buffers_activos %}
+<h2>Contexto aplicado</h2>
+<p>Buffers: {{ med.buffers_activos | join(', ') }}</p>
+{% endif %}
+<h2>Línea temporal</h2>
+<ol class="timeline">
+  {% for m in mediciones | sort(attribute='id') %}
+  <li><a href="{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10 ({{ m.lectura }})</li>
+  {% endfor %}
+</ol>
+<p><a href="caso/{{ med.caso_id }}.html">Ver ficha del caso</a></p>
+{% endblock %}

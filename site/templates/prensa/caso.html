@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ caso.etiqueta }} — {{ brand }}{% endblock %}
+{% block content %}
+<h1>{{ caso.etiqueta }}</h1>
+<p class="lead">Caso de referencia del Medidor de Lawfare. Imputación y cobertura mediática en torno a José Luis Rodríguez Zapatero y Plus Ultra (junio 2026).</p>
+<h2>Evolución de la medición</h2>
+<div class="delta-visual">
+  {% for m in mediciones | sort(attribute='id') %}
+  <div class="delta-step">
+    <strong>{{ m.id }}</strong>
+    <span class="int">{{ m.intensidad }}</span>
+    <small>{{ m.lectura }}</small>
+  </div>
+  {% if not loop.last %}<span class="arrow">→</span>{% endif %}
+  {% endfor %}
+</div>
+<p class="explicacion">El contexto histórico (M1) elevó la medición de 5,0 a 6,4. La verificación con datos duros (M2) la confirmó sin inflarla (+0,1).</p>
+<h2>Mediciones</h2>
+<ul>
+  {% for m in mediciones | sort(attribute='id') %}
+  <li><a href="../medicion/{{ m.id }}.html">{{ m.id }}</a> — {{ m.intensidad }}/10</li>
+  {% endfor %}
+</ul>
+{% if deltas %}
+<h2>Cambios registrados</h2>
+{% for d in deltas %}
+<p><strong>{{ d.id }}</strong>: Δ intensidad {{ d.delta_intensidad | string | replace('.', ',') }} ({{ d.direccion }}) — {{ d.nota }}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,210 @@
+{
+  "buffer_id": "MCS-2",
+  "etiqueta": "Verificación empírica delta 5→6.4 (mecanismos + datos duros)",
+  "resumen_capas": {
+    "L0": 2,
+    "L1": 6,
+    "L2": 0,
+    "L3": 10,
+    "Lx": 0
+  },
+  "items": [
+    {
+      "id": "ea1b430b",
+      "texto_original": "En un periodo de seis años, más de 20 querellas y líneas de investigación contra líderes de Podemos fueron archivadas por falta de indicios de delito.",
+      "capa": "L1",
+      "ranura_destino": "historico_imputaciones",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "cb33dccf",
+      "texto_original": "Archivos por financiación ilegal (Manos Limpias), fraude fiscal, Informe PISA y caso Neurona evidenciaron base probatoria inexistente.",
+      "capa": "L1",
+      "ranura_destino": "historico_imputaciones",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "44abf67b",
+      "texto_original": "Salvador Alba condenado a 6 años y medio por prevaricación, cohecho y falsedad documental contra Victoria Rosell. Sentencias TSJC 2019 y Tribunal Supremo 2021.",
+      "capa": "L0",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "8625e4fa",
+      "texto_original": "Salvador Alba ingresó en prisión Las Palmas I en octubre de 2022; inhabilitación de 18 años.",
+      "capa": "L1",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "8e995670",
+      "texto_original": "16 de noviembre de 2012: medios publicaron borrador UDEF acusando cuentas Suiza a Artur Mas y Xavier Trias. Elecciones catalanas el 25 de noviembre de 2012 (9 días después).",
+      "capa": "L1",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "f6b06c87",
+      "texto_original": "Borrador Operación Cataluña sin firma, no judicializado, desmentido por policía y bancos suizos; irrumpió en cierre de campaña electoral.",
+      "capa": "L1",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "b7b9e7b4",
+      "texto_original": "6 de noviembre de 2018: TEDH condenó a España por vulneración del derecho a juicio justo en caso Bateragune (Arnaldo Otegi). Magistrada Ángela Murillo sin imparcialidad exigida.",
+      "capa": "L0",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    },
+    {
+      "id": "93a14ef0",
+      "texto_original": "Arnaldo Otegi cumplió íntegramente pena de 6 años y medio antes de la corrección europea, certificando inhabilitación política pese a posterior nulidad jurídica.",
+      "capa": "L1",
+      "ranura_destino": "intensidad_historica_comparable",
+      "evidencias": [],
+      "peso": 1.0,
+      "accion": "cargar"
+    }
+  ],
+  "cuarentena": [
+    {
+      "id": "5ae098d6",
+      "texto_original": "Unidades policiales específicas (Operación Kitchen, informes PISA) elaboran dosieres prospectivos sin mandato judicial.",
+      "capa": "L3",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "ad9fe6cf",
+      "texto_original": "El dosier se filtra a medios afines en momentos de máximo impacto político.",
+      "capa": "L3",
+      "ranura_destino": "cobertura_mediatica",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "afaf2846",
+      "texto_original": "Sindicatos o asociaciones presentan querellas usando recortes de prensa ya publicados; el juzgado admite la querella basándose en la alarma social generada por la prensa.",
+      "capa": "L3",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "4efd030c",
+      "texto_original": "Levantamientos de secreto, citaciones o registros televisados en margen de 15-30 días antes de comicios (registros CDC, filtraciones Podemos antes de generales).",
+      "capa": "L3",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "e951031d",
+      "texto_original": "El archivo de causas por falta de pruebas se produce sistemáticamente meses o años después de consumado el objetivo político.",
+      "capa": "L3",
+      "ranura_destino": "ventanas_temporales",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "3d0a0138",
+      "texto_original": "Tipificación de desórdenes como terrorismo (Tsunami Democràtic, CDR) o malversación como rebelión (Procés) para elevar competencia a Audiencia Nacional o Tribunal Supremo.",
+      "capa": "L3",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "1171a6d9",
+      "texto_original": "Alteración del juez natural (forum shopping): arrebatar competencia a juzgados territoriales ordinarios.",
+      "capa": "L3",
+      "ranura_destino": "precedentes_judiciales",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "98840122",
+      "texto_original": "Figura de acusación popular permite a Vox, Manos Limpias y Hazte Oír mantener vivas imputaciones cuando el Ministerio Fiscal pide archivo.",
+      "capa": "L3",
+      "ranura_destino": "patrones_acusacion",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "481c5cb8",
+      "texto_original": "El lawfare moderno en España no busca la condena penal sino la pena de telediario y la inhabilitación política de facto durante la instrucción.",
+      "capa": "L3",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    },
+    {
+      "id": "ea902be9",
+      "texto_original": "El fenómeno dejó de ser episódico para convertirse en mecánica estructural y predecible.",
+      "capa": "L3",
+      "ranura_destino": "meta_patrones_sistemicos",
+      "evidencias": [],
+      "peso": 0.0,
+      "accion": "cuarentena"
+    }
+  ],
+  "medicion_m2": {
+    "id": "M2",
+    "buffers_activos": [
+      "MCS-1",
+      "MCS-2"
+    ],
+    "ejes": {
+      "integridad": 5.44,
+      "sincronia": 6.98,
+      "ventana": 7.07,
+      "impacto": 7.76,
+      "vector": -0.6
+    },
+    "intensidad": 6.5,
+    "lectura": "alta probabilidad de lawfare"
+  },
+  "delta": {
+    "id": "D1→2",
+    "desde": "M1",
+    "hasta": "M2",
+    "buffer_aplicado": "MCS-2",
+    "delta_ejes": {
+      "integridad": 0.24,
+      "sincronia": 0.08,
+      "ventana": 0.07,
+      "impacto": 0.26,
+      "vector": 0.0
+    },
+    "delta_intensidad": 0.1,
+    "direccion": "NEUTRAL",
+    "clasificacion_impacto": "ambiguo",
+    "nota": "Buffer mixto: datos duros (Alba, Cataluña, TEDH) confirman patrón; bloque interpretativo parcialmente en cuarentena. Δ=+0.10"
+  }
+}
