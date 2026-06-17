@@ -4,6 +4,7 @@
     {
       "id": "M0",
       "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
       "intensidad": 5.0,
       "lectura": "sospechas fundadas",
       "buffers_activos": [],
@@ -13,6 +14,7 @@
     {
       "id": "M1",
       "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
       "intensidad": 6.4,
       "lectura": "alta probabilidad de lawfare",
       "buffers_activos": [
@@ -24,6 +26,7 @@
     {
       "id": "M2",
       "caso_id": "zapatero-plus-ultra",
+      "caso_etiqueta": "Zapatero / Plus Ultra",
       "intensidad": 6.5,
       "lectura": "alta probabilidad de lawfare",
       "buffers_activos": [
@@ -38,7 +41,9 @@
     {
       "id": "zapatero-plus-ultra",
       "etiqueta": "Zapatero / Plus Ultra",
-      "ejemplo": true
+      "ejemplo": true,
+      "inaugural": true,
+      "nota_registro": "Medición ilustrativa del artefacto; no define el alcance del proyecto."
     }
   ]
 }

@@ -11,6 +11,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from medidor_lawfare import __version__
 from medidor_lawfare.catalog.sync import cargar_catalog, sincronizar_catalog
+from medidor_lawfare.rdb.estado import listar_casos
 from medidor_lawfare.paths import (
     CASOS_DIR,
     LICENSE,
@@ -65,8 +66,8 @@ def build_prensa() -> None:
         env.get_template("index.html").render(**ctx_base),
         encoding="utf-8",
     )
-    (PUBLIC_PRENSA / "que-es.html").write_text(
-        env.get_template("que-es.html").render(**ctx_base),
+    (PUBLIC_PRENSA / "artefacto.html").write_text(
+        env.get_template("artefacto.html").render(**ctx_base),
         encoding="utf-8",
     )
 
@@ -126,7 +127,7 @@ def build_foss() -> None:
         "index.html",
         "tecnico.html",
         "funcional.html",
-        "ejemplo-zapatero.html",
+        "datos-publicados.html",
         "devops.html",
         "LICENSE.html",
     ]
@@ -153,8 +154,8 @@ def build_root() -> None:
 
 
 def run_build(target: str = "all") -> None:
-    if not (CASOS_DIR / "zapatero-plus-ultra" / "estado.json").exists():
-        raise FileNotFoundError("Falta estado del caso zapatero-plus-ultra")
+    if not listar_casos():
+        raise FileNotFoundError("No hay casos en data/casos/")
     sincronizar_catalog()
     if target in ("all", "prensa", "foss"):
         build_root()

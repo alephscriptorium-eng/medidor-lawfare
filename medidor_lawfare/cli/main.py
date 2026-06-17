@@ -20,11 +20,11 @@ def main(argv: list[str] | None = None) -> int:
 
     p_cribar = sub.add_parser("cribar", help="Cribar buffer entrante (MCN)")
     p_cribar.add_argument("archivo", help="Ruta al buffer JSON/txt o '-' para stdin")
-    p_cribar.add_argument("--caso", default="zapatero-plus-ultra")
+    p_cribar.add_argument("--caso", required=True, help="ID del caso en data/casos/")
 
     p_commit = sub.add_parser("commit", help="Confirmar buffer y recalcular medición")
     p_commit.add_argument("archivo", help="Ruta al buffer JSON")
-    p_commit.add_argument("--caso", default="zapatero-plus-ultra")
+    p_commit.add_argument("--caso", required=True, help="ID del caso en data/casos/")
 
     p_build = sub.add_parser("build", help="Generar sitios estáticos")
     p_build.add_argument(

@@ -3,7 +3,8 @@
   "caso_foco_id": "ZAP-PU-2026-06-17",
   "etiqueta": "Zapatero / Plus Ultra",
   "fecha_evento": "2026-06-17",
-  "descripcion": "Caso de referencia: imputación y cobertura mediática en torno a José Luis Rodríguez Zapatero y Plus Ultra.",
+  "descripcion": "Primera medición publicada en el catálogo del Medidor de Lawfare.",
   "inmutable": true,
-  "ejemplo": true
+  "inaugural": true,
+  "nota_registro": "Medición ilustrativa del artefacto; no define el alcance del proyecto."
 }
