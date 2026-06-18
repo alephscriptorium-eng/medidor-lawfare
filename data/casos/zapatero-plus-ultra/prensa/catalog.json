@@ -1,6 +1,6 @@
 {
   "caso_id": "zapatero-plus-ultra",
-  "generado": "2026-06-18T00:04:20Z",
+  "generado": "2026-06-18T00:21:00Z",
   "publicaciones": [
     {
       "id": "_ejemplo",
@@ -11,6 +11,26 @@
       "medicion_ref": "M9",
       "resumen": "Plantilla operador: reemplazar slug y quitar borrador antes del build.",
       "borrador": true
+    },
+    {
+      "id": "editorial-vista-noruega-m9",
+      "slug": "editorial-vista-noruega-m9",
+      "tipo": "libre",
+      "titulo": "Lo que ve Oslo en Zapatero / Plus Ultra",
+      "fecha": "2026-06-18",
+      "medicion_ref": "M9",
+      "resumen": "Editorial desde un observador institucional noruego: el artefacto sitúa el caso en 7,09 y el contexto público pesa más que la solidez probatoria medida.",
+      "borrador": false
+    },
+    {
+      "id": "sintesis-directa-m9",
+      "slug": "sintesis-directa-m9",
+      "tipo": "sintesis",
+      "titulo": "Síntesis de Medición M9",
+      "fecha": "2026-06-18",
+      "medicion_ref": "M9",
+      "resumen": "Contraste directo entre sincronía política e integridad probatoria.",
+      "borrador": false
     }
   ]
 }

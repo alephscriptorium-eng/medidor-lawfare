@@ -1,0 +1,12 @@
+{
+  "id": "editorial-vista-noruega-m9",
+  "caso_id": "zapatero-plus-ultra",
+  "medicion_ref": "M9",
+  "tipo": "libre",
+  "titulo": "Lo que ve Oslo en Zapatero / Plus Ultra",
+  "fecha": "2026-06-18",
+  "prompt_analisis": "docs/prompts/lectura_pack_ciudadano.prompt.md",
+  "pack_ref": "zapatero-plus-ultra.zip",
+  "lienzo": "site/templates/prensa/lienzo_fragmento.html",
+  "resumen": "Editorial desde un observador institucional noruego: el artefacto sitúa el caso en 7,09 y el contexto público pesa más que la solidez probatoria medida."
+}
