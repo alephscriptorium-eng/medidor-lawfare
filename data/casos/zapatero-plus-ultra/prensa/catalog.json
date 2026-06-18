@@ -1,0 +1,16 @@
+{
+  "caso_id": "zapatero-plus-ultra",
+  "generado": "2026-06-18T00:04:20Z",
+  "publicaciones": [
+    {
+      "id": "_ejemplo",
+      "slug": "_ejemplo",
+      "tipo": "articulo",
+      "titulo": "Ejemplo de publicación (no publicar)",
+      "fecha": "2026-06-18",
+      "medicion_ref": "M9",
+      "resumen": "Plantilla operador: reemplazar slug y quitar borrador antes del build.",
+      "borrador": true
+    }
+  ]
+}

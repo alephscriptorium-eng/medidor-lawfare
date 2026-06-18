@@ -7,6 +7,10 @@ import json
 from typing import Any
 
 from medidor_lawfare.paths import caso_dir, GITHUB_REPO, PROJECT_ROOT
+from medidor_lawfare.site.prensa_publicaciones import (
+    listar_publicaciones as _listar_publicaciones,
+    publicaciones_para_medicion as _publicaciones_para_medicion,
+)
 
 GITHUB_BRANCH = "main"
 
@@ -114,3 +118,15 @@ def caso_enriquecido(caso: dict[str, Any], estado: dict[str, Any]) -> dict[str, 
         ],
         "buffers": buffers,
     }
+
+
+def publicaciones_para_caso(caso_id: str) -> list[dict[str, Any]]:
+    return _listar_publicaciones(caso_id, publicas=True, desde="caso")
+
+
+def publicaciones_para_medicion(
+    caso_id: str, med_id: str, base_href: str = "../"
+) -> list[dict[str, Any]]:
+    return _publicaciones_para_medicion(
+        caso_id, med_id, publicas=True, base_href=base_href
+    )

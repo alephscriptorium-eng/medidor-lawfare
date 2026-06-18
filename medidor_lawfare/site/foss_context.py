@@ -31,7 +31,13 @@ PROMPTS_CIUDADANO: list[dict[str, str]] = [
         "id": "lectura_pack_ciudadano",
         "titulo": "Lectura ciudadana de medición",
         "archivo": "docs/prompts/lectura_pack_ciudadano.prompt.md",
-        "descripcion": "Interpretar un pack ZIP descargado (solo archivos del pack) para un ciudadano, sin jerga técnica.",
+        "descripcion": "Mapa justicia–política desde un pack ZIP: tensión entre ejes procesales y contextuales, sin veredicto maniqueo; tablas trazables.",
+    },
+    {
+        "id": "publicar_prensa",
+        "titulo": "Publicar pieza prensa",
+        "archivo": "docs/prompts/publicar_prensa.prompt.md",
+        "descripcion": "Dos fases: análisis pack cerrado + depósito en data/casos/…/prensa/publicaciones/ para build de artículo, síntesis o tarjeta redes.",
     },
 ]
 

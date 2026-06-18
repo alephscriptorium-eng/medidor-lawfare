@@ -37,6 +37,19 @@
   {% endfor %}
 </ul>
 {% endif %}
+{% if publicaciones %}
+<h2>Publicaciones</h2>
+<p class="section-lead">Piezas editoriales depositadas por agentes sobre este caso (capa encima de las mediciones oficiales).</p>
+<ul class="publicaciones-list">
+  {% for pub in publicaciones %}
+  <li class="publicacion-item">
+    <h3><a href="{{ pub.href }}">{{ pub.titulo }}</a></h3>
+    <p class="pub-meta">{{ pub.tipo | capitalize }} · {{ pub.fecha }}{% if pub.medicion_ref %} · <a href="{{ base_href }}medicion/{{ pub.medicion_ref }}.html">{{ pub.medicion_ref }}</a>{% endif %}</p>
+    <p class="pub-resumen-list">{{ pub.resumen }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
 <p class="nav-actions">
   <a class="btn btn-secondary" href="{{ caso.pack_caso_href }}" download>Descargar paquete completo del caso (.zip)</a>
   <a class="btn btn-secondary" href="{{ base_href }}index.html">Volver al catálogo</a>

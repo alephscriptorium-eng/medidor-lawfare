@@ -257,7 +257,7 @@ Plantillas en `docs/prompts/` — sustituir `{{variables}}` donde aplique; no ac
 
 | Archivo | Uso |
 |---------|-----|
-| `lectura_pack_ciudadano.prompt.md` | Interpretar un pack (`medidor pack`) para un ciudadano: **perímetro cerrado** (solo archivos del pack), español llano, tablas de trazabilidad al final |
+| `lectura_pack_ciudadano.prompt.md` | Pack → ciudadano: mapa **justicia ↔ política**, tensión medida entre ejes procesales y contextuales; sin veredicto maniqueo; tablas trazables |
 
 **Flujo pack ciudadano:**
 

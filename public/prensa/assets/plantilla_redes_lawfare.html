@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CASO_ETIQUETA}} — {{MEDICION_ID}} — Redes</title>
+    <!--
+      Plantilla oficial Medidor de Lawfare — 1080×1080 redes.
+      Protocolo: docs/prompts/publicar_prensa.prompt.md (mapa de campos)
+      Sustituir {{PLACEHOLDERS}} con datos del pack; no inventar cifras.
+    -->
+    <style>
+        :root {
+            --bg-color: #e9e7e1;
+            --paper: #f4f3ef;
+            --ink: #111111;
+            --ink-light: #333333;
+            --alert: #c62828;
+        }
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Courier New", Courier, monospace;
+            padding: 20px;
+        }
+        .social-card {
+            width: 1080px;
+            height: 1080px;
+            background-color: var(--paper);
+            border: 6px solid var(--ink);
+            box-sizing: border-box;
+            padding: 50px 60px;
+            position: relative;
+            box-shadow: 15px 15px 0px var(--ink);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .social-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 10;
+        }
+        .header {
+            border-bottom: 5px solid var(--ink);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-transform: uppercase;
+        }
+        .header-title { font-size: 22px; font-weight: 900; letter-spacing: 2px; color: var(--ink-light); }
+        .header-date { font-size: 20px; font-weight: bold; }
+        .main-headline {
+            font-size: 105px;
+            line-height: 0.85;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            letter-spacing: -4px;
+            color: var(--ink);
+        }
+        .sub-headline {
+            font-size: 28px;
+            background-color: var(--ink);
+            color: var(--paper);
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 60px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            flex-grow: 1;
+        }
+        .data-section { display: flex; flex-direction: column; gap: 45px; }
+        .metric-group {
+            border: 3px solid var(--ink);
+            padding: 25px 20px;
+            position: relative;
+        }
+        .metric-group.alert {
+            border-color: var(--alert);
+            background-color: rgba(198, 40, 40, 0.03);
+        }
+        .metric-title {
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: absolute;
+            top: -16px;
+            left: 20px;
+            background-color: var(--paper);
+            padding: 0 10px;
+        }
+        .metric-group.alert .metric-title { color: var(--alert); }
+        .metric-desc { font-size: 16px; color: var(--ink-light); margin-bottom: 10px; font-weight: bold; }
+        .bar-container {
+            height: 45px;
+            background-color: #dcdcdc;
+            width: 100%;
+            position: relative;
+            border: 2px solid var(--ink);
+        }
+        .bar-fill {
+            height: 100%;
+            background-color: var(--ink);
+            display: flex;
+            align-items: center;
+            padding-right: 15px;
+            justify-content: flex-end;
+            color: var(--paper);
+            font-weight: bold;
+            font-size: 24px;
+            box-sizing: border-box;
+        }
+        .metric-group.alert .bar-fill { background-color: var(--alert); }
+        .narrative-section {
+            font-size: 27px;
+            line-height: 1.45;
+            border-left: 8px solid var(--ink);
+            padding-left: 35px;
+            text-align: justify;
+            font-weight: 500;
+        }
+        .narrative-section p { margin: 0 0 25px 0; }
+        .narrative-section p:first-child::first-letter {
+            font-size: 90px;
+            float: left;
+            line-height: 0.8;
+            padding-right: 15px;
+            font-weight: 900;
+            color: var(--ink);
+        }
+        .highlight { background-color: rgba(198, 40, 40, 0.15); font-weight: bold; }
+        .footer {
+            margin-top: 40px;
+            border-top: 5px solid var(--ink);
+            padding-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            color: var(--ink-light);
+        }
+        .stamp {
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            border: 5px solid var(--alert);
+            color: var(--alert);
+            font-size: 40px;
+            font-weight: 900;
+            padding: 10px 20px;
+            transform: rotate(-12deg);
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="social-card">
+        <div class="stamp">{{SELLO}}</div>
+        <div class="header">
+            <div class="header-title">{{CASO_ETIQUETA}}</div>
+            <div class="header-date">{{MEDICION_ID}} · {{FECHA}}</div>
+        </div>
+        <h1 class="main-headline">INTENSIDAD<br>{{INTENSIDAD}}</h1>
+        <div class="sub-headline">{{SUBTITULO_HUECO}}</div>
+        <div class="content-grid">
+            <div class="data-section">
+                <div class="metric-group">
+                    <div class="metric-title">Justicia (procesal)</div>
+                    <div class="metric-desc">Prueba e instrucción</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: {{POLO_JUSTICIA_BAR_PCT}}%;">{{POLO_JUSTICIA}}</div>
+                    </div>
+                </div>
+                <div class="metric-group alert">
+                    <div class="metric-title">Política (contexto)</div>
+                    <div class="metric-desc">Agenda pública y cobertura</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: {{POLO_CONTEXTO_BAR_PCT}}%;">{{POLO_CONTEXTO}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="narrative-section">
+                <p>{{PARRAFO_1}}</p>
+                <p>{{PARRAFO_2}}</p>
+            </div>
+        </div>
+        <div class="footer">
+            <span>MEDIDOR DE LAWFARE</span>
+            <span>{{LECTURA_ESCALA}}</span>
+            <span>DATOS TRAZABLES</span>
+        </div>
+    </div>
+</body>
+</html>

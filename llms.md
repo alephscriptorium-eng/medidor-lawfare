@@ -257,7 +257,8 @@ Plantillas en `docs/prompts/` — sustituir `{{variables}}` donde aplique; no ac
 
 | Archivo | Uso |
 |---------|-----|
-| `lectura_pack_ciudadano.prompt.md` | Interpretar un pack (`medidor pack`) para un ciudadano: **perímetro cerrado** (solo archivos del pack), español llano, tablas de trazabilidad al final |
+| `lectura_pack_ciudadano.prompt.md` | Pack → ciudadano: mapa **justicia ↔ política**, tensión medida entre ejes procesales y contextuales; sin veredicto maniqueo; tablas trazables |
+| `publicar_prensa.prompt.md` | Dos fases: análisis pack + depósito editorial en `data/casos/…/prensa/publicaciones/` |
 
 **Flujo pack ciudadano:**
 
@@ -267,6 +268,31 @@ Plantillas en `docs/prompts/` — sustituir `{{variables}}` donde aplique; no ac
 4. El agente **no** sale del directorio del pack (sin git, grep global, web ni repo)
 
 **Convención sesiones:** ver tabla «Correspondencia sesión → buffer → medición» arriba.
+
+### Publicaciones prensa (agente)
+
+Capa editorial **encima** de las mediciones oficiales. No altera `estado.json`.
+
+| Concepto | Ruta repo | URL tras build |
+|----------|-----------|----------------|
+| Drop zone | `data/casos/{caso_id}/prensa/publicaciones/{slug}/meta.json` + `cuerpo.html` | — |
+| Índice por caso (generado) | `data/casos/{caso_id}/prensa/catalog.json` | — |
+| Pieza publicada | — | `/prensa/caso/{caso_id}/publicaciones/{slug}.html` |
+| Tarjeta redes | — | `/prensa/caso/{caso_id}/publicaciones/{slug}/card.html` |
+
+**Flujo dos fases** (`docs/prompts/publicar_prensa.prompt.md`):
+
+1. **Análisis:** pack cerrado con `lectura_pack_ciudadano.prompt.md` → mapa justicia↔política y cifras trazables
+2. **Publicación:** agente deposita `meta.json` + `cuerpo.html` en la drop zone; `medidor build --target prensa` genera HTML y enlaza en ficha caso y/o medición (`medicion_ref` opcional)
+
+Schema: `data/schema/publicacion.schema.json`. Ejemplo operador: `data/casos/zapatero-plus-ultra/prensa/publicaciones/_ejemplo/` (`borrador: true` → no se publica).
+
+```bash
+medidor prensa validate --caso zapatero-plus-ultra --slug mi-slug
+medidor build --target prensa
+```
+
+**Mapa campos redes** (`site/assets/prensa/plantilla_redes_lawfare.html`): `INTENSIDAD` ← intensidad de medición; `POLO_JUSTICIA` ← media(integridad, ventana); `POLO_CONTEXTO` ← media(sincronía, impacto); barras = valor×10%.
 
 ---
 
@@ -293,6 +319,9 @@ medidor build --target all
 
 # Paquetes ZIP de datos (medición o caso) sin rebuild completo
 medidor pack --caso <caso-id> [--med M3] [--output dir]
+
+# Validar publicación de agente antes del build
+medidor prensa validate --caso <caso-id> --slug <slug>
 
 # Tests
 pytest

@@ -56,7 +56,8 @@ pip install -e ".[dev]"</pre>
 medidor commit  data/buffers/MI-BUFFER.json --caso &lt;caso-id&gt;
 medidor catalog sync
 medidor build --target all
-medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]</pre>
+medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]
+medidor prensa validate --caso &lt;caso-id&gt; --slug &lt;slug&gt;</pre>
 <p><code>medidor pack</code> genera uno o más ZIP en <code>public/prensa/downloads/</code> (por defecto) sin reconstruir todo el sitio. Sin <code>--med</code>, empaqueta el caso completo; con <code>--med</code>, solo esa medición.</p>
 
 <h2>Ciclo típico</h2>
@@ -67,6 +68,7 @@ medidor pack --caso &lt;caso-id&gt; [--med M3] [--output dir]</pre>
   <li>Si hay cuarentena L3: <code>limpiar_cuarentena_pedir.md</code> / <code>limpiar_cuarentena_recibir.md</code></li>
   <li><code>medidor catalog sync</code> + <code>medidor build --target all</code></li>
   <li>Pack ciudadano: <code>medidor pack --caso &lt;id&gt;</code> → agente con <code>lectura_pack_ciudadano.prompt.md</code></li>
+  <li>Publicación editorial: agente con <code>publicar_prensa.prompt.md</code> → <code>data/casos/&lt;id&gt;/prensa/publicaciones/&lt;slug&gt;/</code> → <code>medidor prensa validate</code> + <code>medidor build --target prensa</code></li>
 </ol>
 
 <h2>Publicar un nuevo caso</h2>

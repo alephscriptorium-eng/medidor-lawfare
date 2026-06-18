@@ -1,0 +1,13 @@
+{
+  "id": "_ejemplo",
+  "caso_id": "zapatero-plus-ultra",
+  "medicion_ref": "M9",
+  "tipo": "articulo",
+  "titulo": "Ejemplo de publicación (no publicar)",
+  "fecha": "2026-06-18",
+  "prompt_analisis": "docs/prompts/lectura_pack_ciudadano.prompt.md",
+  "pack_ref": "zapatero-plus-ultra-M9.zip",
+  "lienzo": "site/templates/prensa/lienzo_fragmento.html",
+  "resumen": "Plantilla operador: reemplazar slug y quitar borrador antes del build.",
+  "borrador": true
+}

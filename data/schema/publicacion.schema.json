@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medidor-lawfare.dev/schema/publicacion/v1",
+  "title": "PublicacionPrensa",
+  "type": "object",
+  "required": [
+    "id",
+    "caso_id",
+    "tipo",
+    "titulo",
+    "fecha",
+    "prompt_analisis",
+    "pack_ref",
+    "lienzo",
+    "resumen"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_][a-z0-9_-]*$",
+      "description": "Slug kebab-case; debe coincidir con el nombre de la carpeta"
+    },
+    "caso_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "medicion_ref": {
+      "type": "string",
+      "pattern": "^M[0-9]+$"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": ["redes", "articulo", "sintesis", "libre"]
+    },
+    "titulo": { "type": "string", "minLength": 1 },
+    "fecha": { "type": "string", "format": "date" },
+    "prompt_analisis": { "type": "string", "minLength": 1 },
+    "pack_ref": { "type": "string", "minLength": 1 },
+    "lienzo": { "type": "string", "minLength": 1 },
+    "resumen": { "type": "string", "minLength": 1 },
+    "borrador": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

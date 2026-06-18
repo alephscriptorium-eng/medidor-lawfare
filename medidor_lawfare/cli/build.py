@@ -27,8 +27,10 @@ from medidor_lawfare.site.prensa_context import (
     buffer_para_medicion,
     caso_enriquecido,
     med_enriquecida,
+    publicaciones_para_medicion,
     timeline_mediciones,
 )
+from medidor_lawfare.site.prensa_publicaciones import build_publicaciones_caso
 
 
 def _jinja_env(subdir: str) -> Environment:
@@ -121,6 +123,9 @@ def build_prensa() -> None:
                 timeline=timeline_mediciones(estado),
                 delta=delta,
                 buffer=buffer,
+                publicaciones=publicaciones_para_medicion(
+                    caso_id, med_id, base_href="../"
+                ),
             ),
             encoding="utf-8",
         )
@@ -131,11 +136,13 @@ def build_prensa() -> None:
         caso_id = caso["id"]
         estado = estados.get(caso_id, {})
         ctx_caso = {**ctx_root, **_href_context("../", "prensa")}
+        publicaciones = build_publicaciones_caso(caso_id, env, caso_dir, ctx=ctx_caso)
         (caso_dir / f"{caso_id}.html").write_text(
             env.get_template("caso.html").render(
                 **ctx_caso,
                 caso=caso_enriquecido(caso, estado),
                 estado=estado,
+                publicaciones=publicaciones,
             ),
             encoding="utf-8",
         )

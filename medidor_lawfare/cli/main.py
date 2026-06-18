@@ -45,6 +45,14 @@ def main(argv: list[str] | None = None) -> int:
     p_catalog_sub = p_catalog.add_subparsers(dest="catalog_cmd", required=True)
     p_catalog_sub.add_parser("sync", help="Sincronizar catalog.json desde estados")
 
+    p_prensa = sub.add_parser("prensa", help="Operaciones de publicaciones prensa")
+    p_prensa_sub = p_prensa.add_subparsers(dest="prensa_cmd", required=True)
+    p_prensa_validate = p_prensa_sub.add_parser(
+        "validate", help="Validar meta.json y cuerpo.html de una publicación"
+    )
+    p_prensa_validate.add_argument("--caso", required=True, help="ID del caso")
+    p_prensa_validate.add_argument("--slug", required=True, help="Slug de la publicación")
+
     args = parser.parse_args(argv)
 
     if args.command == "cribar":
@@ -63,6 +71,9 @@ def main(argv: list[str] | None = None) -> int:
         cat = sincronizar_catalog()
         print(f"Catálogo sincronizado: {len(cat['mediciones_publicas'])} mediciones")
         return 0
+    if args.command == "prensa" and args.prensa_cmd == "validate":
+        from medidor_lawfare.cli.prensa import run as run_prensa_cmd
+        return run_prensa_cmd(args)
 
     parser.print_help()
     return 1

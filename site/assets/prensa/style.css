@@ -739,6 +739,63 @@ code {
 
 p { margin: 0 0 0.85rem; }
 
+/* —— Publicaciones agente —— */
+.publicaciones-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.publicacion-item {
+  border: 2px solid var(--border);
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.85rem;
+  background: var(--surface);
+}
+
+.publicacion-item h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.pub-meta, .pub-resumen-list {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.publicacion-meta .pub-etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.publicacion-cuerpo .pieza-agente {
+  border-left: 4px solid var(--border);
+  padding-left: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.pieza-lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.publicacion-redes .redes-preview {
+  width: 100%;
+  max-width: 540px;
+  height: 540px;
+  border: 2px solid var(--border);
+  margin-top: 0.75rem;
+}
+
+.breadcrumb {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 560px) {
   .cards { grid-template-columns: 1fr; }
   .card { border-right: none !important; }
